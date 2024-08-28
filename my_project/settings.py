@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*9th=%&zpfl6=yn=z4^$1rr5pn)-!a1hn76ca&cw8^ab!6&iqw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-simonmoynih-levellounge-hzs6s09zeua.ws.codeinstitute-ide.net']
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'level_lounge',
 ]
 
 MIDDLEWARE = [
