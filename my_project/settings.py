@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*9th=%&zpfl6=yn=z4^$1rr5pn)-!a1hn76ca&cw8^ab!6&iqw
 DEBUG = False
 
 ALLOWED_HOSTS = ['8000-simonmoynih-levellounge-hzs6s09zeua.ws.codeinstitute-ide.net',
-                'herokuapp.com']
+                '.herokuapp.com']
 
 
 # Application definition
