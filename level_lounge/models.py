@@ -22,3 +22,28 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Post(models.Model):
+    """
+    Represents a post in a forum thread.
+
+    Each post is associated with a user and contains a title, content, 
+    and timestamps for creation and updates. A slug field for
+    creating user-friendly URLs. Code Institute Post model followed
+    with some changes made.
+
+    Attributes:
+        title (CharField): The title of the post.
+        slug (SlugField): A slugified version of the title for use in URLs.
+        content (TextField): The main content of the post.
+        created_at (DateTimeField): Timestamp when the post was created.
+        updated_at (DateTimeField): Timestamp when the post was last updated.
+        user (ForeignKey): Reference to the User who created the post.
+    """
+    title = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
