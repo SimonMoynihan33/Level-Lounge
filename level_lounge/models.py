@@ -25,6 +25,12 @@ class UserProfile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+        """
+        Returns the string representation of the UserProfile object, which is the associated user's username.
+        
+        This method provides a human-readable identifier for the UserProfile object, making it easier 
+        to distinguish between different profiles in the Django admin interface and during debugging.
+        """
         return self.user.username
 
 
@@ -52,7 +58,71 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
+        User, on_delete=models.CASCADE, related_name="forum_posts"
     )
     status = models.IntegerField(choices=STATUS, default=0)
     exercpt = models.TextField(blank=True)
+
+    def save(self, *args, **kwargs):
+        """
+        Overrides the default save method to automatically generate a slug
+        from the post title if it doesn't already exist.
+        
+        The slug is generated using Django's slugify function, ensuring that it is 
+        URL-friendly and unique. After generating the slug, the original save method 
+        is called to save the post object to the database.
+        """
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
+
+    def __str__(self):
+        """
+        Returns the string representation of the Post object, which is the post's title.
+        
+        This method is used to provide a human-readable representation of the object,
+        making it easier to identify in the admin interface and during debugging.
+        """
+        return self.title
+
+
+class Comment(models.Model):
+    """
+    Represents a comment on a post in the forum.
+
+    Each comment is associated with a user and a post, and can optionally be
+    a reply to another comment, supporting nested comment threads.
+
+    Attributes:
+        post (ForeignKey): The post that this comment is related to.
+        user (ForeignKey): The user who created the comment.
+        content (TextField): The main content of the comment.
+        created_at (DateTimeField): The timestamp when the comment was created.
+        updated_at (DateTimeField): The timestamp when the comment was last updated.
+        parent_comment (ForeignKey): An optional field for nesting comments as replies to other comments.
+    """
+    post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="comments"
+    )
+    parent_comment = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
+
+    def __str__(self):
+        """
+        Returns the string representation of the Comment object, which includes the username of the commenter 
+        and the title of the post the comment is associated with.
+
+        This method provides a clear and concise representation of the comment, making it easier to identify 
+        in the Django admin interface and during debugging, especially when dealing with many comments.
+        """
+        return f'Comment by {self.user.username} on {self.post.title}'
+
+    class Meta:
+        """
+        Defines the default ordering for Comment objects, arranging them by their creation time in ascending order.
+        This ensures that comments are displayed in chronological order, with the oldest comments appearing first.
+        """
+        ordering = ['created_at']
