@@ -47,6 +47,7 @@ class Post(models.Model):
     """
     title = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
+    # search_tag = models.TextField (for later addition)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
@@ -54,3 +55,4 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
     status = models.IntegerField(choices=STATUS, default=0)
+    exercpt = models.TextField(blank=True)
