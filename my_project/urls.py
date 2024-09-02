@@ -21,4 +21,5 @@ from level_lounge.views import my_forum
 urlpatterns = [
     path('level_lounge/', my_forum, name='forum'),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')), # Allauth routes
 ]
