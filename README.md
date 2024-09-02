@@ -21,9 +21,9 @@
 - HTML/CSS: Markup and styling languages used for structuring and designing the user interface of your application.
 - Bootstrap: A front-end framework that helps design responsive web pages and user interfaces.
 
-### **API's and External Services**
+### **API's and Documentation**
 
---------------------------
+- Django Documentation: Used extensively throughout app as it is a well documented and clearly defined framework.
 
 ### **Cloud & Deployment**
 

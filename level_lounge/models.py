@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     field automatically stores the timestamp when the profile was created.
     
     Attributes:
-        user (OneToOneField): Links to the Django User model.
+        user (OneToOneField): Links to the Django User model. Used from Django documentation.
         bio (TextField): A short biography or description provided by the user. Optional.
         profile_picture (ImageField): An image file for the user's profile picture. Optional.
         created_at (DateTimeField): The date and time when the user profile was created.
