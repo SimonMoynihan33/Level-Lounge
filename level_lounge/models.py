@@ -83,7 +83,7 @@ class Post(models.Model):
         This method is used to provide a human-readable representation of the object,
         making it easier to identify in the admin interface and during debugging.
         """
-        return self.title
+        return f"{self.title} | Written by {self.author}"
 
 
 class Comment(models.Model):
@@ -105,7 +105,7 @@ class Comment(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-    author = models.ForeignKey(
+    user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="comments"
     )
     parent_comment = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
@@ -118,11 +118,11 @@ class Comment(models.Model):
         This method provides a clear and concise representation of the comment, making it easier to identify 
         in the Django admin interface and during debugging, especially when dealing with many comments.
         """
-        return f'Comment by {self.user.username} on {self.post.title}'
+        return f'Comment "{self.content[:20]}..." by {self.user.username} on {self.post.title}'
 
     class Meta:
         """
         Defines the default ordering for Comment objects, arranging them by their creation time in ascending order.
         This ensures that comments are displayed in chronological order, with the oldest comments appearing first.
         """
-        ordering = ['created_at']
+        ordering = ['-created_at']
