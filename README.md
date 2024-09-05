@@ -40,3 +40,4 @@
 ### **Assistance & Supplementation**
 
 - ChatGPT: AI-powered assistant for helping with debugging, planning and documenting my project.
+- [Logo Design Ai](https://logodesign.ai/) to create the logo
