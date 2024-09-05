@@ -1,0 +1,37 @@
+/* Navbar */
+.nav-bg {
+    background-color: #6d676e;
+}
+
+.main-bg {
+    background-color: #4dfff3;
+}
+
+/* Cards */
+/* Override card style from bootstrap */
+.custom-card-bg {
+    background: none !important;
+    border: none !important;
+}
+
+.card-body {
+    background-color: #6d676e;
+    border-radius: 30px;
+}
+
+.author {
+    color: #faa916
+}
+
+.post-link {
+    color: #faa916;
+    text-decoration: none;
+}
+
+.excerpt {
+    color: #ffffff
+}
+
+.posted-on {
+    color: #ffffff
+}
