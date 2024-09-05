@@ -14,3 +14,11 @@
 - Issue: When the comment was saved, an error that user was not defined showed.
 - Cause: This was because I had defined 'author' in the model, but used 'user' in the template literal inside the dunder method of the Comment class.
 - Fix: Define as user instead of author to keep consistency with other models.
+
+### Bug 04 
+Issue - 3 commits with same changes
+
+### Bug 05
+Issue - Error when `python3 loaddata posts` command was run.
+Cause - My `created_at` field was called `created_on`, causing an error as the fields didn't match.
+Fix - Change field in creds.json file to `created_at` 
