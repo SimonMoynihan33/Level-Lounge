@@ -16,7 +16,23 @@
 - Fix: Define as user instead of author to keep consistency with other models.
 
 ### Bug 04 
-Issue - 3 commits with same changes. Commits ` c93ac1d`, `0a5d8ef` and `d5c30f7` are all the same commits. This is because I added creds.json to my gitignore file, but it still pushed to github. I then tried to reset my repo and IDE to before this using multiple commands in the terminal to no avail. To my knowledge there is no way to delete these commits. There is no sensitive information in this file which means it is not a critical error, but something I will have to be more careful with in the future. After fixing the filepath in gitignore, no difference has been made and the creds.json file still shows in the project repo. This is a mistake that I will learn from and ensure it does not happen in the future.
+- Issue - Three commits with same changes. Commits ` c93ac1d`, `0a5d8ef` and `d5c30f7` are all the same commits. This is because I added posts.json to my gitignore file, but it still pushed to github. All three of these commits were futile attempts at deleting the previous one, and updating it so that posts.json was no longer being pushed to Github. After realising this did not work and I could not delete these commits, I searched online for solutions.
+- Cause - Wrong filepath for posts.json.
+- Fix - After alot of searching online and speaking to some developers on stackoverflow, the solution I found was:
+  1. Fix filepath in .gitignore
+  2. Force Git to stop tracking the file with the command `git rm --cached level_lounge/fixtures/posts.json`
+  3. Commit changes
+  4. Verify file is gone by running `git status`
+
+  I then had to remove the file from Git history and the main repo. To do this I:
+
+  5. Had to run the filter ```git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch level_lounge/fixtures/posts.json" \
+  --prune-empty --tag-name-filter cat -- --all```
+  6. Clean the repo `git reflog expire --expire=now --all && git gc --prune=now --aggressive`
+  7. Force push `git push --force`
+
+This cleared the file from my repo and its history and stopped Git from tracking it in future commits.
 
 ### Bug 05
 Issue - Error when `python3 loaddata posts` command was run.
