@@ -61,7 +61,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="forum_posts"
     )
     status = models.IntegerField(choices=STATUS, default=0)
-    exercpt = models.TextField(blank=True)
+    excerpt = models.TextField(blank=True)
 
     def save(self, *args, **kwargs):
         """
