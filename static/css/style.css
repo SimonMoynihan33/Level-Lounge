@@ -3,8 +3,14 @@
     background-color: #6d676e;
 }
 
+.center-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main styles */
 .main-bg {
-    background-color: #4dfff3;
+    background-color: #faa916;
 }
 
 /* Cards */
