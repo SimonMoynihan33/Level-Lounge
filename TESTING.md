@@ -37,4 +37,9 @@ This cleared the file from my repo and its history and stopped Git from tracking
 ### Bug 05
 - Issue - Error when `python3 loaddata posts` command was run.
 - Cause - My `created_at` field was called `created_on`, causing an error as the fields didn't match.
-- Fix - Change field in creds.json file to `created_at` 
+- Fix - Change field in creds.json file to `created_at`
+
+### Bug 06
+- Issue - Custom CSS file not applying to html page.
+- Cause - MIME type error.
+- Fix - To fix this I changed around the static path in settings.py to no avail, checked everything twice and all code was as it should be. I moved the static file into the my_project directory, and then moved it back into the top level of the directory which fixed the issue!.
