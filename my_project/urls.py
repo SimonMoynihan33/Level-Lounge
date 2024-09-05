@@ -16,10 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from level_lounge.views import my_forum
 
 urlpatterns = [
-    path('level_lounge/', my_forum, name='forum'),
+    path("", include("level_lounge.urls"), name="forum-urls"),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')), # Allauth routes
 ]
