@@ -35,6 +35,6 @@
 This cleared the file from my repo and its history and stopped Git from tracking it in future commits.
 
 ### Bug 05
-Issue - Error when `python3 loaddata posts` command was run.
-Cause - My `created_at` field was called `created_on`, causing an error as the fields didn't match.
-Fix - Change field in creds.json file to `created_at` 
+- Issue - Error when `python3 loaddata posts` command was run.
+- Cause - My `created_at` field was called `created_on`, causing an error as the fields didn't match.
+- Fix - Change field in creds.json file to `created_at` 
