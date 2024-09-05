@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Third-party apps
     'allauth',
     'allauth.account',
+    'django_summernote',
     # Project app
     'level_lounge',
 ]

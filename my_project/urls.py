@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("", include("level_lounge.urls"), name="forum-urls"),
-    path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')), # Allauth routes
+    path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
+    path("", include("level_lounge.urls"), name="forum-urls"),
 ]

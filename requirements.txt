@@ -5,6 +5,7 @@ dj-database-url==0.5.0
 Django==5.1
 django-allauth==64.2.0
 django-debug-toolbar==4.4.6
+django-summernote==0.8.20.0
 gunicorn==23.0.0
 pathspec==0.12.1
 psycopg2==2.9.9
