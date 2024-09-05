@@ -16,7 +16,7 @@
 - Fix: Define as user instead of author to keep consistency with other models.
 
 ### Bug 04 
-Issue - 3 commits with same changes
+Issue - 3 commits with same changes. Commits ` c93ac1d`, `0a5d8ef` and `d5c30f7` are all the same commits. This is because I added creds.json to my gitignore file, but it still pushed to github. I then tried to reset my repo and IDE to before this using multiple commands in the terminal to no avail. To my knowledge there is no way to delete these commits. There is no sensitive information in this file which means it is not a critical error, but something I will have to be more careful with in the future. After fixing the filepath in gitignore, no difference has been made and the creds.json file still shows in the project repo. This is a mistake that I will learn from and ensure it does not happen in the future.
 
 ### Bug 05
 Issue - Error when `python3 loaddata posts` command was run.
