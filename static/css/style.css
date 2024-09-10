@@ -1,3 +1,12 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+.forum-regular {
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* Navbar */
 .nav-bg {
     background-color: #6d676e;
@@ -21,16 +30,16 @@
 }
 
 .card-body {
-    background-color: #6d676e;
+    background-color: #83009a;
     border-radius: 30px;
 }
 
 .author {
-    color: #faa916
+    color: #ffffff;
 }
 
 .post-link {
-    color: #faa916;
+    color: #fa1616;
     text-decoration: none;
 }
 
@@ -46,6 +55,15 @@
     text-decoration: none;
 }
 
+/* Card styling for viewing post */
+.card-text {
+    padding: 15px;
+}
+
+.card {
+    background: #83009a;
+}
+
 /* Style to make footer stick to bottom of page */
 html, body {
     height: 100%;
@@ -59,4 +77,9 @@ html, body {
 }
 .content {
     flex: 1;
+}
+
+/* Post Detail styles */
+.post-title {
+    margin-top: 50px;
 }
