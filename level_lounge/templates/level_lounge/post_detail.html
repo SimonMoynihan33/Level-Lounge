@@ -6,7 +6,7 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title forum-regular">{{ post.title }}</h1>
+                <h1 class="post-title forum-regular right">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_at }}</p>
             </div>
@@ -26,37 +26,6 @@
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
-                <div class="row">
-                    <div class="col-md-12 card mb-4 mt-3">
-                        <h3>Comments:</h3>
-                        <div class="comments-section">
-                            {% for comment in comments %}
-                            <div class="comment">
-                                <p><strong>{{ comment.author }}</strong> - {{ comment.created_at }}</p>
-                                <p>{{ comment.content }}</p> <!-- Display the comment content -->
-
-                                <!-- If there are replies to this comment, display them -->
-                                <div class="replies">
-                                    {% for reply in comment.replies.all %}
-                                    <div class="reply">
-                                        <p><strong>{{ reply.author }}</strong> - {{ reply.created_at }}</p>
-                                        <p>{{ reply.body }}</p> <!-- Display the reply content -->
-                                    </div>
-                                    {% endfor %}
-                                </div>
-
-                                <!-- Form to reply to the comment -->
-                                <form method="post" action="{% url 'add_comment' post.slug %}">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="parent_id" value="{{ comment.id }}">
-                                    <textarea name="body" placeholder="Write a reply"></textarea>
-                                    <button type="submit">Reply</button>
-                                </form>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -29,6 +29,7 @@ def post_detail(request, slug):
     # Only display top-level comments (parent is none)
     comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
     comment_count = post.comments.count()
+    comment_form = CommentForm()
 
     # Pass form to the template for new comments
     form = CommentForm()
@@ -40,7 +41,7 @@ def post_detail(request, slug):
             "post": post,
             "comments": comments,
             "comment_count": comment_count,
-            "forms": form,
+            "comment_form": comment_form,
         }
     )
 
@@ -56,8 +57,11 @@ def add_comment(request, slug):
             parent_id = request.POST.get('parent_id')
             parent_comment = None
             if parent_id:
-                parent_comment = Comment.objects.get(id=parent_id)
-            
+                try:
+                    parent_comment = Comment.objects.get(id=parent_id)
+                except Comment.DoesNotExist:
+                    parent_comment = None  # In case the parent comment doesn't exist
+
             comment = form.save(commit=False)
             comment.post = post
             comment.author = request.user  # Assuming the user is logged in
