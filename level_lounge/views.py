@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
+from django.contrib import messages
 from .models import Post, Comment
 from .forms import CommentForm
 
@@ -29,10 +30,21 @@ def post_detail(request, slug):
     # Only display top-level comments (parent is none)
     comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
     comment_count = post.comments.count()
-    comment_form = CommentForm()
+    
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval'
+    )
 
     # Pass form to the template for new comments
-    form = CommentForm()
+    comment_form = CommentForm()
 
     return render(
         request,

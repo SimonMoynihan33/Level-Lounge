@@ -83,3 +83,15 @@ html, body {
 .post-title {
     margin-top: 50px;
 }
+
+/* Comments & Replies */
+.comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.replies {
+    margin-left: 40px;
+    margin-top: 10px;
+}

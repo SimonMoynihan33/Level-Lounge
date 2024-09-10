@@ -43,3 +43,12 @@ This cleared the file from my repo and its history and stopped Git from tracking
 - Issue: Custom CSS file not applying to html page.
 - Cause: MIME type error.
 - Fix: To fix this I changed around the static path in settings.py to no avail, checked everything twice and all code was as it should be. I moved the static file into the my_project directory, and then moved it back into the top level of the directory which fixed the issue!.
+
+### Bug 07 
+- Issue: Comment form showing three times staxcked on top of eachother.
+- Cause: 
+
+### Bug 08
+- Issue: Could not get comment content to show.
+- Cause: Was referencing the content as 'body' when it is content in my model.
+- Fix: Change 'body' tags to content throughout post_detail.html and py files.
