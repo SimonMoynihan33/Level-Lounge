@@ -35,20 +35,20 @@
 }
 
 .author {
-    color: #ffffff;
+    color: #000000;
 }
 
 .post-link {
-    color: #fa1616;
+    color: #cd00d4;
     text-decoration: none;
 }
 
 .excerpt {
-    color: #ffffff
+    color: #000000
 }
 
 .posted-on {
-    color: #ffffff
+    color: #000000
 }
 
 .media a {
