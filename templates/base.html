@@ -22,72 +22,78 @@
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-    <!-- Nav -->
-    <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
-        <div class="container-fluid">
-            <a href="{% url 'home' %}" class="navbar-brand">
-                <img src="/images/nav-logo.png" alt="The Level Lounge">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 center-nav">
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == profile_url %}active{% endif %}" aria-current="page"
-                            href="#">Profile</a>
-                    </li>
+    <div class="wrapper">
+        <div class="content">
+            <!-- Nav -->
+            <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
+                <div class="container-fluid">
+                    <a href="{% url 'home' %}" class="navbar-brand">
+                        <img src="/images/nav-logo.png" alt="The Level Lounge">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 center-nav">
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                    aria-current="page" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == profile_url %}active{% endif %}"
+                                    aria-current="page" href="#">Profile</a>
+                            </li>
 
-                </ul>
-                <span class="navbar-text text-muted">
-                    Log in/Sign up
-                </span>
-            </div>
+                        </ul>
+                        <span class="navbar-text text-muted">
+                            Log in/Sign up
+                        </span>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="flex-shrink-0 main-bg">
+
+                {% block content %}
+                <!-- Content Goes here -->
+                {% endblock content %}
+
+            </main>
         </div>
-    </nav>
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Copyright Section -->
+                    <div class="col-md-4 text-center d-flex align-items-center">
+                        <p>&copy; 2024 LevelLounge. All rights reserved.</p>
+                    </div>
 
-    <main class="flex-shrink-0 main-bg">
+                    <!-- Contact Section -->
+                    <div class="col-md-4 text-center">
+                        <p>Contact Us:</p>
+                        <p>Phone: +123 456 7890</p>
+                        <p>contact@levellounge.com</p>
+                    </div>
 
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <!-- Copyright Section -->
-                <div class="col-md-4 text-center d-flex align-items-center">
-                    <p>&copy; 2024 LevelLounge. All rights reserved.</p>
-                </div>
-
-                <!-- Contact Section -->
-                <div class="col-md-4 text-center">
-                    <p>Contact Us:</p>
-                    <p>Phone: +123 456 7890</p>
-                    <p>contact@levellounge.com</p>
-                </div>
-
-                <!-- Media Section -->
-                <div class="col-md-4 text-center media">
-                    <p>Follow us:</p>
-                    <p><a href="https://www.instagram.com/" target="_blank" rel="noopener"
-                        aria-label="Visit Our Instagram page (opens in new tab)"><i class="fa-brands fa-instagram"></i>
-                        Instgaram</a></p>
-                    <p><a href="https://x.com/?lang=en" target="_blank" rel="noopener"
-                        aria-label="Visit Our X page (opens in new tab)"><i class="fa-brands fa-x-twitter"></i></a></p>
+                    <!-- Media Section -->
+                    <div class="col-md-4 text-center media">
+                        <p>Follow us:</p>
+                        <p><a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                                aria-label="Visit Our Instagram page (opens in new tab)"><i
+                                    class="fa-brands fa-instagram"></i>
+                                Instgaram</a></p>
+                        <p><a href="https://x.com/?lang=en" target="_blank" rel="noopener"
+                                aria-label="Visit Our X page (opens in new tab)"><i
+                                    class="fa-brands fa-x-twitter"></i></a></p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </footer>
+
+        </footer>
+    </div>
 
 
     <!-- Font Awesome kit -->
