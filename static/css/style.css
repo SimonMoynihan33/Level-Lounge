@@ -41,3 +41,7 @@
 .posted-on {
     color: #ffffff
 }
+
+.media a {
+    text-decoration: none;
+}

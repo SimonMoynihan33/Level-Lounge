@@ -16,9 +16,9 @@
 - Fix: Define as user instead of author to keep consistency with other models.
 
 ### Bug 04 
-- Issue - Three commits with same changes. Commits ` c93ac1d`, `0a5d8ef` and `d5c30f7` are all the same commits. This is because I added posts.json to my gitignore file, but it still pushed to github. All three of these commits were futile attempts at deleting the previous one, and updating it so that posts.json was no longer being pushed to Github. After realising this did not work and I could not delete these commits, I searched online for solutions.
-- Cause - Wrong filepath for posts.json.
-- Fix - After alot of searching online and speaking to some developers on stackoverflow, the solution I found was:
+- Issue: Three commits with same name and minute changes. Commits ` c93ac1d`, `0a5d8ef` and `d5c30f7` are all the same commits. This is because I added posts.json to my gitignore file, but it still pushed to github. All three of these commits were futile attempts at deleting the previous one, and updating it so that posts.json was no longer being pushed to Github. After realising this did not work and I could not delete these commits, I searched online for solutions. This was a lesson learned in that you cannot, to my knowledge, delete commits and not to try to re-do a previous commit logged.
+- Cause: Wrong filepath for posts.json.
+- Fix: After alot of searching online and speaking to some developers on stackoverflow, the solution I found was:
   1. Fix filepath in .gitignore
   2. Force Git to stop tracking the file with the command `git rm --cached level_lounge/fixtures/posts.json`
   3. Commit changes
@@ -35,11 +35,11 @@
 This cleared the file from my repo and its history and stopped Git from tracking it in future commits.
 
 ### Bug 05
-- Issue - Error when `python3 loaddata posts` command was run.
-- Cause - My `created_at` field was called `created_on`, causing an error as the fields didn't match.
-- Fix - Change field in creds.json file to `created_at`
+- Issue: Error when `python3 loaddata posts` command was run.
+- Cause: My `created_at` field was called `created_on`, causing an error as the fields didn't match.
+- Fix: Change field in creds.json file to `created_at`
 
 ### Bug 06
-- Issue - Custom CSS file not applying to html page.
-- Cause - MIME type error.
-- Fix - To fix this I changed around the static path in settings.py to no avail, checked everything twice and all code was as it should be. I moved the static file into the my_project directory, and then moved it back into the top level of the directory which fixed the issue!.
+- Issue: Custom CSS file not applying to html page.
+- Cause: MIME type error.
+- Fix: To fix this I changed around the static path in settings.py to no avail, checked everything twice and all code was as it should be. I moved the static file into the my_project directory, and then moved it back into the top level of the directory which fixed the issue!.
