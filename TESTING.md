@@ -72,3 +72,7 @@ A large bug I encountered was obtaining nested comments. The Code Institute walk
 - Issue: `RecursionError` when attempting to reply to a comment.
 - Cause: This was because I was not terminating the logic properly when displaying the replies, causing replies to display infinitely.
 - Fix: Add for loop to comments.html to iterate through replies and end when there are no more replies, and call `exists()` method to make sure comment replies exist.
+
+### Bug 14
+- Issue: Too many replies can affect mobile view and does not look good. Applying hidden class using django templating language does not seem to work
+- Cause: 

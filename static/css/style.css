@@ -7,6 +7,11 @@
     font-style: normal;
 }
 
+/* Style to hide replies if more than 3 */
+.hidden-reply {
+    display: none;
+}
+
 /* Navbar */
 .nav-bg {
     background-color: #6d676e;
@@ -92,6 +97,14 @@ html, body {
 }
 
 .replies {
-    margin-left: 40px;
+    margin-left: 20px;
+}
+
+.reply {
+    margin-bottom: 10px;
+}
+
+.reply-form {
     margin-top: 10px;
 }
+

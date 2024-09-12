@@ -43,14 +43,26 @@
                 <p><strong>{{ comment.user }}</strong> - {{ comment.created_at }}</p>
                 <p>{{ comment.content }}</p>
 
-                <!-- Check if there are replies before including the replies recursively -->
+                <!-- Display replies (but limit to 3 visible at first) -->
                 {% if comment.replies.exists %}
                 <div class="replies ml-3">
-                    {% include 'level_lounge/comments.html' with comments=comment.replies.all %}
+                    {% for reply in comment.replies.all %}
+                    <div class="reply {% if forloop.counter > 3 %}hidden-reply{% endif %}" id="reply-{{ reply.id }}">
+                        <p><strong>{{ reply.user }}</strong> - {{ reply.created_at }}</p>
+                        <p>{{ reply.content }}</p>
+                    </div>
+                    {% endfor %}
+
+                    <!-- Show more replies button (only if there are more than 3 replies) -->
+                    {% if comment.replies.count > 3 %}
+                    <button class="btn btn-secondary btn-sm" type="button" onclick="showMoreReplies(this)">
+                        Show more replies
+                    </button>
+                    {% endif %}
                 </div>
                 {% endif %}
 
-                <!-- Form to reply to the comment -->
+                <!-- Reply Form for Each Comment -->
                 {% if user.is_authenticated %}
                 <div class="reply-form mt-2 mb-4">
                     <form method="post" action="{% url 'post_detail' post.slug %}">
