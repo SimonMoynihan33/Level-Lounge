@@ -11,21 +11,24 @@ function toggleReplyForm(commentId) {
     }
 }
 
-window.onload = function() {
+function hideReplies() {
+    console.log('hideReplies is called')
     let allRepliesContainers = document.querySelectorAll('.replies');
 
     // Loop through each reply container
     allRepliesContainers.forEach(function(repliesContainer) {
         let replies = repliesContainer.querySelectorAll('.reply');
+        console.log(replies.length + ' replies found');
         
         // Hide replies beyond the third one
         for (let i = 3; i < replies.length; i++) {
+            console.log('Hidong replies...')
             replies[i].classList.add('hidden-reply'); // Apply the hidden class
         }
 
         // If there are more than 3 replies, show the "Show more replies" button
+        let showMoreButton = repliesContainer.nextElementSibling;
         if (replies.length > 3) {
-            let showMoreButton = repliesContainer.nextElementSibling;
             showMoreButton.style.display = 'inline-block';
         }
     });

@@ -3,6 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from .models import Post, Comment
 from .forms import CommentForm
+from django.core.paginator import Paginator
 
 # Create your views here.
 class PostList(generic.ListView):
@@ -25,7 +26,12 @@ def post_detail(request, slug):
     post = get_object_or_404(queryset, slug=slug)
 
     # Fetch only top-level comments (those without a parent)
-    comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
+    all_comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
+    
+    # Paginate comments - Show 3 comments per page
+    paginator = Paginator(all_comments, 3)  # 3 comments per page
+    page_number = request.GET.get('page')  # Get the page number from the request
+    comments = paginator.get_page(page_number)  # Get the comments for that page
     comment_count = post.comments.count()
 
     if request.method == "POST":

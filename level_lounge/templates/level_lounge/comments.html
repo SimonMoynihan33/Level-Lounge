@@ -7,16 +7,14 @@
     {% if comment.replies.exists %}
     <div class="replies ml-3">
         {% for reply in comment.replies.all %}
-            <!-- Recursively include replies for each reply -->
-            {% include 'level_lounge/comments.html' with comment=reply %}
+            <div class="reply"> <!-- Ensure this wrapper has the .reply class -->
+                {% include 'level_lounge/comments.html' with comment=reply %}
+            </div>
         {% endfor %}
-
-        {% if comment.replies.count > 3 %}
         <!-- Ensure button is rendered but hidden by default -->
-        <button class="btn btn-secondary btn-sm" type="button" style="display: none;" onclick="showMoreReplies(this)">
+        <button class="btn btn-secondary btn-sm" type="button" style="display: none" onclick="showMoreReplies(this)">
             Show more replies
         </button>
-        {% endif %}
     </div>
     {% endif %}
 
