@@ -9,7 +9,7 @@
 
 /* Style to hide replies if more than 3 */
 .hidden-reply {
-    display: none;
+    display: none !important;
 }
 
 /* Navbar */
