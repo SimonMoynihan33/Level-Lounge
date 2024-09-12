@@ -56,3 +56,19 @@ This cleared the file from my repo and its history and stopped Git from tracking
 ### Bug 09 
 
 A large bug I encountered was obtaining nested comments. The Code Institute walkthrough views and template did not support this feature, but I felt it was an essential aspect of a discussion based forum website. Most of the time, when I added a view or updated my post_detail template, I ecountered server errors or replies would not show at all.
+
+### Bug 10
+- Issue: `django.template.exceptions.TemplateDoesNotExist: comments.html` error shown when trying to run server when comments.html exists and has content.
+
+### Bug 11
+- Issue: `Not NULL` error when trying to comment for 'author'.
+
+### Bug 12 
+- Issue: `RecursionError` when attempting to comment.
+- Cause: I created an infinite loop as I did not handle checks if there is no replies properly.
+- Fix: Wrap the `{% include %}` tag in a conditional to check if there are replies.
+
+### Bug 13
+- Issue: `RecursionError` when attempting to reply to a comment.
+- Cause: This was because I was not terminating the logic properly when displaying the replies, causing replies to display infinitely.
+- Fix: Add for loop to comments.html to iterate through replies and end when there are no more replies, and call `exists()` method to make sure comment replies exist.

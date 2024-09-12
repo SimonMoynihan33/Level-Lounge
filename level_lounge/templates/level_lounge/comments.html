@@ -1,0 +1,24 @@
+<div class="comment mb-3">
+    <p><strong>{{ comment.user }}</strong> - {{ comment.created_at }}</p>
+    <p>{{ comment.content }}</p>
+
+    <!-- Check if there are replies before including the replies recursively -->
+    {% if comment.replies.exists %}
+    <div class="replies ml-3">
+        <!-- Recursively include comments for replies -->
+        {% for reply in comment.replies.all %}
+            {% include 'level_lounge/comments.html' with comment=reply %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Reply Form for Each Comment -->
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url 'post_detail' post.slug %}">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="hidden" name="parent" value="{{ comment.id }}">
+        <button type="submit" class="btn btn-secondary">Reply</button>
+    </form>
+    {% endif %}
+</div>

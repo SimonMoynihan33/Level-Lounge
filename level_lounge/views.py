@@ -28,17 +28,18 @@ def post_detail(request, slug):
     comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
     comment_count = post.comments.count()
 
-    comment_form = CommentForm()
-
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            comment.author = request.user  # Assign the logged-in user as the comment author
+            comment.user = request.user  # Assign the logged-in user as the comment author
             comment.post = post  # Attach the comment to the post
             comment.save()  # Save the comment to the database
             messages.success(request, 'Comment successfully posted.')
             return redirect('post_detail', slug=post.slug)  # Redirect to avoid duplicate form submission on refresh
+
+    else:
+        comment_form = CommentForm()
 
     return render(
         request,
