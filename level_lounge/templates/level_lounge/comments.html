@@ -7,15 +7,15 @@
     {% if comment.replies.exists %}
     <div class="replies ml-3">
         {% for reply in comment.replies.all %}
-            <div class="reply"> <!-- Ensure this wrapper has the .reply class -->
-                {% include 'level_lounge/comments.html' with comment=reply %}
-            </div>
+        <div class="reply"> <!-- Ensure this wrapper has the .reply class -->
+            {% include 'level_lounge/comments.html' with comment=reply %}
+        </div>
         {% endfor %}
-        <!-- Ensure button is rendered but hidden by default -->
-        <button class="btn btn-secondary btn-sm" type="button" style="display: none" onclick="showMoreReplies(this)">
-            Show more replies
-        </button>
     </div>
+    <!-- Ensure button is rendered but hidden by default -->
+    <button class="btn btn-secondary btn-sm" type="button" style="display: none" onclick="showMoreReplies(this)">
+        Show more replies
+    </button>
     {% endif %}
 
     <!-- Reply button and reply form for authenticated users -->

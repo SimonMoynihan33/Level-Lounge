@@ -19,10 +19,10 @@ function hideReplies() {
     allRepliesContainers.forEach(function(repliesContainer) {
         let replies = repliesContainer.querySelectorAll('.reply');
         console.log(replies.length + ' replies found');
-        
+                
         // Hide replies beyond the third one
         for (let i = 3; i < replies.length; i++) {
-            console.log('Hidong replies...')
+            console.log('Hiding replies..')
             replies[i].classList.add('hidden-reply'); // Apply the hidden class
         }
 
