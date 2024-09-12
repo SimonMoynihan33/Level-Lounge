@@ -13,18 +13,7 @@ class PostList(generic.ListView):
 
 def post_detail(request, slug):
     """
-    Display an individual :model:`blog.Post`.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`blog.Post`.
-
-    **Template:**
-
-    :template:`blog/post_detail.html`
     """
-
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     # Only display top-level comments (parent is none)
@@ -40,7 +29,7 @@ def post_detail(request, slug):
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
+                'Comment successful'
     )
 
     # Pass form to the template for new comments
@@ -57,29 +46,29 @@ def post_detail(request, slug):
         }
     )
 
-
-def add_comment(request, slug):
-    post = get_object_or_404(Post, slug=slug)
+# ------------------------------------- TO BE FIXED
+# def add_comment(request, slug):
+#     post = get_object_or_404(Post, slug=slug)
     
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
+#     if request.method == 'POST':
+#         form = CommentForm(request.POST)
         
-        if form.is_valid():
-            # Check if this is a reply to an existing comment
-            parent_id = request.POST.get('parent_id')
-            parent_comment = None
-            if parent_id:
-                try:
-                    parent_comment = Comment.objects.get(id=parent_id)
-                except Comment.DoesNotExist:
-                    parent_comment = None  # In case the parent comment doesn't exist
+#         if form.is_valid():
+#             # Check if this is a reply to an existing comment
+#             parent_id = request.POST.get('parent_id')
+#             parent_comment = None
+#             if parent_id:
+#                 try:
+#                     parent_comment = Comment.objects.get(id=parent_id)
+#                 except Comment.DoesNotExist:
+#                     parent_comment = None  # In case the parent comment doesn't exist
 
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.author = request.user  # Assuming the user is logged in
-            comment.parent = parent_comment  # Set parent comment if it's a reply
-            comment.save()
+#             comment = form.save(commit=False)
+#             comment.post = post
+#             comment.author = request.user  # Assuming the user is logged in
+#             comment.parent = parent_comment  # Set parent comment if it's a reply
+#             comment.save()
             
-            return redirect('post_detail', slug=post.slug)
+#             return redirect('post_detail', slug=post.slug)
     
-    return redirect('post_detail', slug=post.slug)
+#     return redirect('post_detail', slug=post.slug)
