@@ -98,8 +98,7 @@ class Comment(models.Model):
         user (ForeignKey): The user who created the comment.
         content (TextField): The main content of the comment.
         created_at (DateTimeField): The timestamp when the comment was created.
-        updated_at (DateTimeField): The timestamp when the comment was last updated.
-        parent (ForeignKey): An optional field for nesting comments as replies to other comments.
+        parent (ForeignKey): A field for nesting comments as replies to other comments.
     """
     post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
     content = models.TextField()

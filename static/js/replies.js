@@ -51,4 +51,29 @@ function showMoreReplies(button) {
     if (hiddenReplies.length <= 3) {
         button.style.display = 'none';
     }
+
+    // Show the collapse button
+    let collapseButton = button.nextElementSibling;  // Collapse button comes after "Show more replies"
+    collapseButton.style.display = 'inline-block';  // Show the "Collapse replies" button
+}
+
+/**
+ * Function to collapse replies back to only showing the first 3.
+ * @param {HTMLElement} button - The button element that triggered the event.
+ */
+function collapseReplies(button) {
+    let repliesContainer = button.previousElementSibling.previousElementSibling;  // Replies container is two elements before the button
+    let replies = repliesContainer.querySelectorAll('.reply');
+
+    // Hide all replies beyond the first 3
+    for (let i = 3; i < replies.length; i++) {
+        replies[i].classList.add('hidden-reply');  // Reapply the hidden class
+    }
+
+    // Show the "Show more replies" button
+    let showMoreButton = button.previousElementSibling;
+    showMoreButton.style.display = 'inline-block';  // Show the "Show more replies" button
+
+    // Hide the collapse button
+    button.style.display = 'none';  // Hide the "Collapse replies" button
 }

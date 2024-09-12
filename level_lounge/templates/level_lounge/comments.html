@@ -12,9 +12,14 @@
         </div>
         {% endfor %}
     </div>
-    <!-- Ensure button is rendered but hidden by default -->
+    <!-- button is rendered but hidden by default -->
     <button class="btn btn-secondary btn-sm" type="button" style="display: none" onclick="showMoreReplies(this)">
         Show more replies
+    </button>
+
+    <!-- Collapse replies button (hidden by default) -->
+    <button class="btn btn-secondary btn-sm" type="button" style="display: none;" onclick="collapseReplies(this)">
+        Collapse replies
     </button>
     {% endif %}
 

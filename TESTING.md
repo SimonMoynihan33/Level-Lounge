@@ -86,5 +86,7 @@ A large bug I encountered was obtaining nested comments. The Code Institute walk
 ```
 
 I also tried running the loop outside of the div element to no avail. I also tried adding the `<style>` tag within the templating language but found the same issue as the first solution.
+
+I changed my perspective and decided to try targetting with JavaScript which was fruitless.
 - Cause: Drawbacks with templating language.
-- Fix: The only fix I found to this was from just trying everything I could, which eventually led me to applying all the logic to post_detail.html and rendering comments.html redundant. This worked, also meaning I could delete this file and handle everything in post_detail.html.
+- Fix: After placing console.logs in my hideReplies function, I found that my `.reply` class was not being applied to each reply, therefore not being targetted by JavaScript or the CSS.
