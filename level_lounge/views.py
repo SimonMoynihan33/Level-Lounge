@@ -13,27 +13,32 @@ class PostList(generic.ListView):
 
 def post_detail(request, slug):
     """
+    View to display a single post and its comments, allowing users to add new comments.
+    Handles both top-level comments and replies to other comments.
+    
+    - Retrieves the post using the slug.
+    - Displays top-level comments (those with no parent).
+    - Processes form submissions to add new comments.
+    - Handles replies by attaching a 'parent' comment when applicable.
     """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
-    # Only display top-level comments (parent is none)
+
+    # Fetch only top-level comments (those without a parent)
     comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
     comment_count = post.comments.count()
-    
+
+    comment_form = CommentForm()
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            comment.author = request.user
-            comment.post = post
-            comment.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Comment successful'
-    )
-
-    # Pass form to the template for new comments
-    comment_form = CommentForm()
+            comment.author = request.user  # Assign the logged-in user as the comment author
+            comment.post = post  # Attach the comment to the post
+            comment.save()  # Save the comment to the database
+            messages.success(request, 'Comment successfully posted.')
+            return redirect('post_detail', slug=post.slug)  # Redirect to avoid duplicate form submission on refresh
 
     return render(
         request,
@@ -45,6 +50,7 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         }
     )
+
 
 # ------------------------------------- TO BE FIXED
 # def add_comment(request, slug):

@@ -52,3 +52,7 @@ This cleared the file from my repo and its history and stopped Git from tracking
 - Issue: Could not get comment content to show.
 - Cause: Was referencing the content as 'body' when it is content in my model.
 - Fix: Change 'body' tags to content throughout post_detail.html and py files.
+
+### Bug 09 
+
+A large bug I encountered was obtaining nested comments. The Code Institute walkthrough views and template did not support this feature, but I felt it was an essential aspect of a discussion based forum website. Most of the time, when I added a view or updated my post_detail template, I ecountered server errors or replies would not show at all.
