@@ -1,4 +1,10 @@
 <div class="comment mb-3">
+    {% if comment.parent %}
+    <!-- Display 'Replying to' with the user of the parent comment -->
+    <p><em>Replying to {{ comment.parent.user }}</em></p>
+    {% endif %}
+
+
     <p><strong>{{ comment.user }}</strong> - {{ comment.created_at }}</p>
     <p>{{ comment.content }}</p>
 
