@@ -36,8 +36,8 @@ window.onload = function() {
  * @param {HTMLElement} button - The button element that triggered the event.
  */
 function showMoreReplies(button) {
-    let repliesContainer = button.previousElementSibling; // Get the replies container before the button
-    let hiddenReplies = repliesContainer.querySelectorAll('.hidden-reply'); // Find hidden replies
+    let repliesContainer = button.previousElementSibling;
+    let hiddenReplies = repliesContainer.querySelectorAll('.hidden-reply');
     
     // Show the next 3 hidden replies
     for (let i = 0; i < Math.min(3, hiddenReplies.length); i++) {
