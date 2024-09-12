@@ -74,5 +74,17 @@ A large bug I encountered was obtaining nested comments. The Code Institute walk
 - Fix: Add for loop to comments.html to iterate through replies and end when there are no more replies, and call `exists()` method to make sure comment replies exist.
 
 ### Bug 14
-- Issue: Too many replies can affect mobile view and does not look good. Applying hidden class using django templating language does not seem to work
-- Cause: 
+- Issue: Too many replies can affect mobile view and does not look good. Applying hidden class using django templating language did seem to work in comments.html.
+- Attempted fixes: My first attempt was to use django templating language to apply a css class to comments if there was more than three, but the syntax would not work due to the first `>` tag stopping the rest of the code from running in this example:
+```
+{% for reply in comment.replies.all %}
+        <!-- Only show the first 3 replies initially, hide the rest -->
+        <div class="reply {% if forloop.counter **>** 3 %}hidden-reply{% endif %}" id="reply-{{ reply.id }}">
+            {% include 'level_lounge/comments.html' with comment=reply %}
+        </div>
+        {% endfor %}
+```
+
+I also tried running the loop outside of the div element to no avail. I also tried adding the `<style>` tag within the templating language but found the same issue as the first solution.
+- Cause: Drawbacks with templating language.
+- Fix: The only fix I found to this was from just trying everything I could, which eventually led me to applying all the logic to post_detail.html and rendering comments.html redundant. This worked, also meaning I could delete this file and handle everything in post_detail.html.

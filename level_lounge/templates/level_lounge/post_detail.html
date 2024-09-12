@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -6,13 +7,8 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-12 masthead-text">
-                <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title forum-regular right">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_at }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="#" class="scale" alt="placeholder">
             </div>
         </div>
     </div>
@@ -22,7 +18,6 @@
     <div class="row">
         <div class="col card mb-4 mt-3 left top">
             <div>
-                <!-- Display the post content, using the |safe filter -->
                 <p class="card-text">{{ post.content | safe }}</p>
             </div>
         </div>
@@ -39,47 +34,13 @@
         <h3>Comments:</h3>
         <div class="comments-section">
             {% for comment in comments %}
-            <div class="comment mb-3">
-                <p><strong>{{ comment.user }}</strong> - {{ comment.created_at }}</p>
-                <p>{{ comment.content }}</p>
-
-                <!-- Display replies (but limit to 3 visible at first) -->
-                {% if comment.replies.exists %}
-                <div class="replies ml-3">
-                    {% for reply in comment.replies.all %}
-                    <div class="reply {% if forloop.counter > 3 %}hidden-reply{% endif %}" id="reply-{{ reply.id }}">
-                        <p><strong>{{ reply.user }}</strong> - {{ reply.created_at }}</p>
-                        <p>{{ reply.content }}</p>
-                    </div>
-                    {% endfor %}
-
-                    <!-- Show more replies button (only if there are more than 3 replies) -->
-                    {% if comment.replies.count > 3 %}
-                    <button class="btn btn-secondary btn-sm" type="button" onclick="showMoreReplies(this)">
-                        Show more replies
-                    </button>
-                    {% endif %}
-                </div>
-                {% endif %}
-
-                <!-- Reply Form for Each Comment -->
-                {% if user.is_authenticated %}
-                <div class="reply-form mt-2 mb-4">
-                    <form method="post" action="{% url 'post_detail' post.slug %}">
-                        {% csrf_token %}
-                        {{ comment_form.as_p }}
-                        <input type="hidden" name="parent" value="{{ comment.id }}">
-                        <button type="submit" class="btn btn-secondary">Reply</button>
-                    </form>
-                </div>
-                {% else %}
-                <p><a href="{% url 'login' %}">Log in</a> to leave a reply.</p>
-                {% endif %}
-            </div>
+                <!-- Include the comments.html template for each comment -->
+                {% include 'level_lounge/comments.html' with comment=comment %}
             {% endfor %}
         </div>
     </div>
 </div>
+
 {% block scripts %}
 <script src="{% static 'js/replies.js' %}"></script>
 {% endblock scripts %}

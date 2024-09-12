@@ -1,0 +1,45 @@
+<div class="comment mb-3">
+    <p><strong>{{ comment.user }}</strong> - {{ comment.created_at }}</p>
+    <p>{{ comment.content }}</p>
+
+    <!-- Display replies if they exist -->
+    {% if comment.replies.exists %}
+    <div class="replies ml-3">
+        {% for reply in comment.replies.all %}
+        <div class="reply {% if forloop.counter > 3 %}hidden-reply{% endif %}" id="reply-{{ reply.id }}">
+            <p><strong>{{ reply.user }}</strong> - {{ reply.created_at }}</p>
+            <p>{{ reply.content }}</p>
+
+            <!-- Recursively include replies for each reply -->
+            {% include 'level_lounge/comments.html' with comment=reply %}
+        </div>
+        {% endfor %}
+
+        <!-- Show more replies button if there are more than 3 replies -->
+        {% if comment.replies.count > 3 %}
+        <button class="btn btn-secondary btn-sm" type="button" onclick="showMoreReplies(this)">
+            Show more replies
+        </button>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Reply button and reply form for authenticated users -->
+    {% if user.is_authenticated %}
+    <button class="btn btn-secondary btn-sm" type="button" onclick="toggleReplyForm('{{ comment.id }}')">
+        Reply
+    </button>
+
+    <!-- Hidden reply form -->
+    <div id="reply-form-{{ comment.id }}" class="reply-form" style="display: none; margin-top: 10px;">
+        <form method="post" action="{% url 'post_detail' post.slug %}">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <input type="hidden" name="parent" value="{{ comment.id }}">
+            <button type="submit" class="btn btn-primary">Submit Reply</button>
+        </form>
+    </div>
+    {% else %}
+    <p><a href="{% url 'login' %}">Log in</a> to leave a reply.</p>
+    {% endif %}
+</div>
