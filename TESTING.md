@@ -90,3 +90,6 @@ I also tried running the loop outside of the div element to no avail. I also tri
 I changed my perspective and decided to try targetting with JavaScript which was fruitless.
 - Cause: Drawbacks with templating language.
 - Fix: After placing console.logs in my hideReplies function, I found that my `.reply` class was not being applied to each reply, therefore not being targetted by JavaScript or the CSS.
+
+### Bug 15
+- Issue: Committed changes and pushed them and the site was working, and when I open it again the next day thw fixed buttons are no longer working.

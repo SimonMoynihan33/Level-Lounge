@@ -104,6 +104,6 @@ html, body {
 }
 
 /* Style to hide replies if more than 3 */
-.hidden-reply {
+.hidden {
     display: none !important;
 }

@@ -29,8 +29,9 @@ def post_detail(request, slug):
     all_comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
     
     # Paginate comments - Show 3 comments per page
-    paginator = Paginator(all_comments, 3)  # 3 comments per page
-    page_number = request.GET.get('page')  # Get the page number from the request
+    top_level_comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
+    paginator = Paginator(top_level_comments, 3)  # 3 comments per page
+    page_number = request.GET.get('page')
     comments = paginator.get_page(page_number)  # Get the comments for that page
     comment_count = post.comments.count()
 
@@ -53,6 +54,7 @@ def post_detail(request, slug):
         {
             "post": post,
             "comments": comments,
+            "top_level_comments": top_level_comments,
             "comment_count": comment_count,
             "comment_form": comment_form,
         }
