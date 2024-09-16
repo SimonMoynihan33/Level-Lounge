@@ -6,6 +6,10 @@
     <p>Replying to - {{ comment.parent.user }}</p>
     {% endif %}
     <p>{{ comment.content }}</p>
+    {% if user.is_authenticated and comment.user == user %}
+    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+    {% endif %}
+
 
     <!-- Display replies if they exist -->
     {% if comment.replies.exists %}
@@ -31,14 +35,17 @@
         </div>
     </div>
     <!-- button is rendered but hidden by default -->
+    {% if comment.replies.count > 1 %}
     <button class="btn btn-secondary btn-sm show-more-btn" type="button" onclick="showMoreReplies(this)">
         Show more replies
     </button>
 
     <!-- Collapse replies button (hidden by default) -->
-    <button class="btn btn-secondary btn-sm collapse-replies-btn" type="button" onclick="collapseReplies(this)">
+    <button class="btn btn-secondary btn-sm collapse-replies-btn" type="button" style="display: none"
+        onclick="collapseReplies(this)">
         Collapse replies
     </button>
+    {% endif %}
     {% endif %}
 
     <!-- Reply button and reply form for authenticated users -->

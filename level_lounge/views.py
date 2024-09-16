@@ -85,6 +85,7 @@ def create_post(request):
 def comment_edit(request, slug, comment_id):
     """
     view to edit comments
+    From CI walkthrough
     """
     if request.method == "POST":
 
@@ -93,7 +94,7 @@ def comment_edit(request, slug, comment_id):
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
 
-        if comment_form.is_valid() and comment.author == request.user:
+        if comment_form.is_valid() and comment.user == request.user:
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.approved = False

@@ -22,17 +22,6 @@
                 {% if user.is_authenticated and post.author == user %}
                 <button class="btn btn-delete" post_id="{{ post.id }}">Delete</button>
                 {% endif %}
-                {% if user.is_authenticated and comment.author == user %}
-                <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                {% endif %}
-            </div>
-            <!-- Hidden Edit Form -->
-            <div id="edit-form-{{ post.id }}" class="edit-form" style="display: none;">
-                <form id="postForm" method="post" action="{% url 'edit_post' post.id %}">
-                    {% csrf_token %}
-                    <textarea id="id_body" name="content" class="form-control">{{ post.content }}</textarea>
-                    <button type="submit" class="btn btn-primary" id="submitButton">Update</button>
-                </form>
             </div>
         </div>
     </div>
@@ -55,7 +44,7 @@
 </div>
 
 {% block extras %}
-<script src="{% static 'js/posts.js' %}"></script>
+<script src="{% static 'js/comments.js' %}"></script>
 <script src="{% static 'js/replies.js' %}"></script>
 {% endblock %}
 
