@@ -82,6 +82,23 @@ def create_post(request):
     return render(request, 'level_lounge/create_post.html', {'form': form})
 
 
+@login_required
+def edit_post(request, id):
+    """
+    Function to allow a user to edit their own posts
+    """
+    post = get_object_or_404(Post, id=id, author=request.user)  # Ensure only the author can edit the post
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('post_detail', slug=post.slug)
+    else:
+        form = PostForm(instance=post)
+
+    return render(request, 'level_lounge/edit_post.html', {'form': form})
+
+
 def comment_edit(request, slug, comment_id):
     """
     view to edit comments

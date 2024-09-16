@@ -9,4 +9,5 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('<slug:slug>/edit_comment/<int:comment_id>',
          views.comment_edit, name='comment_edit'),
+    path('post/<int:id>/edit/', views.edit_post, name='edit_post'),
     ]

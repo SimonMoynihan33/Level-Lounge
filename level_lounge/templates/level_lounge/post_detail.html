@@ -19,8 +19,10 @@
         <div class="col card mb-4 mt-3 left top">
             <div>
                 <p class="card-text" id="post{{ post.id }}">{{ post.content | safe }}</p>
+                <!-- Check if the user is authenticated and the author of the post -->
                 {% if user.is_authenticated and post.author == user %}
-                <button class="btn btn-delete" post_id="{{ post.id }}">Delete</button>
+                <a href="{% url 'edit_post' post.id %}" class="btn btn-secondary">Edit</a>
+                
                 {% endif %}
             </div>
         </div>
@@ -32,7 +34,7 @@
             <h3>Leave a Comment:</h3>
             <form method="post" action="{% url 'post_detail' post.slug %}">
                 {% csrf_token %}
-                {{ comment_form }}
+                {{ comment_form.as_p }}
                 <button type="submit" class="btn btn-primary">Submit Comment</button>
             </form>
             {% for comment in top_level_comments %}
