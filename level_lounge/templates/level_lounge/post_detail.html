@@ -22,7 +22,10 @@
                 <!-- Check if the user is authenticated and the author of the post -->
                 {% if user.is_authenticated and post.author == user %}
                 <a href="{% url 'edit_post' post.id %}" class="btn btn-secondary">Edit</a>
-                
+                <form action="{% url 'delete_post' post.id %}" method="get" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>                
                 {% endif %}
             </div>
         </div>
