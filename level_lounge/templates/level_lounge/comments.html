@@ -1,6 +1,10 @@
 {% load static %}
 <div class="comment mb-3">
     <p><strong>{{ comment.user }}</strong> - {{ comment.created_at }}</p>
+    {% if comment.parent %}
+    <!-- Display the user of the parent comment being replied to -->
+    <p>Replying to - {{ comment.parent.user }}</p>
+    {% endif %}
     <p>{{ comment.content }}</p>
 
     <!-- Display replies if they exist -->
@@ -10,7 +14,10 @@
 
         {% if comment.replies.count > 0 %}
         <div class="reply">
-            {% include 'level_lounge/comments.html' with comment=comment.replies.first %}
+            <!-- Loop through all replies for the current comment -->
+            {% for reply in comment.replies.all %}
+            {% include 'level_lounge/comments.html' with comment=reply %}
+            {% endfor %}
         </div>
         {% endif %}
 
@@ -18,7 +25,7 @@
         <div class="hidden-replies hidden">
             {% for reply in comment.replies.all|slice:"1:" %}
             <div class="reply hidden">
-            {% include 'level_lounge/comments.html' with comment=reply %}
+                {% include 'level_lounge/comments.html' with comment=reply %}
             </div>
             {% endfor %}
         </div>

@@ -73,10 +73,6 @@ function collapseReplies(button) {
         hiddenReplies[i].classList.add('hidden');  // Reapply the hidden class
     }
 
-    // Show the "Show more replies" button
-    let showMoreButton = button.previousElementSibling;
-    showMoreButton.style.display = 'inline-block';  // Show the "Show more replies" button
-
     // Hide the collapse button
     button.style.display = 'none';  // Hide the "Collapse replies" button
 }
