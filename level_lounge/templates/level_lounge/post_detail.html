@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col card mb-4 mt-3 left top">
             <div>
-                <p class="card-text" id="post{{ post.id }}">{{ post.content | safe }}</p>
+                <p class="card-text" id="post{{ post.id }}">{{ post.content | safe | linebreaksbr }}</p>
                 <!-- Check if the user is authenticated and the author of the post -->
                 {% if user.is_authenticated and post.author == user %}
                 <a href="{% url 'edit_post' post.id %}" class="btn btn-secondary">Edit</a>
