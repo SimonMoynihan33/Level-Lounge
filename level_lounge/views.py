@@ -12,6 +12,10 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
+def update_info(request):
+    pass
+
+
 def post_detail(request, slug):
     """
     View to display a single post and its comments, allowing users to add new comments.
@@ -61,29 +65,3 @@ def post_detail(request, slug):
     )
 
 
-# ------------------------------------- TO BE FIXED
-# def add_comment(request, slug):
-#     post = get_object_or_404(Post, slug=slug)
-    
-#     if request.method == 'POST':
-#         form = CommentForm(request.POST)
-        
-#         if form.is_valid():
-#             # Check if this is a reply to an existing comment
-#             parent_id = request.POST.get('parent_id')
-#             parent_comment = None
-#             if parent_id:
-#                 try:
-#                     parent_comment = Comment.objects.get(id=parent_id)
-#                 except Comment.DoesNotExist:
-#                     parent_comment = None  # In case the parent comment doesn't exist
-
-#             comment = form.save(commit=False)
-#             comment.post = post
-#             comment.author = request.user  # Assuming the user is logged in
-#             comment.parent = parent_comment  # Set parent comment if it's a reply
-#             comment.save()
-            
-#             return redirect('post_detail', slug=post.slug)
-    
-#     return redirect('post_detail', slug=post.slug)
