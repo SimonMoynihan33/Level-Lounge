@@ -17,12 +17,13 @@ class UserProfile(models.Model):
     Attributes:
         user (OneToOneField): Links to the Django User model. Used from Django documentation.
         bio (TextField): A short biography or description provided by the user. Optional.
-        profile_picture (ImageField): An image file for the user's profile picture. Optional.
+        post_number(IntegerField): Show the amount of posts a user has created
         created_at (DateTimeField): The date and time when the user profile was created.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    post_number = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         """

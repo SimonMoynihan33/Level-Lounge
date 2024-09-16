@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django_summernote',
     # Project app
     'level_lounge',
+    'profile_page'
 ]
 
 SITE_ID = 1
