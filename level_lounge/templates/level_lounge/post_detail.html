@@ -20,10 +20,10 @@
             <div>
                 <p class="card-text">{{ post.content | safe }}</p>
                 {% if user.is_authenticated and post.author == user %}
-                <button class="btn btn-delete text-right" post_id="{{ post.id }}">Delete</button>
+                <button class="btn btn-delete" post_id="{{ post.id }}">Delete</button>
                 {% endif %}
                 {% if user.is_authenticated and post.author == user %}
-                <button class="btn btn-edit text-end" post_id="{{ post.id }}">Edit</button>
+                <button class="btn btn-edit" post_id="{{ post.id }}">Edit</button>
                 {% endif %}
             </div>
         </div>
@@ -46,11 +46,9 @@
     </div>
 </div>
 
-<script>
-    // Initialize the hideReplies function after the page loads
-    document.addEventListener("DOMContentLoaded", function () {
-        hideReplies();  // Hide replies beyond the 3rd one
-    });
-</script>
+{% block extras %}
+<script src="{% static 'js/posts.js' %}"></script>
+<script src="{% static 'js/replies.js' %}"></script>
+{% endblock %}
 
 {% endblock content %}

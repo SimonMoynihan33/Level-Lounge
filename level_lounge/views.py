@@ -3,8 +3,9 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 class PostList(generic.ListView):
@@ -66,25 +67,16 @@ def post_detail(request, slug):
     )
 
 
-def comment_edit(request, slug, comment_id):
-    """
-    View to edit comments
-    CI Code
-    """
+@login_required
+def create_post(request):
     if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user  # Assign the logged-in user as the post's author
+            post.save()  # Save the post
+            return redirect('post_detail', slug=post.slug)  # Redirect to the post detail page
+    else:
+        form = PostForm()
 
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comment = get_object_or_404(Comment, pk=comment_id)
-        comment_form = CommentForm(data=request.POST, instance=comment)
-
-        if comment_form.is_valid() and comment.author == request.user:
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.approved = False
-            comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
-        else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
-
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    return render(request, 'level_lounge/create_post.html', {'form': form})
