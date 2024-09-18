@@ -98,3 +98,7 @@ I changed my perspective and decided to try targetting with JavaScript which was
 ### Bug 16
 - Issue: Cannot get edit post form to show when trying to change CI code from editting comments.
 
+### Bug 17
+- Issue: Cannot get Logout/Login list item to align centrally when the nav collapses on mobile devices. Only solutions I could think of with css aligned everything to the left, or would leave 'Home' and 'Profile' horizontal on one line, and 'Login' right aligned on the next line.
+- Cause: Failure overriding Bootstrap styling successfully.
+- Fix: The only fix I could think of was removing the `ms-auto` Bootstrap class depending on screen sizes. I achieved this through JavaScript.

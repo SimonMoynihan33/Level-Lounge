@@ -268,7 +268,13 @@ html, body {
         text-align: center;
     }
 
+    .ms-auto {
+        text-align: center;
+    }
+
     footer .text-center {
         margin-bottom: 15px;
     }
 }
+
+
