@@ -26,23 +26,57 @@
 
 /* Main styles */
 .main-bg {
-    background-color: #ffffff;
+    background-color: #f5f5f5;
 }
 
 /* Cards */
 /* Override card style from bootstrap */
 .custom-card-bg {
-    background: none !important;
-    border: none !important;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: .5rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effects */
 }
 
-.card-body {
-    background-color: #ffffff;
-    border-radius: 30px;
+/* Bootstrap card hover effect */
+.custom-card-bg:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
 }
 
+/* Adjust card body padding for consistent spacing */
+.custom-card-bg .card-body {
+    padding: 1.25rem; 
+    color: #333;
+}
+
+/* Title customization using Bootstrap's heading classes */
+.card-title {
+    font-size: 1.75rem; 
+    font-weight: 700; 
+    color: #333;
+    text-decoration: none;
+}
+
+/* Author styling with Bootstrap's text-muted class */
 .author {
-    color: #000000;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d; /* Bootstrap's muted text color */
+}
+
+/* Excerpt styling */
+.excerpt {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Date styling */
+.posted-on {
+    font-size: 0.9rem;
+    color: #999;
 }
 
 .post-link {
@@ -50,17 +84,12 @@
     text-decoration: none;
 }
 
-.excerpt {
-    color: #000000
-}
-
-.posted-on {
-    color: #000000
-}
-
 .media a {
     text-decoration: none;
 }
+
+/* Create post button */
+
 
 /* Card styling for viewing post */
 .card-text {

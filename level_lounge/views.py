@@ -9,7 +9,12 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1)
+    """
+    View to display a paginated list of posts, showing the newest posts first.
+    Posts are filtered to show only those with status = 1 (published).
+    The list is paginated, showing 6 posts per page.
+    """
+    queryset = Post.objects.filter(status=1).order_by('-created_at') 
     template_name = "level_lounge/index.html"
     paginate_by = 6
 
