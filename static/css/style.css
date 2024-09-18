@@ -266,6 +266,8 @@ html, body {
 @media (max-width: 768px) {
     .navbar-nav {
         text-align: center;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
     }
 
     .ms-auto {

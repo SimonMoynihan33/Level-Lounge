@@ -37,28 +37,28 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav w-100 justify-content-between">
+                        <ul class="navbar-nav nav-list w-100 justify-content-between">
                             <!-- Left aligned links -->
-                                <li class="nav-item">
-                                    <a class="nav-link {% if request.path == home_url %}active{% endif %}"
-                                        aria-current="page" href="{% url 'home' %}">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link {% if request.path == profile_url %}active{% endif %}"
-                                        aria-current="page" href="#">Profile</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                    aria-current="page" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == profile_url %}active{% endif %}"
+                                    aria-current="page" href="#">Profile</a>
+                            </li>
                             <!-- Right-aligned links (Login/Logout) -->
-                                {% if user.is_authenticated %}
-                                <li class="nav-item ms-auto">
-                                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
-                                        href="{% url 'account_logout' %}">Logout</a>
-                                </li>
-                                {% else %}
-                                <li class="nav-item ms-auto">
-                                    <a class="nav-link {% if request.path == login_url %}active{% endif %}"
-                                        href="{% url 'account_login' %}">Login</a>
-                                </li>
-                                {% endif %}
+                            {% if user.is_authenticated %}
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                    href="{% url 'account_logout' %}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                    href="{% url 'account_login' %}">Login</a>
+                            </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -120,8 +120,6 @@
                     </div>
                 </div>
             </div>
-
-
         </footer>
     </div>
 
@@ -133,24 +131,24 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-        <script>
-            function toggleMsAuto() {
-                const navItem = document.querySelector('.nav-item.ms-auto'); // Select the element with the ms-auto class
-                if (window.matchMedia("(max-width: 768px)").matches) {
-                    // Remove ms-auto if screen is 768px or smaller
-                    navItem.classList.remove('ms-auto');
-                } else {
-                    // Add ms-auto if screen is larger than 768px
-                    navItem.classList.add('ms-auto');
-                }
+    <script>
+        function toggleMsAuto() {
+            const navItem = document.querySelector('.nav-item.ms-auto'); // Select the element with the ms-auto class
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                // Remove ms-auto if screen is 768px or smaller
+                navItem.classList.remove('ms-auto');
+            } else {
+                // Add ms-auto if screen is larger than 768px
+                navItem.classList.add('ms-auto');
             }
-        
-            // Run on page load
-            toggleMsAuto();
-        
-            // Run every time the screen is resized
-            window.addEventListener('resize', toggleMsAuto);
-        </script>
+        }
+
+        // Run on page load
+        toggleMsAuto();
+
+        // Run every time the screen is resized
+        window.addEventListener('resize', toggleMsAuto);
+    </script>
 
 </body>
 
