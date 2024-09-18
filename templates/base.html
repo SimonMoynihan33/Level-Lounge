@@ -37,31 +37,33 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 center-nav">
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == home_url %}active{% endif %}"
-                                    aria-current="page" href="{% url 'home' %}">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == profile_url %}active{% endif %}"
-                                    aria-current="page" href="#">Profile</a>
-                            </li>
-                        </ul>
-                        <div class="navbar-text text-muted">
-                            <ul class="nav-log">
+                        <ul class="navbar-nav w-100 d-flex justify-content-between">
+                            <!-- Left aligned links -->
+                            <div class="d-flex">
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                        aria-current="page" href="{% url 'home' %}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == profile_url %}active{% endif %}"
+                                        aria-current="page" href="#">Profile</a>
+                                </li>
+                            </div>
+                            <!-- Right-aligned links (Login/Logout) -->
+                            <div class="d-flex ms-auto">
                                 {% if user.is_authenticated %}
                                 <li class="nav-item">
                                     <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
-                                        aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                                        href="{% url 'account_logout' %}">Logout</a>
                                 </li>
                                 {% else %}
                                 <li class="nav-item">
                                     <a class="nav-link {% if request.path == login_url %}active{% endif %}"
-                                        aria-current="page" href="{% url 'account_login' %}">Login</a>
+                                        href="{% url 'account_login' %}">Login</a>
                                 </li>
                                 {% endif %}
-                            </ul>
-                        </div>
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </nav>

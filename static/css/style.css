@@ -62,13 +62,13 @@ body {
     text-underline-offset: 3px; /* Space underline from text */
 }
 
-.nav-log .nav-link {
+.nav-link {
     color: #0A1A2A; /* Dark navy for login/logout links */
     font-weight: bold;
     text-decoration: none;
 }
 
-.nav-log .nav-link:hover {
+.nav-link:hover {
     color: #8d8d8d;
     text-decoration: underline;
     text-decoration-thickness: 2px;
@@ -96,6 +96,19 @@ body {
     margin-right: 0 !important;
 }
 
+/* Remove List Decoration */
+ul.navbar-nav li {
+    list-style-type: none; /* Remove bullets */
+}
+
+ul.navbar-nav li a {
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar-nav .nav-item {
+    display: flex; /* Ensures all links are vertically aligned */
+    align-items: center; /* Vertically centers the links */
+}
 
 /* Footer Styles */
 footer {
@@ -125,17 +138,6 @@ footer .media i {
 
 footer .media i:hover {
     color: #8d8d8d; 
-}
-
-/* Remove List Decoration */
-ul.navbar-nav li,
-ul.nav-log li {
-    list-style-type: none; /* Remove bullets */
-}
-
-ul.navbar-nav li a,
-ul.nav-log li a {
-    text-decoration: none; /* Remove underline */
 }
 
 /* Cards */
