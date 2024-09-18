@@ -99,11 +99,3 @@ html, body {
     margin-bottom: 10px;
 }
 
-.reply-form {
-    margin-top: 10px;
-}
-
-/* Style to hide replies if more than 3 */
-.hidden {
-    display: none !important;
-}

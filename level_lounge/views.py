@@ -29,7 +29,7 @@ def post_detail(request, slug):
     - Handles replies by attaching a 'parent' comment when applicable.
     """
     post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.filter(parent__isnull=True).order_by("-created_at")  # Only top-level comments
+    comments = post.comments.filter(parent__isnull=True).order_by("-created_at")  # Fetch top-level comments
     comment_form = CommentForm()
 
     if request.method == 'POST':
@@ -41,7 +41,7 @@ def post_detail(request, slug):
             parent_id = request.POST.get('parent_id')
             if parent_id:
                 parent_comment = Comment.objects.get(id=parent_id)
-                new_comment.parent = parent_comment  # Set the parent comment (either top-level or a reply)
+                new_comment.parent = parent_comment  # Set the parent comment
             new_comment.save()
             return redirect('post_detail', slug=slug)
 
@@ -50,7 +50,6 @@ def post_detail(request, slug):
         'comments': comments,  # Top-level comments
         'comment_form': comment_form,
     })
-
 
 @login_required
 def create_post(request):

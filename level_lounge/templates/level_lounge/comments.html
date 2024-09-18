@@ -1,67 +1,18 @@
 {% load static %}
+<!-- After facing massive errors ChatGPT was used to fix this section -->
+
 <div class="comment mb-3">
+    <!-- Display the user and content of the comment -->
     <p><strong>{{ comment.user }}</strong> - {{ comment.created_at }}</p>
+
+    <!-- If the comment is a reply, display 'Replying to' the user being replied to -->
     {% if comment.parent %}
-    <!-- Display the user of the parent comment being replied to -->
-    <p>Replying to - {{ comment.parent.user }}</p>
+    <p><em>Replying to - {{ comment.parent.user }}</em></p>
     {% endif %}
+
     <p>{{ comment.content }}</p>
-    {% if user.is_authenticated and comment.user == user %}
-    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-    {% endif %}
 
-
-    <!-- Display replies if they exist -->
-    {% if comment.replies.exists %}
-    <div class="replies ml-3">
-        <!-- First reply -->
-
-        <!-- Display all replies (one layer of nesting) -->
-    {% if comment.replies.all %}
-    <div class="replies ml-3">
-        {% for reply in comment.replies.all %}
-            <div class="reply mb-3">
-                <p><strong>{{ reply.user }}</strong> - {{ reply.created_at }}</p>
-                <p>{{ reply.content }}</p>
-                <!-- Reply form for each reply -->
-                {% if user.is_authenticated %}
-                <form method="post" action="{% url 'post_detail' post.slug %}">
-                    {% csrf_token %}
-                    <textarea name="content" class="form-control"></textarea>
-                    <input type="hidden" name="parent_id" value="{{ reply.id }}">
-                    <button type="submit" class="btn btn-primary">Reply</button>
-                </form>
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-
-
-        <!-- Hidden replies -->
-        <div class="hidden-replies hidden">
-            {% for reply in comment.replies.all|slice:"1:" %}
-            <div class="reply hidden">
-                {% include 'level_lounge/comments.html' with comment=reply %}
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <!-- button is rendered but hidden by default -->
-    {% if comment.replies.count > 1 %}
-    <button class="btn btn-secondary btn-sm show-more-btn" type="button" onclick="showMoreReplies(this)">
-        Show more replies
-    </button>
-
-    <!-- Collapse replies button (hidden by default) -->
-    <button class="btn btn-secondary btn-sm collapse-replies-btn" type="button" style="display: none"
-        onclick="collapseReplies(this)">
-        Collapse replies
-    </button>
-    {% endif %}
-    {% endif %}
-
-    <!-- Reply button and reply form for authenticated users -->
+    <!-- Reply button for authenticated users -->
     {% if user.is_authenticated %}
     <button class="btn btn-secondary btn-sm" type="button" onclick="toggleReplyForm('{{ comment.id }}')">
         Reply
@@ -72,6 +23,7 @@
         <form method="post" action="{% url 'post_detail' post.slug %}">
             {% csrf_token %}
             {{ comment_form.as_p }}
+            <!-- Pass the current comment as the parent if it's a reply -->
             <input type="hidden" name="parent" value="{{ comment.id }}">
             <button type="submit" class="btn btn-primary">Submit Reply</button>
         </form>
@@ -79,4 +31,9 @@
     {% else %}
     <p><a href="{% url 'account_login' %}">Log in</a> to leave a reply.</p>
     {% endif %}
+
+    <!-- Display replies if they exist, but without nesting them further -->
+    {% for reply in comment.replies.all %}
+        {% include 'level_lounge/comments.html' with comment=reply %}
+    {% endfor %}
 </div>
