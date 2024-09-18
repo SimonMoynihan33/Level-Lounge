@@ -83,6 +83,20 @@ body {
     background-color: #FFD700;
 }
 
+/* Remove padding and gutter specifically for the navbar inside container-fluid */
+.container-fluid.navbar-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.navbar-collapse {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
 /* Footer Styles */
 footer {
     background-color: #FFD700;
