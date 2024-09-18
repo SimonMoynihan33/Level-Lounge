@@ -89,7 +89,33 @@
 }
 
 /* Create post button */
+.create-post-btn {
+    background: linear-gradient(45deg, #dc4af6, #b732d9);
+    color: white;
+    font-size: 1.3rem;
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 40px;
+}
 
+/* Hover Effect */
+.create-post-btn:hover {
+    background: linear-gradient(45deg, #b732d9, #9115b2); /* Darker purple gradient on hover */
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus Effect (for accessibility) */
+.create-post-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(220, 74, 246, 0.5); 
+}
 
 /* Card styling for viewing post */
 .card-text {
