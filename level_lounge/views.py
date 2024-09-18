@@ -48,6 +48,7 @@ def post_detail(request, slug):
                 parent_comment = Comment.objects.get(id=parent_id)
                 new_comment.parent = parent_comment  # Set the parent comment
             new_comment.save()
+            messages.success(request, 'Comment successfully posted.')
             return redirect('post_detail', slug=slug)
 
     return render(request, 'level_lounge/post_detail.html', {
