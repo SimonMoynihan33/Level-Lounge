@@ -7,6 +7,11 @@
     font-style: normal;
 }
 
+/* Main styles */
+.main-bg {
+    background-color: #0a1a2a;
+}
+
 /* Navbar */
 .nav-bg {
     background-color: #dc4af6;
@@ -24,18 +29,13 @@
     margin-bottom: auto;
 }
 
-/* Main styles */
-.main-bg {
-    background-color: #f5f5f5;
-}
-
 /* Cards */
 /* Override card style from bootstrap */
-.custom-card-bg {
-    background-color: #f9f9f9;
+.card-body {
+    background-color: #2e2e2e;
     border: 1px solid #ddd; /* Light border */
     border-radius: .5rem; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effects */
 }
 
@@ -48,14 +48,13 @@
 /* Adjust card body padding for consistent spacing */
 .custom-card-bg .card-body {
     padding: 1.25rem; 
-    color: #333;
+    color: #E0E0E0;
 }
 
 /* Title customization using Bootstrap's heading classes */
 .card-title {
     font-size: 1.75rem; 
     font-weight: 700; 
-    color: #333;
     text-decoration: none;
 }
 
@@ -63,24 +62,24 @@
 .author {
     font-size: 0.9rem;
     font-style: italic;
-    color: #6c757d; /* Bootstrap's muted text color */
+    color: #E0E0E0; /* Bootstrap's muted text color */
 }
 
 /* Excerpt styling */
 .excerpt {
     font-size: 1rem;
-    color: #666;
+    color: #E0E0E0;
     margin-bottom: 15px;
 }
 
 /* Date styling */
 .posted-on {
     font-size: 0.9rem;
-    color: #999;
+    color: #E0E0E0;
 }
 
 .post-link {
-    color: #dc4af6;
+    color: #FFD700;
     text-decoration: none;
 }
 
@@ -90,7 +89,7 @@
 
 /* Create post button */
 .create-post-btn {
-    background: linear-gradient(45deg, #dc4af6, #b732d9);
+    background: linear-gradient(45deg, #f7e797, #ffd700);
     color: white;
     font-size: 1.3rem;
     padding: 16px 32px;
@@ -115,15 +114,6 @@
 .create-post-btn:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgba(220, 74, 246, 0.5); 
-}
-
-/* Card styling for viewing post */
-.card-text {
-    padding: 15px;
-}
-
-.card {
-    background: #ffffff;
 }
 
 /* Style to make footer stick to bottom of page */
