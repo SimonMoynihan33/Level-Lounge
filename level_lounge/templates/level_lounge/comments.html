@@ -16,14 +16,27 @@
     <div class="replies ml-3">
         <!-- First reply -->
 
-        {% if comment.replies.count > 0 %}
-        <div class="reply">
-            <!-- Loop through all replies for the current comment -->
-            {% for reply in comment.replies.all %}
-            {% include 'level_lounge/comments.html' with comment=reply %}
-            {% endfor %}
-        </div>
-        {% endif %}
+        <!-- Display all replies (one layer of nesting) -->
+    {% if comment.replies.all %}
+    <div class="replies ml-3">
+        {% for reply in comment.replies.all %}
+            <div class="reply mb-3">
+                <p><strong>{{ reply.user }}</strong> - {{ reply.created_at }}</p>
+                <p>{{ reply.content }}</p>
+                <!-- Reply form for each reply -->
+                {% if user.is_authenticated %}
+                <form method="post" action="{% url 'post_detail' post.slug %}">
+                    {% csrf_token %}
+                    <textarea name="content" class="form-control"></textarea>
+                    <input type="hidden" name="parent_id" value="{{ reply.id }}">
+                    <button type="submit" class="btn btn-primary">Reply</button>
+                </form>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
 
         <!-- Hidden replies -->
         <div class="hidden-replies hidden">

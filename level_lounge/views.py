@@ -28,43 +28,28 @@ def post_detail(request, slug):
     - Processes form submissions to add new comments.
     - Handles replies by attaching a 'parent' comment when applicable.
     """
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
+    post = get_object_or_404(Post, slug=slug)
+    comments = post.comments.filter(parent__isnull=True).order_by("-created_at")  # Only top-level comments
+    comment_form = CommentForm()
 
-    # Fetch only top-level comments (those without a parent)
-    all_comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
-    
-    # Paginate comments - Show 3 comments per page
-    top_level_comments = post.comments.filter(parent__isnull=True).order_by("-created_at")
-    paginator = Paginator(top_level_comments, 3)  # 3 comments per page
-    page_number = request.GET.get('page')
-    comments = paginator.get_page(page_number)  # Get the comments for that page
-    comment_count = post.comments.count()
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            new_comment = form.save(commit=False)
+            new_comment.post = post
+            new_comment.user = request.user
+            parent_id = request.POST.get('parent_id')
+            if parent_id:
+                parent_comment = Comment.objects.get(id=parent_id)
+                new_comment.parent = parent_comment  # Set the parent comment (either top-level or a reply)
+            new_comment.save()
+            return redirect('post_detail', slug=slug)
 
-    if request.method == "POST":
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.user = request.user  # Assign the logged-in user as the comment author
-            comment.post = post  # Attach the comment to the post
-            comment.save()  # Save the comment to the database
-            messages.success(request, 'Comment successfully posted.')
-            return redirect('post_detail', slug=post.slug)  # Redirect to avoid duplicate form submission on refresh
-
-    else:
-        comment_form = CommentForm()
-
-    return render(
-        request,
-        "level_lounge/post_detail.html",
-        {
-            "post": post,
-            "comments": comments,
-            "top_level_comments": top_level_comments,
-            "comment_count": comment_count,
-            "comment_form": comment_form,
-        }
-    )
+    return render(request, 'level_lounge/post_detail.html', {
+        'post': post,
+        'comments': comments,  # Top-level comments
+        'comment_form': comment_form,
+    })
 
 
 @login_required
