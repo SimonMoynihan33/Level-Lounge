@@ -93,3 +93,8 @@ I changed my perspective and decided to try targetting with JavaScript which was
 
 ### Bug 15
 - Issue: Committed changes and pushed them and the site was working, and when I open it again the next day thw fixed buttons are no longer working.
+- Fix: Re-do all changes made previous day.
+
+### Bug 16
+- Issue: Cannot get edit post form to show when trying to change CI code from editting comments.
+

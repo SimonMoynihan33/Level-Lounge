@@ -30,7 +30,7 @@
             <!-- Nav -->
             <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
                 <div class="container-fluid">
-                    <a href="{% url 'home' %}" class="navbar-brand">
+                    <a href="{% url 'home' %}" class="navbar-brand">The Level Lounge
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
                             </li>
                         </ul>
                         <div class="navbar-text text-muted">
-                            <ul>
+                            <ul class="nav-log">
                                 {% if user.is_authenticated %}
                                 <li class="nav-item">
                                     <a class="nav-link {% if request.path == logout_url %}active{% endif %}"

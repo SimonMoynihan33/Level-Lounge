@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -77,9 +78,10 @@ class Post(models.Model):
         URL-friendly and unique. After generating the slug, the original save method 
         is called to save the post object to the database.
         """
-        if not self.slug:
+        if not self.slug:  # Only set the slug if it's not already set
             self.slug = slugify(self.title)
-        super(Post, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
+
 
     def __str__(self):
         """

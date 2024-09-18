@@ -14,11 +14,10 @@ class CommentForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'slug', 'content', 'status', 'excerpt']  # Fields to be displayed in the form
+        fields = ['title', 'content', 'status', 'excerpt']  # Fields to be displayed in the form
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the title'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the slug'}),
             'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter the content'}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter the excerpt'}),
             'status': forms.Select(attrs={'class': 'form-control'}),  # Dropdown for status

@@ -9,12 +9,19 @@
 
 /* Navbar */
 .nav-bg {
-    background-color: #6d676e;
+    background-color: #dc4af6;
 }
 
 .center-nav {
     margin-left: auto;
     margin-right: auto;
+}
+
+.nav-log {
+    list-style: none;
+    font-size: 1.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* Main styles */
@@ -39,7 +46,7 @@
 }
 
 .post-link {
-    color: #cd00d4;
+    color: #dc4af6;
     text-decoration: none;
 }
 
