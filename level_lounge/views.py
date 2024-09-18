@@ -88,10 +88,10 @@ def delete_post(request, id):
     post = get_object_or_404(Post, id=id, author=request.user)  # Ensure only the author can delete the post
     if request.method == 'POST':
         post.delete()
+        messages.success(request, 'Post deleted successfully!')
         return redirect('home')  # Redirect to home or post list after deletion
 
-    return render(request, 'level_lounge/confirm_delete.html', {'post': post})
-
+    return redirect('post_detail', id=post.id)  # Redirect back if not a POST request
 
 def comment_edit(request, slug, comment_id):
     """

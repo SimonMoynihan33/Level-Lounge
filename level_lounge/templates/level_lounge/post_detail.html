@@ -22,10 +22,35 @@
                 <!-- Check if the user is authenticated and the author of the post -->
                 {% if user.is_authenticated and post.author == user %}
                 <a href="{% url 'edit_post' post.id %}" class="btn btn-secondary">Edit</a>
-                <form action="{% url 'delete_post' post.id %}" method="get" style="display:inline;">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>                
+                <!-- Delete Button (Triggers Modal) -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#deleteModal-{{ post.id }}">
+                    Delete Post
+                </button>
+
+                <!-- Bootstrap Modal for Delete Confirmation -->
+                <div class="modal fade" id="deleteModal-{{ post.id }}" tabindex="-1" aria-labelledby="deleteModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this post? This action cannot be undone.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <form method="post" action="{% url 'delete_post' post.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endif %}
             </div>
         </div>
@@ -40,16 +65,17 @@
                 {{ comment_form.as_p }}
                 <button type="submit" class="btn btn-primary">Submit Comment</button>
             </form>
-                {% for comment in comments %}
-                    {% include 'level_lounge/comments.html' with comment=comment %}
-                {% endfor %}
-            </div>
+            {% for comment in comments %}
+            {% include 'level_lounge/comments.html' with comment=comment %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 
 {% block extras %}
 <script src="{% static 'js/comments.js' %}"></script>
 <script src="{% static 'js/replies.js' %}"></script>
+<script src="{% static 'js/posts.js' %}"></script>
 {% endblock %}
 
 {% endblock content %}
