@@ -113,3 +113,8 @@ I changed my perspective and decided to try targetting with JavaScript which was
 - Issue: Could not get default image to render on profile page.
 - Cause: Media URL not working as intended.
 - Fix: Add `'MEDIA_URL': settings.MEDIA_URL,` to profile_view directly.
+
+### Bug 20
+- Issue: Post count not updating on user profile.
+- Cause: Post count feature and signals added after posts were created, therefore not counting posts already created.
+- Fix: Run command in Django shell to iterate over posts and update the count.
