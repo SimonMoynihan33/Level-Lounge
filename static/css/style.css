@@ -426,6 +426,7 @@ form label {
 }
 
 /* Input Fields */
+/* Leveraged ChatGPT to properly target inputs */
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],

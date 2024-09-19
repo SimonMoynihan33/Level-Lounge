@@ -4,6 +4,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 class CommentForm(forms.ModelForm):
+    """
+    Form for creating comments, linked to the Comment model.
+    Includes content and hidden parent fields.
+    """
     class Meta:
         model = Comment
         fields = ['content', 'parent']
@@ -14,6 +18,10 @@ class CommentForm(forms.ModelForm):
 
 
 class PostForm(forms.ModelForm):
+    """
+    Form for creating and editing posts, linked to the Post model.
+    Includes fields for title, content, status, and excerpt.
+    """
     class Meta:
         model = Post
         fields = ['title', 'content', 'status', 'excerpt']  # Fields to be displayed in the form
