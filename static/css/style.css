@@ -247,6 +247,44 @@ html, body {
     margin-top: 50px;
 }
 
+/* Masthead Styles */
+.masthead {
+    background-color: #0A1A2A; /* Deep navy for the masthead */
+    padding: 20px 0;
+}
+
+.masthead-text h1 {
+    color: #FFD700; /* Golden yellow for post titles */
+    text-align: right;
+}
+
+.masthead-text p {
+    color: #8d8d8d;
+    text-align: right;
+}
+
+/* Card Styles */
+.postscard > .card {
+    background-color: #2E2E2E;
+    border: none; 
+    padding: 15px;
+    border-radius: 8px; 
+    color: #E0E0E0; 
+}
+
+
+.card .btn-secondary {
+    background-color: #8d8d8d;
+    border: none;
+    color: #E0E0E0;
+}
+
+.card .btn-danger {
+    background-color: #D9534F;
+    border: none;
+    color: #E0E0E0;
+}
+
 /* Comments & Replies */
 .comment {
     margin-bottom: 20px;
