@@ -1,4 +1,3 @@
-<!-- profile.html -->
 {% extends 'base.html' %}
 
 {% block content %}
@@ -14,8 +13,6 @@
             <img src="{{ MEDIA_URL }}profile_pics/default-avatar-icon.jpg" alt="Default Profile Picture"
                 class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
             {% endif %}
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit
-                Profile</button>
         </div>
 
         <!-- User Information Section -->
@@ -24,6 +21,30 @@
             <p><strong>Bio:</strong> {{ profile.bio }}</p>
             <p><strong>Joined On:</strong> {{ profile.joined_on|date:"F j, Y" }}</p>
             <p><strong>Posts Created:</strong> {{ profile.post_count }}</p>
+            <!-- Edit Info Button -->
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editInfoModal">Edit Info</button>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Info Modal -->
+<div class="modal fade" id="editInfoModal" tabindex="-1" aria-labelledby="editInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editInfoModalLabel">Edit Profile Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
