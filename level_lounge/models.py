@@ -19,6 +19,7 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     bio = models.TextField(null=True, blank=True)
+    profile_picture = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
     post_count = models.PositiveIntegerField(default=0)  # Tracks user posts count
     joined_on = models.DateTimeField(auto_now_add=True)  # Timestamp of profile creation
 

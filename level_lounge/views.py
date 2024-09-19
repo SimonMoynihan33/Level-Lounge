@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment, UserProfile
-from .forms import CommentForm, PostForm
+from .forms import CommentForm, PostForm, UserProfileForm
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 
@@ -128,4 +128,17 @@ def profile_view(request, username):
     View to display the user's profile.
     """
     user_profile = get_object_or_404(UserProfile, user__username=username)  # Fetch the profile by username
-    return render(request, 'level_lounge/profile.html', {'profile': user_profile})
+    
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile', username=username)
+    else:
+        form = UserProfileForm(instance=user_profile)
+
+    context = {
+        'profile': user_profile,
+        'form': form,
+    }
+    return render(request, 'level_lounge/profile.html', context)

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comment, Post
+from .models import Comment, Post, UserProfile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -32,3 +32,12 @@ class PostForm(forms.ModelForm):
             'excerpt': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter the excerpt'}),
             'status': forms.Select(attrs={'class': 'form-control'}),  # Dropdown for status
         }
+
+
+class UserProfileForm(forms.ModelForm):
+    """
+    Form for editing the user's profile information.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['bio', 'profile_picture']
