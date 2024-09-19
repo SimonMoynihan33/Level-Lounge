@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post, Comment
+from .models import Post, Comment, UserProfile
 from .forms import CommentForm, PostForm
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
@@ -121,3 +121,11 @@ def comment_edit(request, slug, comment_id):
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def profile_view(request, username):
+    """
+    View to display the user's profile.
+    """
+    user_profile = get_object_or_404(UserProfile, user__username=username)  # Fetch the profile by username
+    return render(request, 'level_lounge/profile.html', {'profile': user_profile})

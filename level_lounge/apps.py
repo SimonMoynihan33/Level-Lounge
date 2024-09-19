@@ -6,4 +6,4 @@ class LevelLoungeConfig(AppConfig):
     name = 'level_lounge'
 
     def ready(self):
-        import your_app_name.signals  # Ensure the signals are connected
+        import level_lounge.signals  # Ensure the signals are connected
