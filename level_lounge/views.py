@@ -6,6 +6,7 @@ from .models import Post, Comment, UserProfile
 from .forms import CommentForm, PostForm, UserProfileForm
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 # Create your views here.
 class PostList(generic.ListView):
@@ -90,39 +91,6 @@ def edit_post(request, id):
 
 
 @login_required
-def delete_post(request, id):
-    post = get_object_or_404(Post, id=id, author=request.user)  # Ensure only the author can delete the post
-    if request.method == 'POST':
-        post.delete()
-        messages.success(request, 'Post deleted successfully!')
-        return redirect('home')  # Redirect to home or post list after deletion
-
-    return redirect('post_detail', id=post.id)  # Redirect back if not a POST request
-
-def comment_edit(request, slug, comment_id):
-    """
-    view to edit comments
-    From CI walkthrough
-    """
-    if request.method == "POST":
-
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comment = get_object_or_404(Comment, pk=comment_id)
-        comment_form = CommentForm(data=request.POST, instance=comment)
-
-        if comment_form.is_valid() and comment.user == request.user:
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.approved = False
-            comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
-        else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
-
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
 def profile_view(request, username):
     """
     View to display the user's profile.
@@ -133,12 +101,16 @@ def profile_view(request, username):
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
             form.save()
+            messages.success(request, "Profile updated successfully!")
             return redirect('profile', username=username)
+        else:
+            messages.error(request, "Please correct the errors below.")
     else:
         form = UserProfileForm(instance=user_profile)
 
     context = {
         'profile': user_profile,
         'form': form,
+        'MEDIA_URL': settings.MEDIA_URL,
     }
     return render(request, 'level_lounge/profile.html', context)

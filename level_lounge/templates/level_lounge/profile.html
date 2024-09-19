@@ -1,8 +1,30 @@
+<!-- profile.html -->
 {% extends 'base.html' %}
+
 {% block content %}
-<h1>{{ user.username }}'s Profile</h1>
-<img src="{{ user.profile.avatar.url }}" alt="Avatar" width="150">
-<p>{{ user.profile.bio }}</p>
-<p>Location: {{ user.profile.location }}</p>
-<p>Website: <a href="{{ user.profile.website }}">{{ user.profile.website }}</a></p>
+<div class="container mt-4">
+    <div class="row">
+        <!-- Profile Image Section -->
+        <div class="col-md-4 text-center">
+            <!-- Check if the profile picture exists, else use the default image -->
+            {% if profile.profile_picture and profile.profile_picture.url %}
+            <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle mb-3"
+                style="width: 200px; height: 200px; object-fit: cover;">
+            {% else %}
+            <img src="{{ MEDIA_URL }}profile_pics/default-avatar-icon.jpg" alt="Default Profile Picture"
+                class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+            {% endif %}
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit
+                Profile</button>
+        </div>
+
+        <!-- User Information Section -->
+        <div class="col-md-8">
+            <h2>{{ profile.user.username }}</h2>
+            <p><strong>Bio:</strong> {{ profile.bio }}</p>
+            <p><strong>Joined On:</strong> {{ profile.joined_on|date:"F j, Y" }}</p>
+            <p><strong>Posts Created:</strong> {{ profile.post_count }}</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

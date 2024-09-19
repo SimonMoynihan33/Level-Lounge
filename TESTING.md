@@ -108,3 +108,8 @@ I changed my perspective and decided to try targetting with JavaScript which was
 - Cause: Implemented Profile feature last, after populating site for testing.
 - Fix: Use python shell commands to loop through and create user profiles for each user without one.
 ----------------------- Image
+
+### Bug 19
+- Issue: Could not get default image to render on profile page.
+- Cause: Media URL not working as intended.
+- Fix: Add `'MEDIA_URL': settings.MEDIA_URL,` to profile_view directly.
