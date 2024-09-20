@@ -91,11 +91,31 @@ def edit_post(request, id):
 
 
 @login_required
+def delete_post(request, post_id):
+    """
+    View to delete a post. Only accessible to logged-in users.
+    """
+    post = get_object_or_404(Post, id=post_id)
+
+    if request.method == 'POST':
+        # Perform the delete action
+        post.delete()
+        messages.success(request, 'Post deleted successfully!')
+        return redirect('home')  # Redirect to the desired page after deletion
+
+    # If not a POST request, redirect to the post detail or another page
+    return redirect('post_detail', slug=post.slug)
+
+
+@login_required
 def profile_view(request, username):
     """
-    View to display the user's profile.
+    View to display the user's profile, including their drafts.
     """
     user_profile = get_object_or_404(UserProfile, user__username=username)  # Fetch the profile by username
+
+    # Fetch drafts associated with the logged-in user (status=0 means draft)
+    drafts = Post.objects.filter(author=request.user, status=0).order_by('-created_at')
     
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
@@ -112,5 +132,6 @@ def profile_view(request, username):
         'profile': user_profile,
         'form': form,
         'MEDIA_URL': settings.MEDIA_URL,
+        'drafts': drafts,
     }
     return render(request, 'level_lounge/profile.html', context)
