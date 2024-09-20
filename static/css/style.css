@@ -399,7 +399,7 @@ input, textarea {
 }
 
 /* Link to Login */
-.comment a {
+.login-link {
     color: #FFD700; /* Golden yellow for login link */
     text-decoration: underline; 
 }

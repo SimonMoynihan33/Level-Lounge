@@ -14,7 +14,7 @@
                 {% if user.is_authenticated %}
                 <a href="{% url 'create_post' %}" class="btn create-post-btn">Create a Post</a>
                 {% else %}
-                <p><a href="{% url 'account_login' %}">Log in</a> to create a post.</p>
+                <p><a class="login-link" href="{% url 'account_login' %}">Log in</a> to create a post.</p>
                 {% endif %}
                 </div>
                 {% for post in post_list %}
