@@ -9,7 +9,8 @@ from .models import UserProfile, Post  # Import your custom profile model
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
-    Signal to automatically create or update the UserProfile whenever a User is created or updated.
+    Signal to automatically create or update the UserProfile whenever a
+    User is created or updated.
     """
     if created:
         # Create a profile for the new user

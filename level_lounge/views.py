@@ -28,7 +28,8 @@ def update_info(request):
 
 def post_detail(request, slug):
     """
-    View to display a single post and its comments, allowing users to add new comments.
+    View to display a single post and its comments, allowing users
+    to add new comments.
     Handles both top-level comments and replies to other comments.
 
     - Retrieves the post using the slug.
@@ -68,7 +69,8 @@ def create_post(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user  # Assign the logged-in user as the post's author
+            # Assign the logged-in user as the post's author
+            post.author = request.user
             post.save()  # Save the post
             # Redirect to the post detail page
             return redirect('post_detail', slug=post.slug)
@@ -84,7 +86,7 @@ def edit_post(request, id):
     Function to allow a user to edit their own posts
     """
     post = get_object_or_404(
-        Post, id=id, author=request.user)  # Ensure only the author can edit the post
+        Post, id=id, author=request.user)  # Only the author can edit the post
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
