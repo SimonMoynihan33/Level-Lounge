@@ -9,13 +9,15 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
 # Create your views here.
+
+
 class PostList(generic.ListView):
     """
     View to display a paginated list of posts, showing the newest posts first.
     Posts are filtered to show only those with status = 1 (published).
     The list is paginated, showing 6 posts per page.
     """
-    queryset = Post.objects.filter(status=1).order_by('-created_at') 
+    queryset = Post.objects.filter(status=1).order_by('-created_at')
     template_name = "level_lounge/index.html"
     paginate_by = 6
 
@@ -28,14 +30,15 @@ def post_detail(request, slug):
     """
     View to display a single post and its comments, allowing users to add new comments.
     Handles both top-level comments and replies to other comments.
-    
+
     - Retrieves the post using the slug.
     - Displays top-level comments (those with no parent).
     - Processes form submissions to add new comments.
     - Handles replies by attaching a 'parent' comment when applicable.
     """
     post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.filter(parent__isnull=True).order_by("-created_at")  # Fetch top-level comments
+    comments = post.comments.filter(parent__isnull=True).order_by(
+        "-created_at")  # Fetch top-level comments
     comment_form = CommentForm()
 
     if request.method == 'POST':
@@ -58,6 +61,7 @@ def post_detail(request, slug):
         'comment_form': comment_form,
     })
 
+
 @login_required
 def create_post(request):
     if request.method == "POST":
@@ -66,7 +70,8 @@ def create_post(request):
             post = form.save(commit=False)
             post.author = request.user  # Assign the logged-in user as the post's author
             post.save()  # Save the post
-            return redirect('post_detail', slug=post.slug)  # Redirect to the post detail page
+            # Redirect to the post detail page
+            return redirect('post_detail', slug=post.slug)
     else:
         form = PostForm()
 
@@ -78,7 +83,8 @@ def edit_post(request, id):
     """
     Function to allow a user to edit their own posts
     """
-    post = get_object_or_404(Post, id=id, author=request.user)  # Ensure only the author can edit the post
+    post = get_object_or_404(
+        Post, id=id, author=request.user)  # Ensure only the author can edit the post
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -112,13 +118,16 @@ def profile_view(request, username):
     """
     View to display the user's profile, including their drafts.
     """
-    user_profile = get_object_or_404(UserProfile, user__username=username)  # Fetch the profile by username
+    user_profile = get_object_or_404(
+        UserProfile, user__username=username)  # Fetch the profile by username
 
     # Fetch drafts associated with the logged-in user (status=0 means draft)
-    drafts = Post.objects.filter(author=request.user, status=0).order_by('-created_at')
-    
+    drafts = Post.objects.filter(
+        author=request.user, status=0).order_by('-created_at')
+
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        form = UserProfileForm(
+            request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
             form.save()
             messages.success(request, "Profile updated successfully!")

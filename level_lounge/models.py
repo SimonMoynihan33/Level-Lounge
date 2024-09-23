@@ -17,16 +17,19 @@ class UserProfile(models.Model):
         post_count (PositiveIntegerField): Tracks the number of posts created by the user.
         joined_on (DateTimeField): Records when the profile was created.
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name='profile')
     bio = models.TextField(null=True, blank=True)
     profile_picture = models.ImageField(
-        upload_to='profile_pics/', 
-        null=True, 
-        blank=True, 
+        upload_to='profile_pics/',
+        null=True,
+        blank=True,
         default='profile_pics/default-avatar-icon.jpg'
     )
-    post_count = models.PositiveIntegerField(default=0)  # Tracks user posts count
-    joined_on = models.DateTimeField(auto_now_add=True)  # Timestamp of profile creation
+    post_count = models.PositiveIntegerField(
+        default=0)  # Tracks user posts count
+    # Timestamp of profile creation
+    joined_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -64,7 +67,7 @@ class Post(models.Model):
         """
         Overrides the default save method to automatically generate a slug
         from the post title if it doesn't already exist.
-        
+
         The slug is generated using Django's slugify function, ensuring that it is 
         URL-friendly and unique. After generating the slug, the original save method 
         is called to save the post object to the database.
@@ -73,11 +76,10 @@ class Post(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
-
     def __str__(self):
         """
         Returns the string representation of the Post object, which is the post's title.
-        
+
         This method is used to provide a human-readable representation of the object,
         making it easier to identify in the admin interface and during debugging.
         """
@@ -98,13 +100,15 @@ class Comment(models.Model):
         created_at (DateTimeField): The timestamp when the comment was created.
         parent (ForeignKey): A field for nesting comments as replies to other comments.
     """
-    post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        'Post', on_delete=models.CASCADE, related_name='comments')
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="comments"
     )
-    parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
+    parent = models.ForeignKey(
+        'self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
 
     def __str__(self):
         """

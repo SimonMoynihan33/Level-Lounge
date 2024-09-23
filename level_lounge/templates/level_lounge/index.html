@@ -1,21 +1,28 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
 
-        <!-- Blog Entries Column -->
+<!-- Hero Section -->
+<section id="hero-image">
+    <div id="cover-text">
+        <h2>Welcome, to The Level Lounge</h2>
+        <img src="{% static 'hero-gaming.webp' %}" alt="">
+    </div>
+</section>
+<section class="container-fluid">
+    <div class="row">
         <div class="col-12 mt-3">
             <div class="row justify-content-center">
                 <!-- Display the "Create Post" button only if the user is authenticated -->
-                 <div class="col-auto">
-                {% if user.is_authenticated %}
-                <a href="{% url 'create_post' %}" class="btn create-post-btn">Create a Post</a>
-                {% else %}
-                <p><a class="login-link" href="{% url 'account_login' %}">Log in</a> to create a post.</p>
-                {% endif %}
+                <div class="col-auto">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'create_post' %}" class="btn create-post-btn">Create a Post</a>
+                    {% else %}
+                    <p><a class="login-link" href="{% url 'account_login' %}">Log in</a> to create a post.</p>
+                    {% endif %}
                 </div>
                 {% for post in post_list %}
                 <div class="col-md-12">
@@ -58,7 +65,8 @@
         </ul>
     </nav>
     {% endif %}
-</div>
+    </div>
+</section>
 
 <!-- index.html content ends here -->
 {% endblock %}

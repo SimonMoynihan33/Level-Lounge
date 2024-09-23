@@ -3,6 +3,7 @@ from .models import Comment, Post, UserProfile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+
 class CommentForm(forms.ModelForm):
     """
     Form for creating comments, linked to the Comment model.
@@ -24,13 +25,18 @@ class PostForm(forms.ModelForm):
     """
     class Meta:
         model = Post
-        fields = ['title', 'content', 'status', 'excerpt']  # Fields to be displayed in the form
+        # Fields to be displayed in the form
+        fields = ['title', 'content', 'status', 'excerpt']
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the title'}),
-            'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter the content'}),
-            'excerpt': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter the excerpt'}),
-            'status': forms.Select(attrs={'class': 'form-control'}),  # Dropdown for status
+            'title': forms.TextInput(attrs={'class': 'form-control',
+                                     'placeholder': 'Enter the title'}),
+            'content': forms.Textarea(attrs={'class': 'form-control',
+                                      'placeholder': 'Enter the content'}),
+            'excerpt': forms.Textarea(attrs={'class': 'form-control',
+                                      'placeholder': 'Enter the excerpt'}),
+            # Dropdown for status
+            'status': forms.Select(attrs={'class': 'form-control'}),
         }
 
 

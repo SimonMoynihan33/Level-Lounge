@@ -145,6 +145,11 @@ footer .media i:hover {
     margin-left: auto !important;
 }
 
+/* Hero Image */
+.hero-image {
+    background: url('../images/hero-gaming.webp') no-repeat center center/cover;
+}
+
 /* Cards */
 /* Override card style from bootstrap */
 .card-body {

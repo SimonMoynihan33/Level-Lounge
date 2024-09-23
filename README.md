@@ -1,6 +1,9 @@
 # The Level Lounge
+The Level Lounge is a forum based app that allows users to engage in discourse around the topic of gaming. Users have the ability to post, comment, reply, save drafts, read other posts and engage in a community. 
 
+[App Link](https://level-lounge-16ccb4ef258a.herokuapp.com/)
 
+![Level Lounge Home](docs/level-l-home.png)
 
 
 
@@ -39,6 +42,10 @@
 
 - LucidChart: Used for creating ERD and Wireframes.
 
+### **Testing**
+
+-Autopep8: Used for python code validation.
+
 ### **Project Management**
 
 - GitHub Projects: For managing tasks, user stories, and sprints in an Agile fashion.
@@ -47,3 +54,8 @@
 
 - ChatGPT: AI-powered assistant for helping with debugging, planning and documenting my project.
 - [Logo Design Ai](https://logodesign.ai/) to create the logo
+
+## Credits
+
+**Images**:
+- [Hero:](https://www.pexels.com/photo/low-light-photo-of-nes-controller-1637436/) By Tomasz Filipek.
