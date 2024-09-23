@@ -1,5 +1,29 @@
 # The Level Lounge
-The Level Lounge is a forum based app that allows users to engage in discourse around the topic of gaming. Users have the ability to post, comment, reply, save drafts, read other posts and engage in a community. 
+Welcome to Level Lounge, a vibrant online community designed for gamers, creators, and enthusiasts alike! Our forum is more than just a place to chat about games; it's a dynamic space where you can connect, share, and collaborate with others who share your passion for gaming.
+
+🎮 What is Level Lounge?
+
+Level Lounge is an open forum where users can dive into a variety of topics, from casual gaming discussions to in-depth strategy debates and everything in between. Whether you’re here to chat about your favorite game, find teammates for your next raid, or discuss the latest trends in game development, Level Lounge has a place for you.
+
+🗨️ Engage in Meaningful Conversations
+
+We believe in the power of community. At Level Lounge, you can engage in both lighthearted and meaningful conversations about the gaming world. Our forum is designed to foster thoughtful discussions, share advice, and connect like-minded individuals. Whether you’re a seasoned pro or a newcomer, your voice matters here.
+
+🤝 Collaborate and Create
+
+Level Lounge isn’t just about conversation; it’s about creation. Connect with others to form parties, collaborate on game-related media, or even team up for game jams and other creative projects. Share your work, get feedback, and find fellow creators to help bring your visions to life.
+
+🔐 Secure User Login
+
+To keep our community safe and secure, Level Lounge features a robust user login system. Create your profile, customize your avatar, and start contributing to the community today.
+
+🏆 Reputation and Recognition
+
+Earn reputation points by contributing to discussions, helping others, and sharing your expertise. Climb the ranks, earn badges, and become a recognized member of the Level Lounge community!
+
+🚀 Join the Conversation
+
+Dive in, introduce yourself, and start exploring everything Level Lounge has to offer. Whether you're here to learn, collaborate, or just hang out, we’re excited to have you as part of our growing community. Let’s level up together!
 
 [App Link](https://level-lounge-16ccb4ef258a.herokuapp.com/)
 
@@ -42,6 +66,7 @@ The Level Lounge is a forum based app that allows users to engage in discourse a
   - [Joined On](#joined-on)
   - [Posts Created](#posts-created)
   - [Python Messages](#python-messages)
+- [Future Features](#future-features)
 - [Technologies & Languages](#technologies-and-languages)
   - [Languages Used](#languages-used)
   - [Technologies Used](#technologies-used)
@@ -56,25 +81,31 @@ The Level Lounge is a forum based app that allows users to engage in discourse a
   - [Acknowledgements](#acknowledgements)
 
 
-## User Experience
+## User Experience 👤
 
-### User Stories
+### User Stories 
 
-### Site Goals
+### Site Goals 
 
-## Design
+## Design 🎨
 
-### Color Scheme
+### Color Scheme 
 
-### Database Schema
+The color scheme of Level Lounge is designed to create an inviting and energetic atmosphere that reflects the vibrant world of gaming. Dominated by shades of gold, navy and gray the theme evokes warmth, enthusiasm, and a sense of adventure, making every interaction feel dynamic and engaging. This bright and bold palette not only enhances readability but also brings a touch of excitement to the forum, encouraging users to explore and participate. The color scheme is carefully balanced to ensure that important elements like buttons, links, and notifications stand out, guiding users intuitively through the platform while maintaining a cohesive and visually appealing experience.
 
-## Planning
+<details><summary>Color Scheme</summary>
+<img src="docs/color-scheme.png">
+</details>
 
-### WireFrames
+### Database Schema 
 
-### ERD
+## Planning 🧬
 
-### Agile Methodology
+### WireFrames 
+
+### ERD 
+
+### Agile Methodology 
 
 #### Milestones
 
@@ -90,7 +121,7 @@ The Level Lounge is a forum based app that allows users to engage in discourse a
 
 #### Kanban Board
 
-## Features
+## Features ⚙️
 
 ### Navigation
 
@@ -134,8 +165,9 @@ The Level Lounge is a forum based app that allows users to engage in discourse a
 
 ### Python Messages
 
+## Future Features 🔮
 
-## Technologies and Languages
+## Technologies and Languages 📡
 
 ### Languages Used
 
@@ -187,11 +219,11 @@ The Level Lounge is a forum based app that allows users to engage in discourse a
 - ChatGPT: AI-powered assistant for helping with debugging, docstrings, planning and documenting my project.
 - [Logo Design Ai](https://logodesign.ai/) to create the logo
 
-## Testing
+## Testing 👨‍🔬
 
 All testing was carried out in my [TESTING.md](/TESTING.md) file.
 
-## Deployment
+## Deployment 🚀
 
 ### Deploy to Heroku
 
@@ -199,7 +231,7 @@ All testing was carried out in my [TESTING.md](/TESTING.md) file.
 
 ### Clone Repo
 
-## Credits
+## Credits ✅
 
 ### Content
 
