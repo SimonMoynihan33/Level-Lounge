@@ -134,10 +134,4 @@ class Comment(models.Model):
         on {self.post.title}'
 
     class Meta:
-        """
-        Defines the default ordering for Comment objects, arranging them by
-        their creation time in ascending order.
-        This ensures that comments are displayed in chronological order,
-        with the oldest comments appearing first.
-        """
         ordering = ['-created_at']
