@@ -30,22 +30,22 @@ The Level Lounge is a forum based app that allows users to engage in discourse a
   - [Profile Page](#profile-page)
   - [Create Post](#create-post)
   - [Edit Post Page](#edit-post)
-  - [Delete Post Modal](#delete-post)
-  - [Edit Profile Modal](#edit-profile)
+  - [Delete Post Modal](#delete-post-modal)
+  - [Edit Profile Modal](#edit-profile-modal)
   - [Comments](#comments)
   - [Nested Replies](#nested-replies)
-  - [Reply Button Dropdown](#reply-button)
+  - [Reply Button Dropdown](#reply-button-dropdown)
   - [Profile Image](#profile-image)
   - [Default Avatar](#default-avatar)
   - [User Drafts](#user-drafts)
-  - [Users Posts](#user-posts)
+  - [Users Posts](#users-posts)
   - [Joined On](#joined-on)
   - [Posts Created](#posts-created)
   - [Python Messages](#python-messages)
-- [Technologies & Languages](#technologies&languages)
+- [Technologies & Languages](#technologies-and-languages)
   - [Languages Used](#languages-used)
   - [Technologies Used](#technologies-used)
-- [Testing](/TESTING.md)
+- [Testing](#testing)
 - [Deployment](#deployment)
   - [Deploy to Heroku](#deploy-to-heroku)
   - [Forking Repo](#forking-repo)
@@ -55,9 +55,93 @@ The Level Lounge is a forum based app that allows users to engage in discourse a
   - [Media](#media)
   - [Acknowledgements](#acknowledgements)
 
-## Technologies Used
 
-### **Development Environment & Version Control:**
+## User Experience
+
+### User Stories
+
+### Site Goals
+
+## Design
+
+### Color Scheme
+
+### Database Schema
+
+## Planning
+
+### WireFrames
+
+### ERD
+
+### Agile Methodology
+
+#### Milestones
+
+#### Epics
+
+#### Issues
+
+#### Labels
+
+#### MoSCoW
+
+#### Fibonacci Scale
+
+#### Kanban Board
+
+## Features
+
+### Navigation
+
+#### Login
+
+#### Logout
+
+#### Signup
+
+### Footer
+
+### Landing Page
+
+### Profile Page
+
+### Create Post
+
+### Edit Post
+
+### Delete Post Modal
+
+### Edit Profile Modal
+
+### Comments
+
+### Nested Replies
+
+### Reply Button Dropdown
+
+### Profile Image
+
+### Default Avatar
+
+### User Drafts
+
+### Users Posts
+
+### Joined On
+
+### Posts Created
+
+### Python Messages
+
+
+## Technologies and Languages
+
+### Languages Used
+
+### Technologies Used
+
+**Development Environment & Version Control:**
 
 - Git: Distributed version control system used for tracking changes in my code.
 - GitHub: A platform for hosting my Git repositories and collaborating on code. Also used for version control, issue tracking, and project management.
@@ -66,44 +150,63 @@ The Level Lounge is a forum based app that allows users to engage in discourse a
 - Python: The programming language used to develop the backend of my application.
 - pip: Python’s package installer, used to install and manage packages.
 
-### **Web Framework & Backend:**
+**Web Framework & Backend:**
 
 - Django: Web framework used for building the backend of an application, including handling HTTP requests, routing, database management, templating and more.
 - Django Allauth: Third-party package used for handling user authentication.
 - PostgreSQL: Default database given to us by Code Institute.
 - Django Debug Toolbar: A configurable set of panels that display various debug information about the current request/response.
 
-### **Frontend Technologies**
+**Frontend Technologies**
 
 - HTML/CSS: Markup and styling languages used for structuring and designing the user interface of your application.
 - Bootstrap: A front-end framework that helps design responsive web pages and user interfaces.
 
-### **API's and Documentation**
+**API's and Documentation**
 
 - Django Documentation: Used extensively throughout app as it is a well documented and clearly defined framework.
 
-### **Cloud & Deployment**
+**Cloud & Deployment**
 
 - Heroku: A cloud platform used for deploying, managing, and scaling a web application.
 
-### **Documentation & Planning**
+**Documentation & Planning**
 
 - LucidChart: Used for creating ERD and Wireframes.
 
-### **Testing**
+**Testing**
 
 -Autopep8: Used for python code validation.
 
-### **Project Management**
+**Project Management**
 
 - GitHub Projects: For managing tasks, user stories, and sprints in an Agile fashion.
 
-### **Assistance & Supplementation**
+**Assistance & Supplementation**
 
-- ChatGPT: AI-powered assistant for helping with debugging, planning and documenting my project.
+- ChatGPT: AI-powered assistant for helping with debugging, docstrings, planning and documenting my project.
 - [Logo Design Ai](https://logodesign.ai/) to create the logo
+
+## Testing
+
+All testing was carried out in my [TESTING.md](/TESTING.md) file.
+
+## Deployment
+
+### Deploy to Heroku
+
+### Forking Repo
+
+### Clone Repo
 
 ## Credits
 
+### Content
+
+### Media
+
 **Images**:
 - [Hero:](https://www.pexels.com/photo/low-light-photo-of-nes-controller-1637436/) By Tomasz Filipek.
+
+### Acknowledgements
+
