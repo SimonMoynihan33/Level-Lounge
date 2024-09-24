@@ -118,3 +118,23 @@ I changed my perspective and decided to try targetting with JavaScript which was
 - Issue: Post count not updating on user profile.
 - Cause: Post count feature and signals added after posts were created, therefore not counting posts already created.
 - Fix: Run command in Django shell to iterate over posts and update the count.
+
+### Bug 21
+- Issue: Profile picture error when trying to access a post from a user created before default profile image was set.
+- Cause: No Profile image for a user.
+- Fix: Run django shell and input code: 
+
+```
+from level_lounge.models import UserProfile
+default_image_path = 'profile_pics/default-avatar-icon.jpg'
+# Query all profiles that don't have a profile picture set
+profiles_without_images = UserProfile.objects.filter(profile_picture='')
+# Update each profile to have the default image
+for profile in profiles_without_images:
+    profile.profile_picture = default_image_path
+    profile.save()
+
+print(f"Updated {profiles_without_images.count()} profiles with the default profile picture.")
+```
+
+Result: `Updated 4 profiles with the default profile picture.`

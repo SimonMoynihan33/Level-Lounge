@@ -8,14 +8,17 @@
 }
 
 /* Main styles */
-html, body {
+html,
+body {
     height: 100%;
 }
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #0A1A2A; /* Deep navy background */
-    color: #E0E0E0 !important; /* Light gray text */
+    background-color: #0A1A2A;
+    /* Deep navy background */
+    color: #E0E0E0 !important;
+    /* Light gray text */
     display: flex;
     flex-direction: column;
     min-height: 100vh !important;
@@ -28,7 +31,8 @@ main {
 .wrapper {
     display: flex;
     flex-direction: column;
-    flex: 1 0 auto; /* Ensure the wrapper takes up all available space */
+    flex: 1 0 auto;
+    /* Ensure the wrapper takes up all available space */
 }
 
 .main-bg {
@@ -46,8 +50,8 @@ main {
 .navbar-brand {
     color: #0A1A2A !important;
     font-weight: bold;
-    font-size: 1.75rem; 
-    text-transform: uppercase; 
+    font-size: 1.75rem;
+    text-transform: uppercase;
     letter-spacing: 1px;
     padding-left: 15px;
 }
@@ -56,31 +60,38 @@ main {
     color: #0A1A2A;
     font-weight: bold;
     text-decoration: none;
-    padding: 0 15px; /* Better click area */
+    padding: 0 15px;
+    /* Better click area */
 }
 
 .navbar-nav {
     display: flex;
-    align-items: center; 
+    align-items: center;
     height: 100%;
 }
 
 .navbar-nav .nav-link.active {
-    color: #FFD700 !important; /* Highlight active link */
-    background-color: #0A1A2A; /* Dark background for active state */
+    color: #FFD700 !important;
+    /* Highlight active link */
+    background-color: #0A1A2A;
+    /* Dark background for active state */
     border-radius: 5px;
     padding: 5px 10px;
 }
 
 .navbar-nav .nav-link:hover {
     color: #8d8d8d;
-    text-decoration: underline; /* Add underline on hover */
-    text-decoration-thickness: 2px; /* Make the underline thicker */
-    text-underline-offset: 3px; /* Space underline from text */
+    text-decoration: underline;
+    /* Add underline on hover */
+    text-decoration-thickness: 2px;
+    /* Make the underline thicker */
+    text-underline-offset: 3px;
+    /* Space underline from text */
 }
 
 .nav-link {
-    color: #0A1A2A; /* Dark navy for login/logout links */
+    color: #0A1A2A;
+    /* Dark navy for login/logout links */
     font-weight: bold;
     text-decoration: none;
 }
@@ -115,16 +126,20 @@ main {
 
 /* Remove List Decoration */
 ul.navbar-nav li {
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none;
+    /* Remove bullets */
 }
 
 ul.navbar-nav li a {
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
+    /* Remove underline */
 }
 
 .navbar-nav .nav-item {
-    display: flex; /* Ensures all links are vertically aligned */
-    align-items: center; /* Vertically centers the links */
+    display: flex;
+    /* Ensures all links are vertically aligned */
+    align-items: center;
+    /* Vertically centers the links */
 }
 
 /* Footer Styles */
@@ -152,11 +167,12 @@ footer p {
 
 footer .media i {
     font-size: 1.5rem;
-    color: #0A1A2A; /* Dark navy icons */
+    color: #0A1A2A;
+    /* Dark navy icons */
 }
 
 footer .media i:hover {
-    color: #8d8d8d; 
+    color: #8d8d8d;
 }
 
 .rights-reserved {
@@ -173,16 +189,19 @@ footer .media i:hover {
     background: #0a1a2a;
     color: #e0e0e0;
     text-align: center;
-    border-bottom: 5px solid #ffd700; /* Gold accent border */
+    border-bottom: 5px solid #ffd700;
+    /* Gold accent border */
 }
 
 /* Cover Text Container */
 #cover-text {
-    max-width: 800px; /* Limits width for better readability */
+    max-width: 800px;
+    /* Limits width for better readability */
     padding: 20px;
     background: rgba(46, 46, 46, 0.8);
     border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
 }
 
 /* Welcome Message Styling */
@@ -191,14 +210,16 @@ footer .media i:hover {
     font-weight: 700;
     margin-bottom: 20px;
     color: #ffd700;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds depth to the text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* Adds depth to the text */
 }
 
 /* Subheading Styling */
 #cover-text h3 {
     font-size: 1.2rem;
     font-weight: 400;
-    color: #e0e0e0; /* Light gray for secondary text */
+    color: #e0e0e0;
+    /* Light gray for secondary text */
     margin-bottom: 20px;
     line-height: 1.6;
 }
@@ -207,28 +228,33 @@ footer .media i:hover {
 /* Override card style from bootstrap */
 .card-body {
     background-color: #2e2e2e;
-    border: 1px solid #ddd; /* Light border */
-    border-radius: .5rem; 
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effects */
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: .5rem;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    /* Subtle shadow for depth */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    /* Smooth hover effects */
 }
 
 /* Bootstrap card hover effect */
 .custom-card-bg:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Darker shadow on hover */
 }
 
 /* Adjust card body padding for consistent spacing */
 .custom-card-bg .card-body {
-    padding: 1.25rem; 
+    padding: 1.25rem;
     color: #E0E0E0;
 }
 
 /* Title customization using Bootstrap's heading classes */
 .card-title {
-    font-size: 1.75rem; 
-    font-weight: 700; 
+    font-size: 1.75rem;
+    font-weight: 700;
     text-decoration: none;
 }
 
@@ -236,7 +262,8 @@ footer .media i:hover {
 .author {
     font-size: 0.9rem;
     font-style: italic;
-    color: #E0E0E0; /* Bootstrap's muted text color */
+    color: #E0E0E0;
+    /* Bootstrap's muted text color */
 }
 
 /* Excerpt styling */
@@ -269,7 +296,8 @@ footer .media i:hover {
     padding: 16px 32px;
     border-radius: 50px;
     border: none;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     display: inline-block;
     text-align: center;
@@ -278,7 +306,8 @@ footer .media i:hover {
 
 /* Hover Effect */
 .create-post-btn:hover {
-    background: linear-gradient(45deg, #b732d9, #9115b2); /* Darker purple gradient on hover */
+    background: linear-gradient(45deg, #b732d9, #9115b2);
+    /* Darker purple gradient on hover */
     color: white;
     transform: translateY(-4px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -287,20 +316,23 @@ footer .media i:hover {
 /* Focus Effect (for accessibility) */
 .create-post-btn:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(220, 74, 246, 0.5); 
+    box-shadow: 0 0 0 4px rgba(220, 74, 246, 0.5);
 }
 
 /* Style to make footer stick to bottom of page */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
+
 /* Flexbox layout for page */
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
+
 .content {
     flex: 1;
 }
@@ -312,12 +344,14 @@ html, body {
 
 /* Masthead Styles */
 .masthead {
-    background-color: #0A1A2A; /* Deep navy for the masthead */
+    background-color: #0A1A2A;
+    /* Deep navy for the masthead */
     padding: 20px 0;
 }
 
 .masthead-text h1 {
-    color: #FFD700; /* Golden yellow for post titles */
+    color: #FFD700;
+    /* Golden yellow for post titles */
     text-align: right;
 }
 
@@ -327,12 +361,12 @@ html, body {
 }
 
 /* Card Styles */
-.postscard > .card {
+.postscard>.card {
     background-color: #2E2E2E;
-    border: none; 
+    border: none;
     padding: 15px;
-    border-radius: 8px; 
-    color: #E0E0E0; 
+    border-radius: 8px;
+    color: #E0E0E0;
 }
 
 
@@ -375,13 +409,14 @@ html, body {
 
 /* Comments Section */
 .comments-section {
-    background-color: #2E2E2E; 
+    background-color: #2E2E2E;
     padding: 15px;
     border-radius: 8px;
 }
 
 .comments-section h3 {
-    color: #FFD700; /* Golden yellow for headers */
+    color: #FFD700;
+    /* Golden yellow for headers */
 }
 
 .comments-section form {
@@ -389,13 +424,14 @@ html, body {
 }
 
 .comments-section .btn-primary {
-    background-color: #FFD700; 
+    background-color: #FFD700;
     border: none;
     color: #0A1A2A;
 }
 
 /* Form Styles */
-input, textarea {
+input,
+textarea {
     background-color: #1F1F1F;
     color: #E0E0E0;
     border: 1px solid #8d8d8d;
@@ -413,29 +449,33 @@ input, textarea {
     border-radius: 8px;
     padding: 15px;
     color: #E0E0E0;
-    border: 1px solid #8d8d8d; 
+    border: 1px solid #8d8d8d;
 }
 
 /* Author and Date */
 .comment em {
-    color: #8d8d8d; /* Gray for 'Replying to' text */
+    color: #8d8d8d;
+    /* Gray for 'Replying to' text */
     font-size: 0.9rem;
 }
 
 /* Comment Text */
 .comment p {
-    margin-bottom: 10px; /* Space between paragraphs */
+    margin-bottom: 10px;
+    /* Space between paragraphs */
 }
 
 /* Reply Button */
 .btn-secondary {
-    background-color: #8d8d8d; /* Gray for secondary buttons */
+    background-color: #8d8d8d;
+    /* Gray for secondary buttons */
     border: none;
     color: #E0E0E0;
 }
 
 .btn-secondary:hover {
-    background-color: #6c6c6c; /* Slightly darker gray on hover */
+    background-color: #6c6c6c;
+    /* Slightly darker gray on hover */
 }
 
 /* Reply Form */
@@ -454,34 +494,40 @@ input, textarea {
 }
 
 .btn-primary:hover {
-    background-color: #e6c200; /* Slightly darker yellow on hover */
+    background-color: #e6c200;
+    /* Slightly darker yellow on hover */
 }
 
 /* Link to Login */
 .login-link {
-    color: #FFD700; /* Golden yellow for login link */
-    text-decoration: underline; 
+    color: #FFD700;
+    /* Golden yellow for login link */
+    text-decoration: underline;
 }
 
 .comment a:hover {
-    color: #e6c200; /* Slightly darker yellow on hover */
+    color: #e6c200;
+    /* Slightly darker yellow on hover */
 }
 
 /* Form Container */
 form {
     background-color: #2E2E2E;
     padding: 20px;
-    border-radius: 8px; 
-    border: 1px solid #8d8d8d; 
-    color: #E0E0E0; 
+    border-radius: 8px;
+    border: 1px solid #8d8d8d;
+    color: #E0E0E0;
 }
 
 /* Styling for forms (Create post form etc) */
 form label {
-    color: #FFD700; /* Golden yellow for labels */
+    color: #FFD700;
+    /* Golden yellow for labels */
     font-weight: bold;
-    margin-bottom: 5px; /* Space below labels */
-    display: block; /* Put labels are on their own line */
+    margin-bottom: 5px;
+    /* Space below labels */
+    display: block;
+    /* Put labels are on their own line */
 }
 
 /* Input Fields */
@@ -492,20 +538,21 @@ form input[type="password"],
 form textarea,
 form select {
     background-color: #1F1F1F !important;
-    color: #E0E0E0 !important; 
-    border: 1px solid #8d8d8d; 
+    color: #E0E0E0 !important;
+    border: 1px solid #8d8d8d;
     padding: 10px;
-    border-radius: 4px; 
-    width: 100%; 
-    margin-bottom: 15px; 
-    box-sizing: border-box; 
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
 /* Input Focus State */
 form input:focus,
 form textarea:focus,
 form select:focus {
-    border-color: #FFD700 !important; /* Yellow outline whn focused */
+    border-color: #FFD700 !important;
+    /* Yellow outline whn focused */
     outline: none;
 }
 
@@ -518,7 +565,8 @@ form select:focus {
 }
 
 /* Posts and Drafts Section Styling */
-.posts-section, .drafts-section {
+.posts-section,
+.drafts-section {
     margin-top: 20px;
     margin-bottom: 50px;
     padding: 15px;
@@ -528,9 +576,12 @@ form select:focus {
 }
 
 /* Headings for Posts and Drafts */
-.posts-section h3, .drafts-section h3 {
-    color: #ffd700; /* Gold heading color */
-    border-bottom: 2px solid #ffd700; /* Gold underline */
+.posts-section h3,
+.drafts-section h3 {
+    color: #ffd700;
+    /* Gold heading color */
+    border-bottom: 2px solid #ffd700;
+    /* Gold underline */
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
@@ -545,33 +596,61 @@ form select:focus {
 
 /* Specific styling for the date inside posts and drafts */
 .list-group-item small {
-    color: #8d8d8d !important; /* Light gray color with high specificity */
-    font-size: 0.9rem; /* Adjust font size if needed */
+    color: #8d8d8d !important;
+    /* Light gray color with high specificity */
+    font-size: 0.9rem;
+    /* Adjust font size if needed */
 }
 
 /* Links inside Posts and Drafts */
 .list-group-item a {
-    color: #ffd700; /* Gold links */
+    color: #ffd700;
+    /* Gold links */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .list-group-item a:hover {
     text-decoration: underline;
-    color: #e0e0e0; /* Light gray on hover */
+    color: #e0e0e0;
+    /* Light gray on hover */
 }
 
 /* Buttons for Editing Drafts */
 .btn-primary.btn-sm {
-    background-color: #ffd700; /* Gold button */
+    background-color: #ffd700;
+    /* Gold button */
     border: none;
-    color: #0a1a2a; /* Main background color */
+    color: #0a1a2a;
+    /* Main background color */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-primary.btn-sm:hover {
-    background-color: #e0e0e0; /* Light gray on hover */
-    color: #0a1a2a; /* Main background color */
+    background-color: #e0e0e0;
+    /* Light gray on hover */
+    color: #0a1a2a;
+    /* Main background color */
+}
+
+/* Profile picture styling in post_detail and comments */
+.profile-picture {
+    width: 60px; /* Set the size for profile pictures in posts */
+    height: 60px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50%;
+    border: 1px solid #ffd700;
+    margin-right: 10px;
+}
+
+/* Profile picture in comments */
+.comment-profile-picture {
+    width: 50px; /* Slightly smaller for comments */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ffd700;
+    margin-right: 5px; /* Smaller margin for comments */
 }
 
 /* Responsive Styling */
@@ -588,5 +667,23 @@ form select:focus {
 
     footer .text-center {
         margin-bottom: 15px;
+    }
+
+    /* Profile Section */
+    .profile-picture,
+    .comment-profile-picture {
+        width: 35px;
+        height: 35px;
+    }
+
+    .profile-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .profile-section .profile-name {
+        font-weight: bold;
+        color: #e0e0e0;
     }
 }
