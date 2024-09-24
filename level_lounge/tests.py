@@ -2,8 +2,8 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from django.urls import reverse
 
-# Create your tests here.
-# AI leveraged to help configure tests and check errors
+# AI and Reddit (r/django) leveraged to help
+# configure tests and check errors
 class UserAuthTests(TestCase):
     """
     Tests for user authentication, including login and logout functionalities.
