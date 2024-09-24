@@ -579,9 +579,7 @@ form select:focus {
 .posts-section h3,
 .drafts-section h3 {
     color: #ffd700;
-    /* Gold heading color */
     border-bottom: 2px solid #ffd700;
-    /* Gold underline */
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
@@ -594,12 +592,12 @@ form select:focus {
     transition: background-color 0.3s;
 }
 
-/* Specific styling for the date inside posts and drafts */
+/* Specific styling for the date inside posts and drafts
+AI used as I could not get the styles to apply */
 .list-group-item small {
     color: #8d8d8d !important;
     /* Light gray color with high specificity */
     font-size: 0.9rem;
-    /* Adjust font size if needed */
 }
 
 /* Links inside Posts and Drafts */
@@ -630,14 +628,13 @@ form select:focus {
     background-color: #e0e0e0;
     /* Light gray on hover */
     color: #0a1a2a;
-    /* Main background color */
 }
 
 /* Profile picture styling in post_detail and comments */
 .profile-picture {
-    width: 60px; /* Set the size for profile pictures in posts */
+    width: 60px; /* Size for profile pictures in posts */
     height: 60px;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-fit: cover;
     border-radius: 50%;
     border: 1px solid #ffd700;
     margin-right: 10px;
