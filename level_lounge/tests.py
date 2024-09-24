@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 # Create your tests here.
+# AI leveraged to help configure tests and check errors
 class UserAuthTests(TestCase):
     """
     Tests for user authentication, including login and logout functionalities.
@@ -17,7 +18,12 @@ class UserAuthTests(TestCase):
         """
         Test that a user can log in successfully
         """
-        response = self.client.post(reverse('account_login'), {'username': 'testuser', 'password': 'password123'})
+        response = self.client.post(reverse('login'), {
+            'username': 'testuser',
+            'password': 'password123'
+        })
+        print(f"Login URL: {reverse('login')}")
+        print(f"Response Status Code: {response.status_code}")
         self.assertEqual(response.status_code, 302)  # Expect a redirect on successful login
         self.assertTrue(response.wsgi_request.user.is_authenticated)
 
@@ -27,6 +33,8 @@ class UserAuthTests(TestCase):
         """
         # Log the user in first
         self.client.login(username='testuser', password='password123')
-        response = self.client.get(reverse('account_logout'))
+        response = self.client.post(reverse('logout'))
+        print(f"Logout URL: {reverse('logout')}")
+        print(f"Response Status Code: {response.status_code}")
         self.assertEqual(response.status_code, 302)  # Redirect after logout
         self.assertFalse(response.wsgi_request.user.is_authenticated)

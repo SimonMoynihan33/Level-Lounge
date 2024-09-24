@@ -35,7 +35,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['8000-simonmoynih-levellounge-hzs6s09zeua.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -158,6 +157,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+# URLS
+LOGIN_REDIRECT_URL = '/'  # Redirect to home after login
+LOGOUT_REDIRECT_URL = '/'  # Redirect to home after logout
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
