@@ -7,74 +7,332 @@
     font-style: normal;
 }
 
-/* Navbar */
-.nav-bg {
-    background-color: #6d676e;
-}
-
-.center-nav {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* Main styles */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0A1A2A;
+    /* Deep navy background */
+    color: #E0E0E0 !important;
+    /* Light gray text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh !important;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    /* Ensure the wrapper takes up all available space */
+}
+
 .main-bg {
-    background-color: #ffffff;
+    background-color: #0a1a2a;
+}
+
+/* Navbar Styles */
+.nav-bg {
+    background-color: #FFD700;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #0A1A2A !important;
+    font-weight: bold;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 15px;
+}
+
+.navbar-nav .nav-link {
+    color: #0A1A2A;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 15px;
+    /* Better click area */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-nav .nav-link.active {
+    color: #FFD700 !important;
+    /* Highlight active link */
+    background-color: #0A1A2A;
+    /* Dark background for active state */
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #8d8d8d;
+    text-decoration: underline;
+    /* Add underline on hover */
+    text-decoration-thickness: 2px;
+    /* Make the underline thicker */
+    text-underline-offset: 3px;
+    /* Space underline from text */
+}
+
+.nav-link {
+    color: #0A1A2A;
+    /* Dark navy for login/logout links */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #8d8d8d;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.navbar-toggler {
+    border-color: #0A1A2A;
+}
+
+.navbar-collapse {
+    background-color: #FFD700;
+}
+
+/* Remove padding and gutter specifically for the navbar inside container-fluid */
+.container-fluid.navbar-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.navbar-collapse {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Remove List Decoration */
+ul.navbar-nav li {
+    list-style-type: none;
+    /* Remove bullets */
+}
+
+ul.navbar-nav li a {
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.navbar-nav .nav-item {
+    display: flex;
+    /* Ensures all links are vertically aligned */
+    align-items: center;
+    /* Vertically centers the links */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #FFD700;
+    color: #0A1A2A;
+    flex-shrink: 0;
+    padding: 1rem 0;
+}
+
+footer a {
+    color: #0A1A2A;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #8d8d8d;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+footer .media i {
+    font-size: 1.5rem;
+    color: #0A1A2A;
+    /* Dark navy icons */
+}
+
+footer .media i:hover {
+    color: #8d8d8d;
+}
+
+.rights-reserved {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+/* Hero Section Styling */
+#hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: #0a1a2a;
+    color: #e0e0e0;
+    text-align: center;
+    border-bottom: 5px solid #ffd700;
+    /* Gold accent border */
+}
+
+/* Cover Text Container */
+#cover-text {
+    max-width: 800px;
+    /* Limits width for better readability */
+    padding: 20px;
+    background: rgba(46, 46, 46, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
+}
+
+/* Welcome Message Styling */
+.welcome-msg {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* Adds depth to the text */
+}
+
+/* Subheading Styling */
+#cover-text h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #e0e0e0;
+    /* Light gray for secondary text */
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 /* Cards */
 /* Override card style from bootstrap */
-.custom-card-bg {
-    background: none !important;
-    border: none !important;
-}
-
 .card-body {
-    background-color: #ffffff;
-    border-radius: 30px;
+    background-color: #2e2e2e;
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: .5rem;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    /* Subtle shadow for depth */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    /* Smooth hover effects */
 }
 
-.author {
-    color: #000000;
+/* Bootstrap card hover effect */
+.custom-card-bg:hover {
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Darker shadow on hover */
 }
 
-.post-link {
-    color: #cd00d4;
+/* Adjust card body padding for consistent spacing */
+.custom-card-bg .card-body {
+    padding: 1.25rem;
+    color: #E0E0E0;
+}
+
+/* Title customization using Bootstrap's heading classes */
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
     text-decoration: none;
 }
 
-.excerpt {
-    color: #000000
+/* Author styling with Bootstrap's text-muted class */
+.author {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #E0E0E0;
+    /* Bootstrap's muted text color */
 }
 
+/* Excerpt styling */
+.excerpt {
+    font-size: 1rem;
+    color: #E0E0E0;
+    margin-bottom: 15px;
+}
+
+/* Date styling */
 .posted-on {
-    color: #000000
+    font-size: 0.9rem;
+    color: #E0E0E0;
+}
+
+.post-link {
+    color: #FFD700;
+    text-decoration: none;
 }
 
 .media a {
     text-decoration: none;
 }
 
-/* Card styling for viewing post */
-.card-text {
-    padding: 15px;
+/* Create post button */
+.create-post-btn {
+    background: linear-gradient(45deg, #f7e797, #ffd700);
+    color: white;
+    font-size: 1.3rem;
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.card {
-    background: #ffffff;
+/* Hover Effect */
+.create-post-btn:hover {
+    background: linear-gradient(45deg, #b732d9, #9115b2);
+    /* Darker purple gradient on hover */
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus Effect (for accessibility) */
+.create-post-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(220, 74, 246, 0.5);
 }
 
 /* Style to make footer stick to bottom of page */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
+
 /* Flexbox layout for page */
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
+
 .content {
     flex: 1;
 }
@@ -84,26 +342,345 @@ html, body {
     margin-top: 50px;
 }
 
-/* Comments & Replies */
-.comment {
+/* Masthead Styles */
+.masthead {
+    background-color: #0A1A2A;
+    /* Deep navy for the masthead */
+    padding: 20px 0;
+}
+
+.masthead-text h1 {
+    color: #FFD700;
+    /* Golden yellow for post titles */
+    text-align: right;
+}
+
+.masthead-text p {
+    color: #8d8d8d;
+    text-align: right;
+}
+
+/* Card Styles */
+.postscard>.card {
+    background-color: #2E2E2E;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    color: #E0E0E0;
+}
+
+
+.card .btn-secondary {
+    background-color: #8d8d8d;
+    border: none;
+    color: #E0E0E0;
+    text-align: right;
+}
+
+.card .btn-danger {
+    background-color: #D9534F;
+    border: none;
+    color: #E0E0E0;
+    text-align: right;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #2E2E2E !important;
+    color: #E0E0E0;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #8d8d8d;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #8d8d8d;
+    border: none;
+    color: #E0E0E0;
+}
+
+.modal-footer .btn-danger {
+    background-color: #D9534F;
+    border: none;
+    color: #E0E0E0;
+}
+
+/* Comments Section */
+.comments-section {
+    background-color: #2E2E2E;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.comments-section h3 {
+    color: #FFD700;
+    /* Golden yellow for headers */
+}
+
+.comments-section form {
     margin-bottom: 20px;
+}
+
+.comments-section .btn-primary {
+    background-color: #FFD700;
+    border: none;
+    color: #0A1A2A;
+}
+
+/* Form Styles */
+input,
+textarea {
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    border: 1px solid #8d8d8d;
+    border-radius: 4px;
     padding: 10px;
-    border: 1px solid #ddd;
 }
 
-.replies {
-    margin-left: 20px;
+/* Comments & Replies */
+.comments-section {
+    margin-bottom: 40px;
 }
 
-.reply {
+.comment {
+    background-color: #2E2E2E;
+    border-radius: 8px;
+    padding: 15px;
+    color: #E0E0E0;
+    border: 1px solid #8d8d8d;
+}
+
+/* Author and Date */
+.comment em {
+    color: #8d8d8d;
+    /* Gray for 'Replying to' text */
+    font-size: 0.9rem;
+}
+
+/* Comment Text */
+.comment p {
     margin-bottom: 10px;
+    /* Space between paragraphs */
 }
 
+/* Reply Button */
+.btn-secondary {
+    background-color: #8d8d8d;
+    /* Gray for secondary buttons */
+    border: none;
+    color: #E0E0E0;
+}
+
+.btn-secondary:hover {
+    background-color: #6c6c6c;
+    /* Slightly darker gray on hover */
+}
+
+/* Reply Form */
 .reply-form {
-    margin-top: 10px;
+    background-color: #1F1F1F;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #8d8d8d;
 }
 
-/* Style to hide replies if more than 3 */
-.hidden {
-    display: none !important;
+/* Submit Reply Button */
+.btn-primary {
+    background-color: #FFD700;
+    border: none;
+    color: #0A1A2A;
+}
+
+.btn-primary:hover {
+    background-color: #e6c200;
+    /* Slightly darker yellow on hover */
+}
+
+/* Link to Login */
+.login-link {
+    color: #FFD700;
+    /* Golden yellow for login link */
+    text-decoration: underline;
+}
+
+.comment a:hover {
+    color: #e6c200;
+    /* Slightly darker yellow on hover */
+}
+
+/* Form Container */
+form {
+    background-color: #2E2E2E;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #8d8d8d;
+    color: #E0E0E0;
+}
+
+/* Styling for forms (Create post form etc) */
+form label {
+    color: #FFD700;
+    /* Golden yellow for labels */
+    font-weight: bold;
+    margin-bottom: 5px;
+    /* Space below labels */
+    display: block;
+    /* Put labels are on their own line */
+}
+
+/* Input Fields */
+/* Leveraged ChatGPT to properly target inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+    background-color: #1F1F1F !important;
+    color: #E0E0E0 !important;
+    border: 1px solid #8d8d8d;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* Input Focus State */
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #FFD700 !important;
+    /* Yellow outline whn focused */
+    outline: none;
+}
+
+.signup-text {
+    margin-left: 30px;
+}
+
+.signup {
+    margin-bottom: 40px;
+}
+
+/* Posts and Drafts Section Styling */
+.posts-section,
+.drafts-section {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 15px;
+    background-color: #2e2e2e;
+    border-radius: 8px;
+    border: 1px solid #8d8d8d;
+}
+
+/* Headings for Posts and Drafts */
+.posts-section h3,
+.drafts-section h3 {
+    color: #ffd700;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* List Group Items (Posts and Drafts) */
+.list-group-item {
+    background-color: #2e2e2e !important;
+    border: none;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Specific styling for the date inside posts and drafts
+AI used as I could not get the styles to apply */
+.list-group-item small {
+    color: #8d8d8d !important;
+    /* Light gray color with high specificity */
+    font-size: 0.9rem;
+}
+
+/* Links inside Posts and Drafts */
+.list-group-item a {
+    color: #ffd700;
+    /* Gold links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+    color: #e0e0e0;
+    /* Light gray on hover */
+}
+
+/* Buttons for Editing Drafts */
+.btn-primary.btn-sm {
+    background-color: #ffd700;
+    /* Gold button */
+    border: none;
+    color: #0a1a2a;
+    /* Main background color */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary.btn-sm:hover {
+    background-color: #e0e0e0;
+    /* Light gray on hover */
+    color: #0a1a2a;
+}
+
+/* Profile picture styling in post_detail and comments */
+.profile-picture {
+    width: 60px; /* Size for profile pictures in posts */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ffd700;
+    margin-right: 10px;
+}
+
+/* Profile picture in comments */
+.comment-profile-picture {
+    width: 50px; /* Slightly smaller for comments */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ffd700;
+    margin-right: 5px; /* Smaller margin for comments */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .ms-auto {
+        text-align: center;
+    }
+
+    footer .text-center {
+        margin-bottom: 15px;
+    }
+
+    /* Profile Section */
+    .profile-picture,
+    .comment-profile-picture {
+        width: 35px;
+        height: 35px;
+    }
+
+    .profile-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .profile-section .profile-name {
+        font-weight: bold;
+        color: #e0e0e0;
+    }
 }
