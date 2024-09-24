@@ -3,7 +3,11 @@
 
 <div class="comment mb-3">
     <!-- Display the user and content of the comment -->
-    <p><strong><a href="{% url 'profile' comment.user.username %}" >{{ comment.user }}</a></strong> - {{ comment.created_at }}</p>
+    <p class="profile-section"><strong>
+        <img src="{{ comment.user.profile.profile_picture.url }}" alt="Profile Picture"
+            class="comment-profile-picture"><a href="{% url 'profile' comment.user.username %}">{{ comment.user
+            }}</a></strong> - {{ comment.created_at }}
+    </p>
 
     <!-- If the comment is a reply, display 'Replying to' the user being replied to -->
     {% if comment.parent %}
@@ -34,6 +38,6 @@
 
     <!-- Display replies if they exist -->
     {% for reply in comment.replies.all %}
-        {% include 'level_lounge/comments.html' with comment=reply %}
+    {% include 'level_lounge/comments.html' with comment=reply %}
     {% endfor %}
 </div>
