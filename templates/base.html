@@ -48,16 +48,15 @@
                         <ul class="navbar-nav nav-list w-100">
                             <!-- Left aligned links -->
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
                                     aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == profile_url %}active{% endif %}"
+                                <a class="nav-link {% if request.resolver_match.url_name == 'profile' and request.user.username == request.resolver_match.kwargs.username %}active{% endif %}"
                                     aria-current="page" href="{% url 'profile' user.username %}">Profile</a>
                             </li>
                             <!-- Right-aligned links (Login/Logout) -->
-
                             <li class="nav-item ms-auto">
                                 <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
                                     href="{% url 'account_logout' %}">Logout</a>

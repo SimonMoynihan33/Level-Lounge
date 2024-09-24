@@ -128,7 +128,6 @@ def delete_post(request, post_id):
     return redirect('post_detail', slug=post.slug)
 
 
-@login_required
 def profile_view(request, username):
     """
     Display the user's profile, including their drafts, and handle profile updates.
@@ -137,9 +136,11 @@ def profile_view(request, username):
     user_profile = get_object_or_404(
         UserProfile, user__username=username)  # Fetch the profile by username
 
-    # Fetch drafts associated with the logged-in user (status=0 means draft)
+    # Fetch drafts and posts associated with the logged-in user (status=0 means draft,
+    # status=1 means published)
+    posts = Post.objects.filter(author=user_profile.user, status=1).order_by('-created_at')
     drafts = Post.objects.filter(
-        author=request.user, status=0).order_by('-created_at')
+        author=user_profile.user, status=0).order_by('-created_at')
 
     if request.method == 'POST':
         form = UserProfileForm(
@@ -157,6 +158,7 @@ def profile_view(request, username):
         'profile': user_profile,
         'form': form,
         'MEDIA_URL': settings.MEDIA_URL,
+        'posts': posts,
         'drafts': drafts,
     }
     return render(request, 'level_lounge/profile.html', context)

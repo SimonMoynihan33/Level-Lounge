@@ -417,10 +417,6 @@ input, textarea {
 }
 
 /* Author and Date */
-.comment p strong {
-    color: #FFD700; /* Golden yellow for usernames */
-}
-
 .comment em {
     color: #8d8d8d; /* Gray for 'Replying to' text */
     font-size: 0.9rem;
@@ -521,6 +517,63 @@ form select:focus {
     margin-bottom: 40px;
 }
 
+/* Posts and Drafts Section Styling */
+.posts-section, .drafts-section {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 15px;
+    background-color: #2e2e2e;
+    border-radius: 8px;
+    border: 1px solid #8d8d8d;
+}
+
+/* Headings for Posts and Drafts */
+.posts-section h3, .drafts-section h3 {
+    color: #ffd700; /* Gold heading color */
+    border-bottom: 2px solid #ffd700; /* Gold underline */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* List Group Items (Posts and Drafts) */
+.list-group-item {
+    background-color: #2e2e2e !important;
+    border: none;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Specific styling for the date inside posts and drafts */
+.list-group-item small {
+    color: #8d8d8d !important; /* Light gray color with high specificity */
+    font-size: 0.9rem; /* Adjust font size if needed */
+}
+
+/* Links inside Posts and Drafts */
+.list-group-item a {
+    color: #ffd700; /* Gold links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+    color: #e0e0e0; /* Light gray on hover */
+}
+
+/* Buttons for Editing Drafts */
+.btn-primary.btn-sm {
+    background-color: #ffd700; /* Gold button */
+    border: none;
+    color: #0a1a2a; /* Main background color */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary.btn-sm:hover {
+    background-color: #e0e0e0; /* Light gray on hover */
+    color: #0a1a2a; /* Main background color */
+}
+
 /* Responsive Styling */
 @media (max-width: 768px) {
     .navbar-nav {
@@ -537,5 +590,3 @@ form select:focus {
         margin-bottom: 15px;
     }
 }
-
-
