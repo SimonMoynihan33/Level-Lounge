@@ -2,7 +2,6 @@ const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
-console.log('working');
 /**
 * Initializes edit functionality for the provided edit buttons.
 * 

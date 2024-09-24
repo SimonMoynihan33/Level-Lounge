@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
-
+from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -22,11 +22,11 @@ class UserProfile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='profile')
     bio = models.TextField(null=True, blank=True)
-    profile_picture = models.ImageField(
-        upload_to='profile_pics/',
-        null=True,
+    profile_picture = CloudinaryField(
+        'image',
         blank=True,
-        default='profile_pics/default-avatar-icon.jpg'
+        null=True,
+        default='default-avatar-icon'
     )
     post_count = models.PositiveIntegerField(
         default=0)  # Tracks user posts count
