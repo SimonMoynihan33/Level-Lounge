@@ -22,7 +22,7 @@
 
     <!-- Reply button for authenticated users -->
     {% if user.is_authenticated %}
-    <button class="btn btn-secondary btn-sm" type="button" onclick="toggleReplyForm('{{ comment.id }}')">
+    <button class="btn btn-secondary btn-sm reply-button" type="button" onclick="toggleReplyForm('{{ comment.id }}')">
         Reply
     </button>
 

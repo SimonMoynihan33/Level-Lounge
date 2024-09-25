@@ -322,13 +322,6 @@ footer .media i:hover {
     box-shadow: 0 0 0 4px rgba(220, 74, 246, 0.5);
 }
 
-/* Style to make footer stick to bottom of page */
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
 /* Flexbox layout for page */
 .wrapper {
     display: flex;
@@ -422,6 +415,12 @@ body {
     /* Golden yellow for headers */
 }
 
+.profile-section a,
+.post-subtitle a {
+    text-decoration: underline;
+    color: #ffd700
+}
+
 .comments-section form {
     margin-bottom: 20px;
 }
@@ -499,6 +498,48 @@ textarea {
 .btn-primary:hover {
     background-color: #e6c200;
     /* Slightly darker yellow on hover */
+}
+
+/* Main comment styles */
+.comment {
+    background-color: #2E2E2E;
+    border-radius: 8px;
+    padding: 15px;
+    color: #E0E0E0;
+    margin-left: 3px; /* Slight indentation for comments */
+    margin-bottom: 10px; /* Space between comments vertically */
+    margin-right: 0;
+    padding-right: 0;
+}
+
+/* Single-level reply styling */
+.reply {
+    background-color: #1F1F1F;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 5px; /* Slight indentation for replies */
+    margin-right: 0; /* No margin on the right */
+    padding-right: 0;
+    margin-bottom: 10px; /* Space between replies vertically */
+}
+
+/* Reply form styling */
+.reply-form {
+    background-color: #1F1F1F;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 5px; /* Indentation for the reply form */
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: 10px;
+}
+
+/* Button styling */
+.reply-button {
+    background-color: #8d8d8d;
+    border: none;
+    color: #E0E0E0;
+    margin-bottom: 15px;
 }
 
 /* Link to Login */
