@@ -3,11 +3,14 @@
 
 <div class="comment mb-3">
     <!-- Display the user and content of the comment -->
-    <p class="profile-section"><strong>
-            <img src="{{ comment.user.profile.profile_picture.url }}" alt="Profile Picture"
-                class="comment-profile-picture" />
-            <a href="{% url 'profile' comment.user.username %}">
-                {{ comment.user }}</a></strong> - {{ comment.created_at }}
+    <p class="profile-section">
+        <strong>
+            <!-- Link to the user's profile -->
+            <a href="{% url 'profile' comment.user.username %}">{{ comment.user }}</a>
+        </strong>
+    </p>
+    <p>
+        - {{ comment.created_at|date:"F j, Y, g:i a" }}
     </p>
 
     <!-- If the comment is a reply, display 'Replying to' the user being replied to -->

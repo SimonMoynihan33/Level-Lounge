@@ -14,12 +14,26 @@ import cloudinary.uploader
 import cloudinary.api
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 from django.contrib.messages import constants as messages
 import sys
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
-    
+
+
+# Cloudinary
+# Load environment variables from .env file if it exists
+load_dotenv()
+
+# Cloudinary configuration using environment variables
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
