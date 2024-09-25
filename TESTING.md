@@ -1,4 +1,4 @@
-## USer Story Testing
+## User Story Testing
 
 | Iteration | User Story                        | Result            | Acceptance Criteria                                                                                                       | Tasks Completed                                                                                                                   |
 |-----------|-----------------------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -60,7 +60,7 @@
 | S3        | User Profile Setup                     | <mark>PASS</mark>     | 1. Users should be able to view their profile with details like username, reputation, and post history.     | - Implemented profile view with post history.                                                                    |
 |           |                                        |                       | 2. Users should be able to edit basic profile information (e.g., bio, profile picture).                      | - Created forms for editing profile information.                                                                 |
 |           |                                        |                       |                                                                                                             | - Allowed users to update and delete information on their profile.                                                |
-| S3        | User can like posts                    | <mark>TBD</mark>      | N/A                                                                                                         | N/A                                                                                                               |
+| S3        | User can like posts                    | <mark>DEFERRED</mark>      | N/A                                                                                                         | N/A                                                                                                               |
 | S4        | Final Documentation                    | <mark>PASS</mark>     | 1. Documentation should include setup instructions, key feature descriptions, and API integrations.         | - Wrote comprehensive documentation for the project, including setup instructions and feature descriptions.       |
 |           |                                        |                       | 2. The README file should be clear, well-organized, and easy to follow.                                     | - Ensured the README file is well-structured and includes all necessary information.                             |
 |           |                                        |                       | 3. Documentation should cover both developer setup and user instructions.                                   | - Reviewed and finalized documentation to ensure accuracy and clarity.                                           |
@@ -74,6 +74,22 @@
 |           |                                        |                       | 2. The count does not include drafts or deleted posts; only visible, published posts are included in the count. | - Integrated the post count display with the profile layout, ensuring it updates dynamically when changes occur.  |
 |           |                                        |                       | 3. The post count updates automatically when posts are added, edited, or deleted.                           | - Tested the accuracy of the post count by creating, editing, and deleting posts to ensure the count reflects real-time data. |
 
+## Validation
+
+### **HTML**
+
+| Page               | Validator                                                                                                                             | Result              |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| 404 Page           | <details><summary>404 Page</summary><img src="docs/validation/html/val-404html.png"></details>                                        | <mark>PASS</mark>   |
+| Account Login      | <details><summary>Account Login</summary><img src="docs/validation/html/val-account-login-html.png"></details>                        | <mark>PASS</mark>   |
+| Create Post        | <details><summary>Create Post Page</summary><img src="docs/validation/html/val-create_post-html.png"></details>                       | <mark>PASS</mark>   |
+| Edit Post          | <details><summary>Edit Post Page</summary><img src="docs/validation/html/val-edit-post-html.png"></details>                           | <mark>PASS</mark>   |
+| Logged-In Home     | <details><summary>Logged-In Home Page</summary><img src="docs/validation/html/val-logged-in-home-html.png"></details>                 | <mark>PASS</mark>   |
+| Logout             | <details><summary>Logout Page</summary><img src="docs/validation/html/val-logout-html.png"></details>                                 | <mark>PASS</mark>   |
+| Post Detail Draft  | <details><summary>Post Detail Draft Page</summary><img src="docs/validation/html/val-post_detail-draft.png"></details>                | <mark>PASS</mark>   |
+| Post Detail        | <details><summary>Post Detail Page</summary><img src="docs/validation/html/val-post_detail-html.png"></details>                       | <mark>PASS</mark>   |
+| Post List          | <details><summary>Post List Page</summary><img src="docs/validation/html/val-post-list-html.png"></details>                           | <mark>PASS</mark>   |
+| Profile            | <details><summary>Profile Page</summary><img src="docs/validation/html/val-profile-html.png"></details>                               | <mark>PASS</mark>   |
 
 
 
