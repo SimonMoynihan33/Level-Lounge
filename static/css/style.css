@@ -574,6 +574,13 @@ form label {
     /* Put labels are on their own line */
 }
 
+/* Style for all input and textarea placeholder text */
+input::placeholder,
+textarea::placeholder {
+    color: #8d8d8d; /* Change this color to your preferred placeholder color */
+    opacity: 1; /* Ensures full color visibility */
+}
+
 /* Input Fields */
 /* Leveraged ChatGPT to properly target inputs */
 form input[type="text"],
@@ -589,6 +596,11 @@ form select {
     width: 100%;
     margin-bottom: 15px;
     box-sizing: border-box;
+}
+
+/* Margin for bottom of forms */
+form {
+    margin-bottom: 30px;
 }
 
 /* Input Focus State */

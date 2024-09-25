@@ -37,11 +37,11 @@ class PostForm(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control',
-                                     'placeholder': 'Enter the title'}),
+                                     'placeholder': ''}),
             'content': forms.Textarea(attrs={'class': 'form-control',
-                                      'placeholder': 'Enter the content'}),
+                                      'placeholder': ''}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control',
-                                      'placeholder': 'Enter the excerpt'}),
+                                      'placeholder': ''}),
             # Dropdown for status
             'status': forms.Select(attrs={'class': 'form-control'}),
         }
