@@ -55,15 +55,10 @@ class UserProfileForm(forms.ModelForm):
         fields = ['bio', 'profile_picture']
 
     def save(self, commit=True):
-        # written by chatGPT
-        instance = super(UserProfileForm, self).save(commit=False)
-        # Check if an image was uploaded; handle it properly
+        instance = super().save(commit=False)
         if self.cleaned_data.get('profile_picture'):
             instance.profile_picture = self.cleaned_data['profile_picture']
-        else:
-            # Ensure the default path is set if cleared or missing
-            instance.profile_picture = 'https://res.cloudinary.com/dxckubce0/image/upload/v1/default-avatar-icon_igvupd.webp'
-
         if commit:
             instance.save()
         return instance
+

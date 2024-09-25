@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-
+{% load cloudinary %}
 {% block content %}
 <div class="container mt-4">
     <div class="row">
         <!-- Profile Image Section -->
         <div class="col-md-4 text-center">
             <!-- Display profile picture; fallback to default if not accessible -->
-            {% if profile.profile_picture and profile.profile_picture.url %}
-                <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+            {% if profile.profile_picture %}
+                <img src="{% cloudinary_url profile.profile_picture %}" alt="Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
             {% else %}
-                <img src="https://res.cloudinary.com/dxckubce0/image/upload/v1/default-avatar-icon.webp" alt="Default Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                <img src="{% cloudinary_url 'default-avatar-icon_igvupd.webp' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
             {% endif %}
         </div>
 
