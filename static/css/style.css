@@ -675,6 +675,11 @@ AI used as I could not get the styles to apply */
     color: #0a1a2a;
 }
 
+/* Checkbox for profile image edit */
+#profile_picture-clear_id {
+    visibility: hidden;
+}
+
 /* Responsive Styling */
 @media (max-width: 768px) {
     .navbar-nav {
