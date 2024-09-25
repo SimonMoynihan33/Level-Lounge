@@ -629,7 +629,7 @@ form label {
 /* Style for all input and textarea placeholder text */
 input::placeholder,
 textarea::placeholder {
-    color: #8d8d8d; /* Change this color to your preferred placeholder color */
+    color: #8d8d8d;
     opacity: 1; /* Ensures full color visibility */
 }
 

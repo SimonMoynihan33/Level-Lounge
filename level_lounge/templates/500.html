@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="error-page text-center">
-    <h1>500 - Server Error</h1>
-    <p>Oh no! It seems like the server rage quit.</p>
-    <p>We'll be back online soon. Please try again later.</p>
-    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Try Again</a>
+    <h1 class="error-title">500 - Server Error</h1>
+    <p class="error-message">Oh no! It seems like the server rage quit.</p>
+    <p class="error-submessage">We'll be back online soon. Please try again later.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary error-button">Try Again</a>
 </div>
 {% endblock %}
