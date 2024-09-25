@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Third-party apps
     'cloudinary_storage',
+    # Third-party apps
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -60,16 +60,6 @@ INSTALLED_APPS = [
     # Project app
     'level_lounge',
 ]
-
-# Configure Cloudinary
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-    'SECURE': True 
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'

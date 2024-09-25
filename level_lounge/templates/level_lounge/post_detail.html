@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 {% load crispy_forms_tags %}
 
 <div class="masthead">
@@ -8,9 +8,22 @@
         <div class="row g-0">
             <div class="col-md-12 masthead-text">
                 <h1 class="post-title forum-regular right">{{ post.title }}</h1>
-                <p class="post-subtitle profile-section">
-                    <img src="{{ post.author.profile.profile_picture.url }}" alt="Profile Picture" class="profile-picture"><a href="{% url 'profile' post.author.username %}">
-                        {{ post.author }}</a>| {{ post.created_at }}</p>
+                <div class="image-container profile-section">
+                    {% if user.profile.profile_picture and user.profile.profile_picture.url %}
+                    <img class="profile-picture"
+                        src="https://res.cloudinary.com/dxckubce0/image/upload/v1/default-avatar-icon_igvupd"" alt="
+                        placeholder image">
+                    {% else %}
+                    <img class="profile-picture" src=" {{ user.profile.profile_picture.url }}" alt="{{ post.title }}">
+                    {% endif %}
+                    <div class="image-flash">
+                        <p class="post-subtitle">
+                            <a href="{% url 'profile' post.author.username %}">
+                                {{ post.author }}</a>| {{ post.created_at }}
+                        </p>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
