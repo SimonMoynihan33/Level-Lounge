@@ -26,6 +26,7 @@ class UserProfile(models.Model):
         'image',
         blank=True,
         null=True,
+        default='https://res.cloudinary.com/dxckubce0/image/upload/v1/default-avatar-icon_igvupd.webp'
         )
     post_count = models.PositiveIntegerField(
         default=0)  # Tracks user posts count

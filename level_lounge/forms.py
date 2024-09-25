@@ -55,6 +55,7 @@ class UserProfileForm(forms.ModelForm):
         fields = ['bio', 'profile_picture']
 
     def save(self, commit=True):
+        # written by chatGPT
         instance = super(UserProfileForm, self).save(commit=False)
         # Check if an image was uploaded; handle it properly
         if self.cleaned_data.get('profile_picture'):
