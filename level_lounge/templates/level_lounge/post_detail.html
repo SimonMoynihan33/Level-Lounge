@@ -9,10 +9,9 @@
             <div class="col-md-12 masthead-text">
                 <h1 class="post-title forum-regular right">{{ post.title }}</h1>
                 <div class="image-container">
-                        <p class="post-subtitle">
-                            <a href="{% url 'profile' post.author.username %}">{{ post.author }}</a> | {{ post.created_at }}
-                        </p>
-                    </div>
+                    <p class="post-subtitle">
+                        <a href="{% url 'profile' post.author.username %}">{{ post.author }}</a> | {{ post.created_at }}
+                    </p>
                 </div>
             </div>
         </div>
