@@ -90,6 +90,20 @@
 | Post Detail        | <details><summary>Post Detail Page</summary><img src="docs/validation/html/val-post_detail-html.png"></details>                       | <mark>PASS</mark>   |
 | Post List          | <details><summary>Post List Page</summary><img src="docs/validation/html/val-post-list-html.png"></details>                           | <mark>PASS</mark>   |
 | Profile            | <details><summary>Profile Page</summary><img src="docs/validation/html/val-profile-html.png"></details>                               | <mark>PASS</mark>   |
+| Sign Up            | <details><summary>Sign Up Page</summary><img src="docs/validation/html/val-signup-html.png"></details>                                | <mark>PASS</mark> |
+
+### **CSS**
+| Page                   | Validator                                                                                                                                    | Result              |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| CSS Validation     | <details><summary>CSS Validation</summary><img src="docs/validation/css/val-css.png"></details>                                       | <mark>PASS</mark>   |
+
+### **JavaScript**
+| Page                   | Validator                                                                                                                                    | Result              |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| JS Validation Comments | <details><summary>JS Validation Comments</summary><img src="docs/validation/js/val-js-validation-comments.png"></details>                    | <mark>PASS</mark>   |
+| Toggle Reply Form JS   | <details><summary>Toggle Reply Form JS Validation</summary><img src="docs/validation/js/val-togglereplyform-js-val.png"></details>           | <mark>PASS</mark>   |
+
+`One unused variable toggleReplyForm()` is actually in use for the reply form so this metric is irrelevant.
 
 
 
