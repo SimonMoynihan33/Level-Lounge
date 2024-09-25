@@ -694,42 +694,6 @@ AI used as I could not get the styles to apply */
     visibility: hidden;
 }
 
-/* Error Page Styles */
-.error-page {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.error-page h1 {
-    font-size: 3em;
-    color: #FFD700;
-}
-
-.error-page p {
-    color: #E0E0E0;
-    font-size: 1.2em;
-}
-
-.error-page p.secondary-text {
-    color: #8d8d8d;
-    font-size: 1em;
-}
-
-.error-page img {
-    width: 300px;
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.error-page .btn-primary {
-    background-color: #FFD700;
-    border: none;
-    color: #0A1A2A;
-    margin-top: 20px;
-}
-
 /* Responsive Styling */
 @media (max-width: 768px) {
     .navbar-nav {

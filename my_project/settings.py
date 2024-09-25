@@ -49,7 +49,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ['8000-simonmoynih-levellounge-hzs6s09zeua.ws.codeinstitute-ide.net',
-                '.herokuapp.com']
+                '.herokuapp.com',]
 
 # Application definition
 
