@@ -73,7 +73,7 @@
             </form>
             {% else %}
             <!-- Prompt unauthenticated users to log in before commenting -->
-            <p>You need to be <a class="login-link" href="{% url 'login' %}?next={{ request.path }}">logged in</a> to
+            <p>You need to be <a class="login-link" href="{% url 'account_login' %}?next={{ request.path }}">logged in</a> to
                 leave a
                 comment.</p>
             {% endif %}
