@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block content %}
-<div class="error-page text-center">
+<section class="error-page text-center">
     <h1 class="error-title">404 - Page Not Found</h1>
     <p class="error-message">Oops! You've wandered off the beaten path.</p>
     <p class="error-submessage">Even the best players miss their mark sometimes!</p>
     <a href="{% url 'home' %}" class="btn btn-primary error-button">Return to Safety</a>
-</div>
+</section>
 {% endblock %}
