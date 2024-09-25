@@ -31,8 +31,7 @@
 </head>
 
 <body class="d-flex flex-column main-bg">
-    <div class="wrapper d-flex flex-column flex-grow-1">
-        <div class="content">
+    <header>
             <!-- Nav -->
             <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
                 <div class="container-fluid navbar-container">
@@ -89,14 +88,13 @@
                     </div>
                 </div>
             </div>
+    </header>
 
-            <main class="flex-shrink-0 main-bg">
-                {% block content %}
-                <!-- Content Goes here -->
-                {% endblock content %}
-            </main>
-        </div>
-    </div>
+    <main class="main-bg flex-grow-1">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
 
     <!-- Footer -->
     <footer class="py-4">
