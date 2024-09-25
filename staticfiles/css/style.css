@@ -21,22 +21,72 @@ body {
     /* Light gray text */
     display: flex;
     flex-direction: column;
-    min-height: 100vh !important;
 }
 
 main {
     flex: 1 0 auto;
+    margin-top: 20px;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
-    flex: 1 0 auto;
-    /* Ensure the wrapper takes up all available space */
 }
 
 .main-bg {
     background-color: #0a1a2a;
+}
+
+.error-page {
+    padding: 50px 20px;
+    text-align: center;
+    color: #E0E0E0; 
+    background-color: #2E2E2E;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-title {
+    font-size: 3em;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.error-image {
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px; 
+}
+
+.error-message {
+    font-size: 1.2em;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.error-submessage {
+    font-size: 1em;
+    color: #8d8d8d;
+    margin-bottom: 30px;
+}
+
+.error-button {
+    background-color: #FFD700;
+    border: none;
+    color: #0A1A2A; /* Dark blue or black to match button styling */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.error-button:hover {
+    background-color: #e6c200; /* Slightly darker gold for hover effect */
 }
 
 /* Navbar Styles */
@@ -140,6 +190,11 @@ ul.navbar-nav li a {
     /* Ensures all links are vertically aligned */
     align-items: center;
     /* Vertically centers the links */
+}
+
+/* Logged in as prompt in top right */
+.logged-in-as {
+    color: #0a1a2a;
 }
 
 /* Footer Styles */
@@ -319,13 +374,6 @@ footer .media i:hover {
     box-shadow: 0 0 0 4px rgba(220, 74, 246, 0.5);
 }
 
-/* Style to make footer stick to bottom of page */
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
 /* Flexbox layout for page */
 .wrapper {
     display: flex;
@@ -419,6 +467,12 @@ body {
     /* Golden yellow for headers */
 }
 
+.profile-section a,
+.post-subtitle a {
+    text-decoration: underline;
+    color: #ffd700
+}
+
 .comments-section form {
     margin-bottom: 20px;
 }
@@ -498,6 +552,48 @@ textarea {
     /* Slightly darker yellow on hover */
 }
 
+/* Main comment styles */
+.comment {
+    background-color: #2E2E2E;
+    border-radius: 8px;
+    padding: 15px;
+    color: #E0E0E0;
+    margin-left: 3px; /* Slight indentation for comments */
+    margin-bottom: 10px; /* Space between comments vertically */
+    margin-right: 0;
+    padding-right: 0;
+}
+
+/* Single-level reply styling */
+.reply {
+    background-color: #1F1F1F;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 5px; /* Slight indentation for replies */
+    margin-right: 0; /* No margin on the right */
+    padding-right: 0;
+    margin-bottom: 10px; /* Space between replies vertically */
+}
+
+/* Reply form styling */
+.reply-form {
+    background-color: #1F1F1F;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 5px; /* Indentation for the reply form */
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: 10px;
+}
+
+/* Button styling */
+.reply-button {
+    background-color: #8d8d8d;
+    border: none;
+    color: #E0E0E0;
+    margin-bottom: 15px;
+}
+
 /* Link to Login */
 .login-link {
     color: #FFD700;
@@ -530,6 +626,13 @@ form label {
     /* Put labels are on their own line */
 }
 
+/* Style for all input and textarea placeholder text */
+input::placeholder,
+textarea::placeholder {
+    color: #8d8d8d; /* Change this color to your preferred placeholder color */
+    opacity: 1; /* Ensures full color visibility */
+}
+
 /* Input Fields */
 /* Leveraged ChatGPT to properly target inputs */
 form input[type="text"],
@@ -545,6 +648,13 @@ form select {
     width: 100%;
     margin-bottom: 15px;
     box-sizing: border-box;
+}
+
+/* Margin for bottom of forms */
+form {
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 /* Input Focus State */
@@ -578,7 +688,7 @@ form select:focus {
 /* Headings for Posts and Drafts */
 .posts-section h3,
 .drafts-section h3 {
-    color: #ffd700;
+    color: #ffd700 !important;
     border-bottom: 2px solid #ffd700;
     padding-bottom: 5px;
     margin-bottom: 15px;
@@ -601,8 +711,9 @@ AI used as I could not get the styles to apply */
 }
 
 /* Links inside Posts and Drafts */
-.list-group-item a {
-    color: #ffd700;
+.list-group-item a,
+.drafts-list {
+    color: #ffd700 !important;
     /* Gold links */
     text-decoration: none;
     transition: color 0.3s;
@@ -619,7 +730,7 @@ AI used as I could not get the styles to apply */
     background-color: #ffd700;
     /* Gold button */
     border: none;
-    color: #0a1a2a;
+    color: #0a1a2a !important;
     /* Main background color */
     transition: background-color 0.3s, color 0.3s;
 }
@@ -630,24 +741,9 @@ AI used as I could not get the styles to apply */
     color: #0a1a2a;
 }
 
-/* Profile picture styling in post_detail and comments */
-.profile-picture {
-    width: 60px; /* Size for profile pictures in posts */
-    height: 60px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid #ffd700;
-    margin-right: 10px;
-}
-
-/* Profile picture in comments */
-.comment-profile-picture {
-    width: 50px; /* Slightly smaller for comments */
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #ffd700;
-    margin-right: 5px; /* Smaller margin for comments */
+/* Checkbox for profile image edit */
+#profile_picture-clear_id {
+    visibility: hidden;
 }
 
 /* Responsive Styling */
