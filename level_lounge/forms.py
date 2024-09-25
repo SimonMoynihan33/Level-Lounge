@@ -31,7 +31,8 @@ class PostForm(forms.ModelForm):
 
         # Customize labels for fields
         labels = {
-            'excerpt': 'Post Description',  # Change the label for the excerpt field
+            # Change the label for the excerpt field
+            'excerpt': 'Post Description',
         }
 
         widgets = {

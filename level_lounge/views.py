@@ -67,7 +67,8 @@ def create_post(request):
     If the request method is POST, this view processes the submitted form data
     to create a new post, assigning the logged-in user as the post's author.
     If the form is valid, the post is saved and the user is redirected to the
-    post detail page. If the request method is not POST, an empty form is displayed.
+    post detail page. If the request method is not POST, an empty form is
+    displayed.
     """
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -89,12 +90,13 @@ def edit_post(request, id):
     """
     Handle the editing of an existing post by its author.
 
-    This view allows a logged-in user to edit their own post. It retrieves the post 
-    based on the provided ID, ensuring that only the author of the post can edit it. 
-    If the request method is POST, the view processes the submitted form data to 
-    update the post. If the form is valid, the changes are saved and the user is 
-    redirected to the post detail page. If the request method is not POST, the form 
-    is pre-filled with the post's current data.
+    This view allows a logged-in user to edit their own post. It retrieves
+    the post based on the provided ID, ensuring that only the author of
+    the post can edit it. If the request method is POST, the view
+    processes the submitted form data to update the post. If the
+    form is valid, the changes are saved and the user is
+    redirected to the post detail page. If the request method is
+    not POST, the form is pre-filled with the post's current data.
     """
     post = get_object_or_404(
         Post, id=id, author=request.user)  # Only the author can edit the post
@@ -113,8 +115,9 @@ def edit_post(request, id):
 def delete_post(request, post_id):
     """
     Handle post deletion, ensuring only logged-in users can delete posts.
-    Deletes the specified post if accessed via a POST request and redirects to the home page. 
-    If accessed via other methods, redirects to the post detail page.
+    Deletes the specified post if accessed via a POST request and redirects
+    to the home page. If accessed via other methods, redirects to the
+    post detail page.
     """
     post = get_object_or_404(Post, id=post_id)
 
@@ -130,13 +133,15 @@ def delete_post(request, post_id):
 
 def profile_view(request, username):
     """
-    Display the user's profile, including their drafts, and handle profile updates.
-    Renders the profile page with the user's information, drafts, and a form for profile updates.
+    Display the user's profile, including their drafts, and handle
+    profile updates. Renders the profile page with the user's information,
+    drafts, and a form for profile updates.
     """
     user_profile = get_object_or_404(
         UserProfile, user__username=username)  # Fetch the profile by username
 
-    # Fetch drafts and posts associated with the logged-in user (status=0 means draft,
+    # Fetch drafts and posts associated with the logged-in user
+    # (status=0 means draft,
     # status=1 means published)
     posts = Post.objects.filter(
         author=user_profile.user, status=1).order_by('-created_at')

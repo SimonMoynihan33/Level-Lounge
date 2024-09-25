@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 /**
  * Function to toggle the visibility of the reply form associated with a specific comment.
  * @param {string} commentId - The ID of the comment for which the reply form needs to be toggled.
