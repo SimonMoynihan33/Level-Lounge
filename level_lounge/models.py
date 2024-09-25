@@ -26,7 +26,6 @@ class UserProfile(models.Model):
         'image',
         blank=True,
         null=True,
-        default='default-avatar-icon_igvupd'
         )
     post_count = models.PositiveIntegerField(
         default=0)  # Tracks user posts count

@@ -2,6 +2,7 @@ from django import forms
 from .models import Comment, Post, UserProfile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms.widgets import ClearableFileInput
 
 
 class CommentForm(forms.ModelForm):
@@ -52,3 +53,16 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['bio', 'profile_picture']
+
+    def save(self, commit=True):
+        instance = super(UserProfileForm, self).save(commit=False)
+        # Check if an image was uploaded; handle it properly
+        if self.cleaned_data.get('profile_picture'):
+            instance.profile_picture = self.cleaned_data['profile_picture']
+        else:
+            # Ensure the default path is set if cleared or missing
+            instance.profile_picture = 'profile_pics/default-avatar-icon.jpg'
+
+        if commit:
+            instance.save()
+        return instance
