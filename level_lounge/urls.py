@@ -1,6 +1,11 @@
+from django.conf.urls import handler404, handler500, handler403, handler400
 from . import views
 from django.urls import path
 from django.contrib.auth import views as auth_views
+
+# Custom error handlers
+handler404 = 'level_lounge.views.custom_404'
+handler500 = 'level_lounge.views.custom_500'
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),

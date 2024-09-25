@@ -601,6 +601,8 @@ form select {
 /* Margin for bottom of forms */
 form {
     margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 /* Input Focus State */
