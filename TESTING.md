@@ -138,3 +138,7 @@ print(f"Updated {profiles_without_images.count()} profiles with the default prof
 ```
 
 Result: `Updated 4 profiles with the default profile picture.`
+
+### Bug 22
+- Issue: Profile images not rendering all of the time
+
