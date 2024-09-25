@@ -80,9 +80,6 @@
             {% for comment in comments %}
             {% include 'level_lounge/comments.html' with comment=comment %}
             {% endfor %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
         </div>
     </div>
     {% endif %}
