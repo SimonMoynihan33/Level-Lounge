@@ -47,7 +47,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-simonmoynih-levellounge-hzs6s09zeua.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
@@ -176,9 +176,6 @@ LOGOUT_REDIRECT_URL = '/'  # Redirect to home after logout
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Set Cloudinary as the default storage for media files
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MEDIA_URL = '/media/'  # URL to access media files
 MEDIA_ROOT = BASE_DIR / 'media'
