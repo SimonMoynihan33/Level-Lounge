@@ -62,7 +62,7 @@ class UserProfileForm(forms.ModelForm):
             instance.profile_picture = self.cleaned_data['profile_picture']
         else:
             # Ensure the default path is set if cleared or missing
-            instance.profile_picture = 'profile_pics/default-avatar-icon.jpg'
+            instance.profile_picture = 'https://res.cloudinary.com/dxckubce0/image/upload/v1/default-avatar-icon_igvupd.webp'
 
         if commit:
             instance.save()
