@@ -142,6 +142,11 @@ ul.navbar-nav li a {
     /* Vertically centers the links */
 }
 
+/* Logged in as prompt in top right */
+.logged-in-as {
+    color: #0a1a2a;
+}
+
 /* Footer Styles */
 footer {
     background-color: #FFD700;
