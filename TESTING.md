@@ -9,20 +9,29 @@
 | 0.3       | Set Up Development Environment ( 3, Must Have)                             | <mark>PASS</mark>     |
 | 0.4       | DiceBear Integration Planning (3, Won't Have)                              | <mark>DEFERRED</mark> |
 | 0.5       | User Stories and Backlog Creation (3, Must Have)                           | <mark>PASS</mark>     |
+| 0.6       | User Login (3, Must Have)                                                  | <mark>PASS</mark>     |
+| 0.7       | User Logout (3, Must Have)                                                 | <mark>PASS</mark>     |
+| 0.8       | Create Forum Post (5, Must Have)                                           | <mark>PASS</mark>     |
+| 0.9       | Edit Forum Post (5, Must Have)                                             | <mark>PASS</mark>     |
 | S1        | Home Page Setup (3, Must Have)                                             | <mark>PASS</mark>     |
 | S1        | Database Setup (5, Must Have)                                              | <mark>PASS</mark>     |
 | S1        | Create Posts (5, Must Have)                                                | <mark>PASS</mark>     |
+| S1        | Delete Forum Post (5, Must Have)                                           | <mark>PASS</mark>     |
 | S2        | Basic Game Rating System (5, Won't Have)                                   | <mark>DEFERRED</mark> |
 | S2        | Forum Moderation Tools (8, Must Have)                                      | <mark>PASS</mark>     |
 | S2        | Forum Creation and Setup (8, Must Have)                                    | <mark>PASS</mark>     |
+| S2        | Edit Profile and Bio (5, Must Have)                                        | <mark>PASS</mark>     |
+| S2        | Change Profile Picture (5, Should Have)                                    | <mark>PASS</mark>     |
 | S3        | Search and Filtering (8, Won't Have)                                       | <mark>DEFERRED</mark> |
-| S3        | User can like posts (5, Should Have)                                       | <mark>DEFERRED</mark>     |
+| S3        | User can like posts (5, Could Have)                                        | <mark>TBD</mark>      |
 | S3        | User Profile Setup (5, Must Have)                                          | <mark>PASS</mark>     |
+| S3        | View Own Posts and Drafts (8, Must Have)                                   | <mark>PASS</mark>     |
+| S3        | Click Usernames to View Profiles (5, Should Have)                          | <mark>PASS</mark>     |
 | S4        | Final Deployment (5, Must Have)                                            | <mark>PASS</mark>     |
 | S4        | Final Documentation (8, Must Have)                                         | <mark>PASS</mark>     |
 | S4        | Unit and Integration Testing (8, Must Have)                                | <mark>PASS</mark>     |
 | S4        | Bug Fixes and Refinements (8, Must Have)                                   | <mark>PASS</mark>     |
-
+| S4        | Display Post Count on Profile (3, Should Have)                             | <mark>PASS</mark>     |
 
 
 

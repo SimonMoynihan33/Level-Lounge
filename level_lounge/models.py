@@ -27,7 +27,7 @@ class UserProfile(models.Model):
         default='default-avatar-icon_igvupd.webp',
         blank=True,
         null=True,
-        )
+    )
     post_count = models.PositiveIntegerField(
         default=0)  # Tracks user posts count
     # Timestamp of profile creation

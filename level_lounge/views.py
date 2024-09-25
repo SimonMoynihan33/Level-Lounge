@@ -138,7 +138,8 @@ def profile_view(request, username):
 
     # Fetch drafts and posts associated with the logged-in user (status=0 means draft,
     # status=1 means published)
-    posts = Post.objects.filter(author=user_profile.user, status=1).order_by('-created_at')
+    posts = Post.objects.filter(
+        author=user_profile.user, status=1).order_by('-created_at')
     drafts = Post.objects.filter(
         author=user_profile.user, status=0).order_by('-created_at')
 

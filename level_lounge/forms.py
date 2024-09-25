@@ -29,7 +29,7 @@ class PostForm(forms.ModelForm):
         # Fields to be displayed in the form
         fields = ['title', 'content', 'status', 'excerpt']
 
-          # Customize labels for fields
+        # Customize labels for fields
         labels = {
             'excerpt': 'Post Description',  # Change the label for the excerpt field
         }
@@ -61,4 +61,3 @@ class UserProfileForm(forms.ModelForm):
         if commit:
             instance.save()
         return instance
-
