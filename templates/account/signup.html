@@ -19,7 +19,9 @@
             {{ field.label_tag }}
             {{ field }}
             {% if field.help_text %}
-                <small class="helptext">{{ field.help_text|safe }}</small>
+            <div id="{{ field.id_for_label }}_helptext" class="helptext">
+              {{ field.help_text|safe }}
+          </div>
             {% endif %}
             {% for error in field.errors %}
                 <span class="error">{{ error }}</span>
