@@ -583,7 +583,7 @@ form select:focus {
 /* Headings for Posts and Drafts */
 .posts-section h3,
 .drafts-section h3 {
-    color: #ffd700;
+    color: #ffd700 !important;
     border-bottom: 2px solid #ffd700;
     padding-bottom: 5px;
     margin-bottom: 15px;
@@ -606,8 +606,9 @@ AI used as I could not get the styles to apply */
 }
 
 /* Links inside Posts and Drafts */
-.list-group-item a {
-    color: #ffd700;
+.list-group-item a,
+.drafts-list {
+    color: #ffd700 !important;
     /* Gold links */
     text-decoration: none;
     transition: color 0.3s;
@@ -624,7 +625,7 @@ AI used as I could not get the styles to apply */
     background-color: #ffd700;
     /* Gold button */
     border: none;
-    color: #0a1a2a;
+    color: #0a1a2a !important;
     /* Main background color */
     transition: background-color 0.3s, color 0.3s;
 }
@@ -633,26 +634,6 @@ AI used as I could not get the styles to apply */
     background-color: #e0e0e0;
     /* Light gray on hover */
     color: #0a1a2a;
-}
-
-/* Profile picture styling in post_detail and comments */
-.profile-picture {
-    width: 60px; /* Size for profile pictures in posts */
-    height: 60px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid #ffd700;
-    margin-right: 10px;
-}
-
-/* Profile picture in comments */
-.comment-profile-picture {
-    width: 50px; /* Slightly smaller for comments */
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #ffd700;
-    margin-right: 5px; /* Smaller margin for comments */
 }
 
 /* Responsive Styling */

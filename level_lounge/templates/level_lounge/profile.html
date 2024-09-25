@@ -32,7 +32,6 @@
                 {% for post in posts %}
                 <li class="list-group-item">
                     <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
-                    <!-- Assuming you use the slug for URL -->
                     <small class="text-muted">Published on {{ post.created_at|date:"F j, Y" }}</small>
                 </li>
                 {% endfor %}
@@ -44,13 +43,13 @@
         <!-- Display user's drafts -->
         {% if user.is_authenticated and profile.user == user %}
         <section class="drafts-section col-md-12 mt-4">
-        <h3>Drafts</h3>
+        <h3 class="gold">Drafts</h3>
         {% if drafts %}
         <ul class="list-group mb-4">
             {% for draft in drafts %}
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center drafts-list">
                 {{ draft.title }}
-                <a href="{% url 'edit_post' draft.id %}" class="btn btn-primary btn-sm">Edit Draft</a>
+                <a href="{% url 'edit_post' draft.id %}" class="btn btn-primary btn-sm edit-draft">Edit Draft</a>
             </li>
             {% endfor %}
         </ul>

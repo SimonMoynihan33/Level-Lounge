@@ -1,3 +1,32 @@
+## USer Story Testing
+
+## User Story Testing
+
+| Iteration | User Story                                                                 | Result                |
+|-----------|----------------------------------------------------------------------------|-----------------------|
+| 0.1       | Wireframing and UI design(5, Must Have)                                    | <mark>PASS</mark>     |
+| 0.2       | Database Design & ERD (5, Must Have)                                       | <mark>PASS</mark>     |
+| 0.3       | Set Up Development Environment ( 3, Must Have)                             | <mark>PASS</mark>     |
+| 0.4       | DiceBear Integration Planning (3, Won't Have)                              | <mark>DEFERRED</mark> |
+| 0.5       | User Stories and Backlog Creation (3, Must Have)                           | <mark>PASS</mark>     |
+| S1        | Home Page Setup (3, Must Have)                                             | <mark>PASS</mark>     |
+| S1        | Database Setup (5, Must Have)                                              | <mark>PASS</mark>     |
+| S1        | Create Posts (5, Must Have)                                                | <mark>PASS</mark>     |
+| S2        | Basic Game Rating System (5, Won't Have)                                   | <mark>DEFERRED</mark> |
+| S2        | Forum Moderation Tools (8, Must Have)                                      | <mark>PASS</mark>     |
+| S2        | Forum Creation and Setup (8, Must Have)                                    | <mark>PASS</mark>     |
+| S3        | Search and Filtering (8, Won't Have)                                       | <mark>DEFERRED</mark> |
+| S3        | User can like posts (5, Should Have)                                       | <mark>DEFERRED</mark>     |
+| S3        | User Profile Setup (5, Must Have)                                          | <mark>PASS</mark>     |
+| S4        | Final Deployment (5, Must Have)                                            | <mark>PASS</mark>     |
+| S4        | Final Documentation (8, Must Have)                                         | <mark>PASS</mark>     |
+| S4        | Unit and Integration Testing (8, Must Have)                                | <mark>PASS</mark>     |
+| S4        | Bug Fixes and Refinements (8, Must Have)                                   | <mark>PASS</mark>     |
+
+
+
+
+
 ## Bugs
 
 ### Bug 01
