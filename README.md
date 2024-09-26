@@ -17,10 +17,6 @@ Level Lounge isn’t just about conversation; it’s about creation. Connect wit
 
 To keep our community safe and secure, Level Lounge features a robust user login system. Create your profile, customize your avatar, and start contributing to the community today.
 
-🏆 Reputation and Recognition
-
-Earn reputation points by contributing to discussions, helping others, and sharing your expertise. Climb the ranks, earn badges, and become a recognized member of the Level Lounge community!
-
 🚀 Join the Conversation
 
 Dive in, introduce yourself, and start exploring everything Level Lounge has to offer. Whether you're here to learn, collaborate, or just hang out, we’re excited to have you as part of our growing community. Let’s level up together!
