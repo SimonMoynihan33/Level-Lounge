@@ -32,6 +32,7 @@
     - [Bug 16](#bug-16)
     - [Bug 17](#bug-17)
     - [Bug 18](#bug-18)
+- [Unfixed Bugs](#unfixed-bugs)
 
 ## User Story Testing
 
@@ -350,7 +351,8 @@ This cleared the file from my repo and its history and stopped Git from tracking
 
 ### Bug 07 
 - **Issue**: Comment form showing three times staxcked on top of eachother.
-- **Cause**: 
+- **Cause**: Looping over comments.
+- **Fix**: Fix placement of loop.
 
 ### Bug 08
 - **Issue**: Could not get comment content to show.
@@ -372,7 +374,7 @@ A large bug I encountered was obtaining nested comments. The Code Institute walk
 - **Fix**: Add for loop to comments.html to iterate through replies and end when there are no more replies, and call `exists()` method to make sure comment replies exist.
 
 ### Bug 12
-- **Issue**: Too many replies can affect mobile view and does not look good. Applying hidden class using django templating language did seem to work in comments.html.
+- **Issue**: Too many replies can affect mobile view and does not look good. Applying hidden class using django templating language didn't seem to work in comments.html.
 - Attempted fixes: My first attempt was to use django templating language to apply a css class to comments if there was more than three, but the syntax would not work due to the first `>` tag stopping the rest of the code from running in this example:
 ```
 {% for reply in comment.replies.all %}
@@ -387,7 +389,7 @@ I also tried running the loop outside of the div element to no avail. I also tri
 
 I changed my perspective and decided to try targetting with JavaScript which was fruitless.
 - **Cause**: Drawbacks with templating language.
-- **Fix**: After placing console.logs in my hideReplies function, I found that my `.reply` class was not being applied to each reply, therefore not being targetted by JavaScript or the CSS.
+- **Fix**: After placing console.logs in my hideReplies function, I found that my `.reply` class was not being applied to each replyin my JavaScript solution, therefore not being targetted by JavaScript or the CSS.
 
 ### Bug 13
 - **Issue**: JavaScript for showing and hiding replies did not function as intended.
@@ -398,11 +400,16 @@ I changed my perspective and decided to try targetting with JavaScript which was
 - **Cause**: Failure overriding Bootstrap styling successfully.
 - **Fix**: The only fix I could think of was removing the `ms-auto` Bootstrap class depending on screen sizes. I achieved this through JavaScript.
 
+### Bug 14.5
+- **Issue**: On screen sizes of 769px up to laptop sizes, the login/logout would once again align right on the nav dropdown. I attempted to tailor my JavaScrpit to target these screen sizes also but could not get the code to apply.
+- **Fix**: Remove the JavaScript functionality for this and align the log nav button the same as Home and Profile, moving the 'You are not logged in' or 'You are logged in as..' message to the right of the navbar to fill the remaining space and enhance design.
+
 ### Bug 15
 - **Issue**: Created UserProfile model and view after creating users.
 - **Cause**: Implemented Profile feature last, after populating site for testing.
 - **Fix**: Use python shell commands to loop through and create user profiles for each user without one.
------------------------ Image
+
+<details><summary>Django Shell Profile Fix</summary><img src="docs/shell-profile-fix.png"></details>
 
 ### Bug 16
 - **Issue**: Could not get default image to render on profile page.
@@ -422,9 +429,9 @@ I changed my perspective and decided to try targetting with JavaScript which was
 ```
 from level_lounge.models import UserProfile
 default_image_path = 'profile_pics/default-avatar-icon.jpg'
-# Query all profiles that don't have a profile picture set
+# Queried all profiles that don't have a profile picture set
 profiles_without_images = UserProfile.objects.filter(profile_picture='')
-# Update each profile to have the default image
+# Updated each profile to have the default image
 for profile in profiles_without_images:
     profile.profile_picture = default_image_path
     profile.save()
