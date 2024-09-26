@@ -824,7 +824,7 @@ This project was built with the support of various communities, resources, and i
 
 ### **Technical Assistance and Tools**
 
-- **ChatGPT**: ChatGPT was used to break down complex code into manageable parts and write small code snippets that were beyond my current skill level. All contributions from ChatGPT are documented within the codebase through comments to ensure proper acknowledgment. ChatGPT also assisted in providing explanations and advice on improving the readability and efficiency of my code. Also, tables were created by inputting all information into ChatGPT, and asking it to give it to me in table format, making documentation much quicker and allowing me to spend more time testing my features.
+- **ChatGPT**: ChatGPT was used to break down complex code into manageable parts and write small code snippets that were beyond my current skill level. All contributions from ChatGPT are documented within the codebase through comments to ensure proper acknowledgment. ChatGPT also assisted in providing explanations and advice on improving the readability and efficiency of my code and readme, sometimes correcting grammar mistakes and poor punctuation and leading to an overall better documentation and project as a whole. Also, tables were created by inputting all information into ChatGPT, and asking it to give it to me in table format, making documentation much quicker and allowing me to spend more time testing my features.
 
 - **[Lucidchart](https://www.lucidchart.com/)**: Lucidchart was utilized for planning and designing the database structure and user flow diagrams. These visual aids were crucial for conceptualizing complex relationships and ensuring the database met the application’s needs.
 
