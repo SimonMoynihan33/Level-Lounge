@@ -162,7 +162,7 @@
 | Comment box working                                            | Users can add comments                               | Works as expected         | Pass  |
 | Submit comment button                                          | Submits comment successfully                         | Works as expected         | Pass  |
 | Comments show up when one is posted                            | Comments display correctly after posting             | Works as expected         | Pass  |
-| Validation message for comment                                 | Validation messages show for incorrect inputs        | Works as expected         | Pass  |
+| Validation message for comment                                 | Validation messages show for successful comments        | Works as expected         | Pass  |
 | Reply button                                                   | Opens reply box dropdown                            | Works as intended         | Pass  |
 | Submit reply button                                            | Submits reply successfully                          | Works as expected         | Pass  |
 | Reply to reply                                                 | Replies can nest correctly                          | Works as expected         | Pass  |

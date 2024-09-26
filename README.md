@@ -124,150 +124,186 @@ The color scheme of Level Lounge is designed to create an inviting and energetic
 
 ### Navigation
 <details><summary>Navigation</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-nav.png">
 </details>
 
 The navigation bar provides easy access to the main sections of the forum, such as Home, Profile, and Login/Logout. It is styled for clear visibility and includes hover effects for an interactive feel. The navigation ensures users can seamlessly browse the forum, enhancing the overall user experience.
 
+### Logged-Out Navigation
+<details><summary>Logged-Out Navigation</summary> 
+<img src="docs/features/feat-nav-logged-out.png">
+</details>
+
+When logged out, the navigation adjusts to show options relevant to non-authenticated users, like login and signup links, enhancing accessibility for new and returning visitors. Also, hiding the nav link for the profile as a logged out user cannot have a profile.
+
 ### Login
 <details><summary>Login</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-login.png">
 </details>
 
 The login functionality uses Django's built-in `LoginView` to authenticate users, ensuring secure access to the platform. It allows users to log in and access personalized features like posting content and interacting with other users. This feature is crucial for maintaining the integrity of the forum and protecting user data.
 
 ### Logout
 <details><summary>Logout</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-signout.png">
 </details>
 
 The logout function allows users to safely exit their accounts, clearing their session data. This feature, also handled by Django's built-in `LogoutView`, ensures user data is protected and offers peace of mind, especially for users accessing the forum on shared devices.
 
 ### Signup
 <details><summary>Signup</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-signup.png">
 </details>
 
 The signup feature allows new users to register for an account, granting them access to all the interactive features of Level Lounge. By enabling user registration, the forum grows its community, encouraging more engagement and content creation.
 
 ### Footer
 <details><summary>Footer</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-footer.png">
 </details>
 
 The footer provides additional navigation links and other important information, creating a cohesive and professional look for the site. It is styled consistently with the rest of the website, keeping the design user-friendly and visually appealing.
 
 ### Landing Page
 <details><summary>Landing Page</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-landing.png">
 </details>
 
 The landing page welcomes users to Level Lounge, offering a quick overview of the forum’s purpose and main features. It serves as the entry point and sets the tone for the rest of the site, engaging users right from their first interaction.
 
 ### Profile Page
 <details><summary>Profile Page</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-profile.png">
 </details>
 
 The profile page displays user information, including their bio, profile picture, posts, and other user-specific data like drafts and joined date. This page allows users to personalize their presence on the forum and easily manage their content, fostering a sense of community.
 
 ### Create Post
 <details><summary>Create Post</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-create-post.png">
 </details>
 
 The Create Post feature allows users to contribute to the forum by writing and sharing content. This feature supports user-generated content, which is essential for keeping the forum dynamic and engaging.
 
+### Logged-Out Create Post Button
+<details><summary>Logged-Out Create Post Button</summary> 
+<img src="docs/features/feat-logged-out-create-post-btn.png">
+</details>
+
+When logged out, the create post button is replaced with a link that directs users to the login page, guiding them to sign in or register before contributing to the forum.
+
 ### Edit Post Page
 <details><summary>Edit Post Page</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-edit-post.png">
 </details>
 
 The Edit Post Page enables users to modify their posts after publishing, allowing them to correct errors or update content as needed. This flexibility improves the quality of content on the forum and empowers users to maintain their contributions.
 
 ### Delete Post Modal
 <details><summary>Delete Post Modal</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-delete-modal.png">
 </details>
 
 The Delete Post Modal provides a confirmation dialog when a user attempts to delete a post, preventing accidental deletions. It enhances user experience by ensuring that significant actions like deletions are intentional.
 
 ### Edit Profile Modal
 <details><summary>Edit Profile Modal</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-edit-profile-modal.png">
 </details>
 
 The Edit Profile Modal allows users to update their profile information, such as their bio and profile picture. This feature supports personalization, helping users express themselves within the community.
 
 ### Comments
 <details><summary>Comments</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-comments.png">
 </details>
 
 The comments feature allows users to engage with posts through feedback and discussions. It is a core element of interaction on the forum, encouraging communication and deeper engagement with the content.
 
+### Logged-Out Comments
+<details><summary>Logged-Out Comments</summary> 
+<img src="docs/features/feat-comments-logged-out.png">
+</details>
+
+When logged out, users can still view comments but cannot interact with them, maintaining transparency and readability without compromising the integrity of user interactions.
+
 ### Nested Replies
 <details><summary>Nested Replies</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-nested-comments.png">
 </details>
 
 Nested replies enable users to respond to comments, creating threaded discussions. This feature allows for organized conversations, making it easier for users to follow and participate in ongoing discussions.
 
 ### Reply Button Dropdown
 <details><summary>Reply Button Dropdown</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-reply-dropdown.png">
 </details>
 
 The Reply Button Dropdown offers a simple way for users to respond directly to comments with options to tag or address specific replies. This feature streamlines user interaction and makes the comment section more intuitive.
 
 ### Profile Image
 <details><summary>Profile Image</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-profile-image.png">
 </details>
 
 Profile images allow users to upload and display a personal photo, adding a visual element to their presence on the forum. This feature supports personalization and helps to foster a sense of identity and community among users.
 
 ### Default Avatar
 <details><summary>Default Avatar</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-default-profile-image.png">
 </details>
 
 The default avatar is displayed when a user has not set a custom profile image, ensuring a consistent and professional appearance across the forum. It also encourages users to personalize their profiles by setting their own images.
 
 ### User Drafts
 <details><summary>User Drafts</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-drafts.png">
 </details>
 
 The User Drafts feature allows users to save their posts as drafts before publishing, enabling them to work on content over time. This feature supports content creation by giving users the flexibility to perfect their posts before sharing.
 
 ### Users Posts
 <details><summary>Users Posts</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-users-posts.png">
 </details>
 
 The Users Posts section on the profile page shows all posts created by the user, making it easy for them and others to see their contributions. This feature helps highlight active members of the community and encourages more interaction.
 
 ### Joined On
 <details><summary>Joined On</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-joined-on.png">
 </details>
 
 The "Joined On" date on the profile page shows when a user became a member of the forum, giving context to their activity and presence. It helps build a sense of longevity and community among users.
 
 ### Posts Created
 <details><summary>Posts Created</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-posts-created.png">
 </details>
 
 This feature displays the total number of posts created by a user on their profile, highlighting their level of activity and contribution to the forum. It provides recognition for active users and encourages engagement.
 
 ### Python Messages
 <details><summary>Python Messages</summary> 
-<img src="./docs/images/">
+<img src="docs/features/feat-python-messages.png">
 </details>
 
 Python messages are used throughout the application to provide feedback to users, such as success or error messages when performing actions. These messages improve user experience by offering clear communication about what’s happening on the site.
+
+### Drafts with No Comments
+<details><summary>Drafts with No Comments</summary> 
+<img src="docs/features/feat-drafts-no-comments.png">
+</details>
+
+When a post is saved as a draft (status set to 0), comments are disabled to maintain privacy and prevent interaction until the post is published. This feature ensures that drafts remain a personal workspace for users to refine their content before sharing it with the community.
+
+### 404 Page
+<details><summary>404 Page</summary> 
+<img src="docs/features/feat-404-page.png">
+</details>
+
+The custom 404 page is displayed when users attempt to access a page that does not exist. It provides a friendly message and a link to navigate back to safety, enhancing the overall user experience by helping users find their way back without frustration.
+
 
 ## Future Features 🔮
 
