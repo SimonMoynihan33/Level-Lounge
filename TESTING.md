@@ -105,29 +105,166 @@
 
 `One unused variable toggleReplyForm()` is actually in use for the reply form so this metric is irrelevant.
 
+### Python
 
+| File Validation                  | Details                                                                                                                | Result                    |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| All Project Files                | <details><summary>Validation Details</summary><img src="docs/validation/python/python-no-errors.png"></details>       | <mark>PASS</mark>         |
+| Django Settings (`settings.py`)  | <details><summary>Validation Details</summary><img src="docs/validation/python/python-errors.png"></details>          | <mark>PASS (Warnings)</mark> |
+
+### Explanation
+
+- **PEP8 and CI Linter Validation**: 
+  - All project files, except for Django migrations and `settings.py`, were validated using PEP8 standards and also individually tested in the CI Linter. Every file showed no errors or warnings, confirming compliance with coding standards.
+
+- **Settings File (`settings.py`)**:
+  - The errors observed in the `settings.py` file are related to Django-specific settings, which are configured according to Django’s official recommendations. These settings are not meant to be changed and are typical of Django projects. All other files passed validation with zero errors or warnings.
+
+
+### **Lighthouse Scores**
+
+| Page            | Desktop Validation                                                                                           | Mobile Validation                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| 404 Page        | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-404.png"></details>                        | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-404.png"></details>                         |
+| Create Post     | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-create-post.png"></details>                | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-create-post.png"></details>                 |
+| Edit Post       | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-edit-post.png"></details>                  | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-edit-post.png"></details>                   |
+| Home Page       | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-home.png"></details>                       | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-home.png"></details>                        |
+| Login Page      | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-login.png"></details>                      | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-login.png"></details>                       |
+| Logout Page     | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-logout.png"></details>                     | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-logout.png"></details>                      |
+| Post Detail     | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-post.png"></details>                       | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-post.png"></details>                        |
+| Profile Page    | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-profile.png"></details>                    | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-profile.png"></details>                     |
+| Sign Up Page    | <details><summary>Desktop</summary><img src="docs/lighthouse/lh-d-signup.png"></details>                     | <details><summary>Mobile</summary><img src="docs/lighthouse/lh-m-signup.png"></details>    
+
+### **Feature Testing Summary**
+
+| Feature                                                        | Expected Outcome                                     | Actual Outcome            | Pass  |
+| -------------------------------------------------------------- | ---------------------------------------------------- | ------------------------- | ----- |
+| **Mobile Specific**                                            |                                                      |                           |       |
+| Logo brings you home                                           | Logo navigates to home page                          | Works as expected         | Pass  |
+| Dropdown to show nav                                           | Mobile nav dropdown displays correctly               | Works as expected         | Pass  |
+| Login link in nav                                              | Login link visible and functional in nav             | Works as expected         | Pass  |
+| Signup link in login page                                      | Signup link present on login page                    | Works as expected         | Pass  |
+| Signup                                                         | User can successfully sign up                        | Works as expected         | Pass  |
+| Signout                                                        | User can successfully sign out                       | Works as expected         | Pass  |
+| Login                                                          | User can successfully log in                         | Works as expected         | Pass  |
+| Validation for all log-in/out/up                               | Proper validation messages display                   | Works as expected         | Pass  |
+| All nav buttons                                                | Nav buttons work correctly                           | Works as expected         | Pass  |
+| Signout / go back button                                       | Signout redirects properly                           | Works as expected         | Pass  |
+| 'Signed in as...' / 'You are not logged in' showing in nav     | Nav displays correct user status                     | Works as expected         | Pass  |
+| Create post button                                             | Button navigates to create post page                 | Works as expected         | Pass  |
+| Link to each post                                              | Links navigate to the correct posts                  | Works as expected         | Pass  |
+| Pagination button                                              | Pagination works correctly                           | Works as expected         | Pass  |
+| **Post Criteria**                                              |                                                      |                           |       |
+| Cannot edit or delete a post if it is not yours                | Edit/delete options hidden for non-owners            | Works as expected         | Pass  |
+| Can edit and delete if it is your post                         | Edit/delete options available for owners             | Works as expected         | Pass  |
+| Shows the post you clicked                                     | Correct post is displayed                            | Works as expected         | Pass  |
+| Hyperlink in title bringing you to user’s page                 | Post title links to user’s profile                   | Works as expected         | Pass  |
+| Comment box working                                            | Users can add comments                               | Works as expected         | Pass  |
+| Submit comment button                                          | Submits comment successfully                         | Works as expected         | Pass  |
+| Comments show up when one is posted                            | Comments display correctly after posting             | Works as expected         | Pass  |
+| Validation message for comment                                 | Validation messages show for incorrect inputs        | Works as expected         | Pass  |
+| Reply button                                                   | Opens reply box dropdown                            | Works as intended         | Pass  |
+| Submit reply button                                            | Submits reply successfully                          | Works as expected         | Pass  |
+| Reply to reply                                                 | Replies can nest correctly                          | Works as expected         | Pass  |
+| 'Replying to...' indicating which comment you are replying to  | Shows which comment the reply addresses             | Works as expected         | Pass  |
+| Comment author hyperlink bringing you to their page            | Links correctly to author’s profile                 | Works as expected         | Pass  |
+| **Create Post Criteria**                                       |                                                      |                           |       |
+| Create post button                                             | Opens create post form                              | Works as expected         | Pass  |
+| Required fields                                                | Validates title and content fields                  | Works as expected         | Pass  |
+| Picking draft does not publish the post                        | Draft posts are saved but not published             | Works as expected         | Pass  |
+| Published publishes the post                                   | Post is visible after publishing                    | Works as expected         | Pass  |
+| Post goes to top of home page                                  | Newly published posts appear at the top             | Works as expected         | Pass  |
+| **Draft Criteria**                                             |                                                      |                           |       |
+| Comments are off for drafts                                    | Comments cannot be added to drafts                  | Works as expected         | Pass  |
+| Delete/edit buttons                                            | Buttons work correctly for drafts                   | Works as expected         | Pass  |
+| **Edit Criteria**                                              |                                                      |                           |       |
+| Edit post button brings you to form where you can edit post    | Edit form opens correctly                           | Works as expected         | Pass  |
+| User can still pick draft                                      | Option to save as draft available                   | Works as expected         | Pass  |
+| User can publish                                               | Published option works correctly                    | Works as expected         | Pass  |
+| Published post has comments                                    | Comments enabled after publishing                   | Works as expected         | Pass  |
+| **Profile Criteria**                                           |                                                      |                           |       |
+| Posts created updates as you post                              | Posts created count updates dynamically             | Works as expected         | Pass  |
+| Posts section dynamically updates for each post                | Posts are shown correctly on profile                | Works as expected         | Pass  |
+| Drafts do not overlap, if one is changed it goes to other section | Drafts and published posts are correctly sorted  | Works as expected         | Pass  |
+| Edit draft button                                              | Edit button works correctly for drafts              | Works as expected         | Pass  |
+| Clicking post brings you to the post                           | Post links navigate correctly                       | Works as expected         | Pass  |
+| Edit info button                                               | Opens edit profile modal                            | Works as expected         | Pass  |
+| Bio update after save changes                                  | Bio updates immediately after saving                | Works as expected         | Pass  |
+| Profile picture updates after save changes                     | Profile picture updates correctly                   | Works as expected         | Pass  |
+| Option to clear back to default profile picture                | Clear profile picture function works                | Works as expected         | Pass  |
+| Profile picture shows, and if not default shows                | Profile pictures display correctly                  | Works as expected         | Pass  |
+| **Logged Out Criteria**                                        |                                                      |                           |       |
+| Nav changes from logout to login                               | Nav correctly updates when logged out               | Works as expected         | Pass  |
+| Profile link in nav not visible                                | Profile link hidden when logged out                 | Works as expected         | Pass  |
+| All profiles can still be viewed while logged out              | Profiles accessible while logged out                | Works as expected         | Pass  |
+| Comments can be viewed when logged out                         | Comments visible without logging in                 | Works as expected         | Pass  |
+| Posts can be viewed when logged out                            | Posts accessible while logged out                   | Works as expected         | Pass  |
+| Create post button is link to log in                           | Redirects to login when not authenticated           | Works as expected         | Pass  |
+| Cannot leave comment if logged out                             | Commenting disabled for logged-out users            | Works as expected         | Pass  |
+| Cannot leave reply if logged out                               | Replying disabled for logged-out users              | Works as expected         | Pass  |
+| Comment button changed to link to log in                       | Comment button directs to login page                | Works as expected         | Pass  |
+| Reply dropdown not available, changed to link to log in        | Reply options disabled, link provided to log in     | Works as expected         | Pass  |
+| Clicking posts on other users profile brings you to said post  | Links navigate correctly from profile posts         | Works as expected         | Pass  |
+| Joined on field in profile shows the exact date joined on      | Displays correct join date                          | Works as expected         | Pass  |
+| **Footer Criteria**                                            |                                                      |                           |       |
+| Footer at bottom of page                                       | Footer sticks to the bottom of the page             | Works as expected         | Pass  |
+| Contact section                                                | Contact information visible in footer               | Works as expected         | Pass  |
+| Instagram link                                                 | Link navigates to Instagram                         | Working                  | Pass  |
+| All footer links                                                    | Footer links open in new tabs                       | Working                  | Pass  |
+
+
+### **User Authentication Tests**
+
+These tests are designed to ensure that the basic user authentication features of Level Lounge, like logging in and logging out, are working correctly. They’re set up using Django’s `TestCase` class, which allows you to simulate user interactions with the site in a safe testing environment. This environment uses a temporary mock database that’s created at the start of the tests and destroyed once they’re finished, so there’s no risk of affecting your real data.
+
+#### **How the Tests Work**
+
+1. **Setup (`setUp` Method)**
+   - This method sets up a test user with a username (`testuser`) and a password (`password123`). This user will be used in all the authentication tests to keep things consistent and straightforward.
+
+2. **Login Test (`test_login`)**
+   - The purpose of this test is to make sure users can log in correctly when they provide the right credentials.
+   - It does this by sending a POST request to the login URL with the test user’s details. After that, it checks if the response status code is 302, which indicates a successful login that redirects the user to another page.
+   - The test also verifies that the user is actually logged in by checking the `is_authenticated` status.
+
+3. **Logout Test (`test_logout`)**
+   - This test checks if a user who is logged in can successfully log out.
+   - First, it logs the test user in using Django’s `client.login` method. Then, it sends a POST request to the logout URL.
+   - The expected outcome is another 302 status code, showing that the logout was successful and the user was redirected.
+   - Finally, it confirms that the user is logged out by checking that the `is_authenticated` status is now `False`.
+
+#### **Why These Tests Matter**
+
+- These tests run against a mock database, so you don’t have to worry about messing up your real data. After each test, everything is wiped clean, allowing you to run these tests repeatedly without any long-term impact.
+- By testing these core authentication functions, you can be confident that users will have a smooth and secure experience when logging in and out of Level Lounge. It’s a straightforward but crucial part of keeping the platform reliable and user-friendly.
+
+These tests can be run anytime using Django’s built-in test runner (`python manage.py test`), making them a handy tool to catch issues early before they affect your users.
+
+#### **Python Testing Results**
+
+<details><summary>tests.py</summary><img src="docs/testing/python-testing.png">
 
 ## Bugs
 
 ### Bug 01
-- Issue: `django.core.exceptions.ImproperlyConfigured: allauth.account.middleware.AccountMiddleware must be added to settings.MIDDLEWARE`.
-- Cause: Django Allauth expected a specific middleware, `allauth.account.middleware.AccountMiddleware` to be added to 'MIDDLEWARE' settings.
-- Fix: Add `'allauth.account.middleware.AccountMiddleware',`
+- **Issue**: `django.core.exceptions.ImproperlyConfigured: allauth.account.middleware.AccountMiddleware must be added to settings.MIDDLEWARE`.
+- **Cause**: Django Allauth expected a specific middleware, `allauth.account.middleware.AccountMiddleware` to be added to 'MIDDLEWARE' settings.
+- **Fix**: Add `'allauth.account.middleware.AccountMiddleware',`
 
 ### Bug 02
-- Issue: When I try to add a comment through the Django admin site, I'm met with a Server Error (500). 
-- Cause: When ```Debug=True``` was set, I was told my error was that the 'Comment' object has no attribute 'body'.
-- Fix: Change attribute 'self.body' to 'self.content'.
+- **Issue**: When I try to add a comment through the Django admin site, I'm met with a Server Error (500). 
+- **Cause**: When ```Debug=True``` was set, I was told my error was that the 'Comment' object has no attribute 'body'.
+- **Fix**: Change attribute 'self.body' to 'self.content'.
 
 ### Bug 03
-- Issue: When the comment was saved, an error that user was not defined showed.
-- Cause: This was because I had defined 'author' in the model, but used 'user' in the template literal inside the dunder method of the Comment class.
-- Fix: Define as user instead of author to keep consistency with other models.
+- **Issue**: When the comment was saved, an error that user was not defined showed.
+- **Cause**: This was because I had defined 'author' in the model, but used 'user' in the template literal inside the dunder method of the Comment class.
+- **Fix**: Define as user instead of author to keep consistency with other models.
 
 ### Bug 04 
-- Issue: Three commits with same name and minute changes. Commits ` c93ac1d`, `0a5d8ef` and `d5c30f7` are all the same commits. This is because I added posts.json to my gitignore file, but it still pushed to github. All three of these commits were futile attempts at deleting the previous one, and updating it so that posts.json was no longer being pushed to Github. After realising this did not work and I could not delete these commits, I searched online for solutions. This was a lesson learned in that you cannot, to my knowledge, delete commits and not to try to re-do a previous commit logged.
-- Cause: Wrong filepath for posts.json.
-- Fix: After alot of searching online and speaking to some developers on stackoverflow, the solution I found was:
+- **Issue**: Three commits with same name and minute changes. Commits ` c93ac1d`, `0a5d8ef` and `d5c30f7` are all the same commits. This is because I added posts.json to my gitignore file, but it still pushed to github. All three of these commits were futile attempts at deleting the previous one, and updating it so that posts.json was no longer being pushed to Github. After realising this did not work and I could not delete these commits, I searched online for solutions. This was a lesson learned in that you cannot, to my knowledge, delete commits and not to try to re-do a previous commit logged.
+- **Cause**: Wrong filepath for posts.json.
+- **Fix**: After alot of searching online and speaking to some developers on stackoverflow, the solution I found was:
   1. Fix filepath in .gitignore
   2. Force Git to stop tracking the file with the command `git rm --cached level_lounge/fixtures/posts.json`
   3. Commit changes
@@ -144,40 +281,40 @@
 This cleared the file from my repo and its history and stopped Git from tracking it in future commits.
 
 ### Bug 05
-- Issue: Error when `python3 loaddata posts` command was run.
-- Cause: My `created_at` field was called `created_on`, causing an error as the fields didn't match.
-- Fix: Change field in creds.json file to `created_at`
+- **Issue**: Error when `python3 loaddata posts` command was run.
+- **Cause**: My `created_at` field was called `created_on`, causing an error as the fields didn't match.
+- **Fix**: Change field in creds.json file to `created_at`
 
 ### Bug 06
-- Issue: Custom CSS file not applying to html page.
-- Cause: MIME type error.
-- Fix: To fix this I changed around the static path in settings.py to no avail, checked everything twice and all code was as it should be. I moved the static file into the my_project directory, and then moved it back into the top level of the directory which fixed the issue!.
+- **Issue**: Custom CSS file not applying to html page.
+- **Cause**: MIME type error.
+- **Fix**: To fix this I changed around the static path in settings.py to no avail, checked everything twice and all code was as it should be. I moved the static file into the my_project directory, and then moved it back into the top level of the directory which fixed the issue!.
 
 ### Bug 07 
-- Issue: Comment form showing three times staxcked on top of eachother.
-- Cause: 
+- **Issue**: Comment form showing three times staxcked on top of eachother.
+- **Cause**: 
 
 ### Bug 08
-- Issue: Could not get comment content to show.
-- Cause: Was referencing the content as 'body' when it is content in my model.
-- Fix: Change 'body' tags to content throughout post_detail.html and py files.
+- **Issue**: Could not get comment content to show.
+- **Cause**: Was referencing the content as 'body' when it is content in my model.
+- **Fix**: Change 'body' tags to content throughout post_detail.html and py files.
 
 ### Bug 09 
 
 A large bug I encountered was obtaining nested comments. The Code Institute walkthrough views and template did not support this feature, but I felt it was an essential aspect of a discussion based forum website. Most of the time, when I added a view or updated my post_detail template, I ecountered server errors or replies would not show at all.
 
 ### Bug 10 
-- Issue: `RecursionError` when attempting to comment.
-- Cause: I created an infinite loop as I did not handle checks if there is no replies properly.
-- Fix: Wrap the `{% include %}` tag in a conditional to check if there are replies.
+- **Issue**: `RecursionError` when attempting to comment.
+- **Cause**: I created an infinite loop as I did not handle checks if there is no replies properly.
+- **Fix**: Wrap the `{% include %}` tag in a conditional to check if there are replies.
 
 ### Bug 11
-- Issue: `RecursionError` when attempting to reply to a comment.
-- Cause: This was because I was not terminating the logic properly when displaying the replies, causing replies to display infinitely.
-- Fix: Add for loop to comments.html to iterate through replies and end when there are no more replies, and call `exists()` method to make sure comment replies exist.
+- **Issue**: `RecursionError` when attempting to reply to a comment.
+- **Cause**: This was because I was not terminating the logic properly when displaying the replies, causing replies to display infinitely.
+- **Fix**: Add for loop to comments.html to iterate through replies and end when there are no more replies, and call `exists()` method to make sure comment replies exist.
 
 ### Bug 12
-- Issue: Too many replies can affect mobile view and does not look good. Applying hidden class using django templating language did seem to work in comments.html.
+- **Issue**: Too many replies can affect mobile view and does not look good. Applying hidden class using django templating language did seem to work in comments.html.
 - Attempted fixes: My first attempt was to use django templating language to apply a css class to comments if there was more than three, but the syntax would not work due to the first `>` tag stopping the rest of the code from running in this example:
 ```
 {% for reply in comment.replies.all %}
@@ -191,38 +328,38 @@ A large bug I encountered was obtaining nested comments. The Code Institute walk
 I also tried running the loop outside of the div element to no avail. I also tried adding the `<style>` tag within the templating language but found the same issue as the first solution.
 
 I changed my perspective and decided to try targetting with JavaScript which was fruitless.
-- Cause: Drawbacks with templating language.
-- Fix: After placing console.logs in my hideReplies function, I found that my `.reply` class was not being applied to each reply, therefore not being targetted by JavaScript or the CSS.
+- **Cause**: Drawbacks with templating language.
+- **Fix**: After placing console.logs in my hideReplies function, I found that my `.reply` class was not being applied to each reply, therefore not being targetted by JavaScript or the CSS.
 
 ### Bug 13
-- Issue: JavaScript for showing and hiding replies did not function as intended.
-- Fix: Remove show and collapse functionality as it had unfixed bugs and within the time frame was not plausible to properly implement.
+- **Issue**: JavaScript for showing and hiding replies did not function as intended.
+- **Fix**: Remove show and collapse functionality as it had unfixed bugs and within the time frame was not plausible to properly implement.
 
 ### Bug 14
-- Issue: Cannot get Logout/Login list item to align centrally when the nav collapses on mobile devices. Only solutions I could think of with css aligned everything to the left, or would leave 'Home' and 'Profile' horizontal on one line, and 'Login' right aligned on the next line.
-- Cause: Failure overriding Bootstrap styling successfully.
-- Fix: The only fix I could think of was removing the `ms-auto` Bootstrap class depending on screen sizes. I achieved this through JavaScript.
+- **Issue**: Cannot get Logout/Login list item to align centrally when the nav collapses on mobile devices. Only solutions I could think of with css aligned everything to the left, or would leave 'Home' and 'Profile' horizontal on one line, and 'Login' right aligned on the next line.
+- **Cause**: Failure overriding Bootstrap styling successfully.
+- **Fix**: The only fix I could think of was removing the `ms-auto` Bootstrap class depending on screen sizes. I achieved this through JavaScript.
 
 ### Bug 15
-- Issue: Created UserProfile model and view after creating users.
-- Cause: Implemented Profile feature last, after populating site for testing.
-- Fix: Use python shell commands to loop through and create user profiles for each user without one.
+- **Issue**: Created UserProfile model and view after creating users.
+- **Cause**: Implemented Profile feature last, after populating site for testing.
+- **Fix**: Use python shell commands to loop through and create user profiles for each user without one.
 ----------------------- Image
 
 ### Bug 16
-- Issue: Could not get default image to render on profile page.
-- Cause: Media URL not working as intended.
-- Fix: Add `'MEDIA_URL': settings.MEDIA_URL,` to profile_view directly.
+- **Issue**: Could not get default image to render on profile page.
+- **Cause**: Media URL not working as intended.
+- **Fix**: Add `'MEDIA_URL': settings.MEDIA_URL,` to profile_view directly.
 
 ### Bug 27
-- Issue: Post count not updating on user profile.
-- Cause: Post count feature and signals added after posts were created, therefore not counting posts already created.
-- Fix: Run command in Django shell to iterate over posts and update the count.
+- **Issue**: Post count not updating on user profile.
+- **Cause**: Post count feature and signals added after posts were created, therefore not counting posts already created.
+- **Fix**: Run command in Django shell to iterate over posts and update the count.
 
 ### Bug 28
-- Issue: Profile picture error when trying to access a post from a user created before default profile image was set.
-- Cause: No Profile image for a user.
-- Fix: Run django shell and input code: 
+- **Issue**: Profile picture error when trying to access a post from a user created before default profile image was set.
+- **Cause**: No Profile image for a user.
+- **Fix**: Run django shell and input code: 
 
 ```
 from level_lounge.models import UserProfile
