@@ -139,7 +139,7 @@
 
 | Feature                                                        | Expected Outcome                                     | Actual Outcome            | Pass  |
 | -------------------------------------------------------------- | ---------------------------------------------------- | ------------------------- | ----- |
-| **Mobile Specific**                                            |                                                      |                           |       |
+| **Home page Specific**                                            |                                                      |                           |       |
 | Logo brings you home                                           | Logo navigates to home page                          | Works as expected         | Pass  |
 | Dropdown to show nav                                           | Mobile nav dropdown displays correctly               | Works as expected         | Pass  |
 | Login link in nav                                              | Login link visible and functional in nav             | Works as expected         | Pass  |
@@ -215,7 +215,7 @@
 
 ### **User Authentication Tests**
 
-These tests are designed to ensure that the basic user authentication features of Level Lounge, like logging in and logging out, are working correctly. They’re set up using Django’s `TestCase` class, which allows you to simulate user interactions with the site in a safe testing environment. This environment uses a temporary mock database that’s created at the start of the tests and destroyed once they’re finished, so there’s no risk of affecting your real data.
+My python tests are designed to ensure that the basic user authentication features of Level Lounge, like logging in and logging out, are working correctly. They’re set up using Django’s `TestCase` class, which allows you to simulate user interactions with the site in a safe testing environment. This environment uses a temporary mock database that’s created at the start of the tests and destroyed once they’re finished, so there’s no risk of affecting your real data.
 
 #### **How the Tests Work**
 
@@ -242,7 +242,7 @@ These tests can be run anytime using Django’s built-in test runner (`python ma
 
 #### **Python Testing Results**
 
-<details><summary>tests.py</summary><img src="docs/testing/python-testing.png">
+<details><summary>tests.py</summary><img src="docs/testing/python-testing.png"></details>
 
 ## Bugs
 
