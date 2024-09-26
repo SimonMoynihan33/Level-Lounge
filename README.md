@@ -168,7 +168,6 @@ The database schema for Level Lounge is designed to manage users, forum posts, c
   - `slug` (SlugField): Auto-generated from the title, used to create readable and SEO-friendly URLs.
   - `content` (TextField): The main content of the post, allowing for long-form text.
   - `created_at` (DateTimeField): Automatically records when the post is first created.
-  - `updated_at` (DateTimeField): Automatically updates when the post is edited, providing a record of changes.
   - `author` (ForeignKey): Links the post to the user who created it, establishing ownership and enabling user-specific queries.
   - `status` (IntegerField): Indicates whether the post is a draft or published, with choices defined as (0, "Draft") and (1, "Published").
   - `excerpt` (TextField): A brief summary of the post, displayed in listings or previews to give readers a quick idea of the content.

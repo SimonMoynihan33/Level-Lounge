@@ -52,15 +52,12 @@ class Post(models.Model):
         URLs.
         content (TextField): The main content of the post.
         created_at (DateTimeField): Timestamp when the post was created.
-        updated_at (DateTimeField): Timestamp when the post was last
-        updated.
         user (ForeignKey): Reference to the User who created the post.
     """
     title = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="forum_posts"
     )
