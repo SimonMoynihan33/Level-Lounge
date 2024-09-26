@@ -326,7 +326,7 @@ The Fibonacci Scale was used for task estimation, assigning point values to user
 
 #### Kanban Board
 
-The Kanban Board was utilized to visually track the status of tasks from To Do, In Progress, to Done. This board provided a clear and dynamic view of the project’s progress, helping to keep the team on track and ensuring that tasks were completed in an organized manner.
+The Kanban Board was utilized to visually track the status of tasks from To Do, In Progress, to Done. This board provided a clear and dynamic view of the project’s progress, helping to keep me on track and ensuring that tasks were completed in an organized manner.
 
 - <details><summary>Kanban Board</summary>
   <img src="docs/planning/agile/kanbanboard.png"></details>
@@ -556,7 +556,7 @@ As Level Lounge continues to grow, numerous features can be added to enhance use
 - **Feature Description**: Add gamification elements such as leaderboards, achievements, and daily challenges to encourage ongoing participation and competition among users.
 - **Benefit**: Gamification can significantly boost engagement by making the forum experience more fun and rewarding for active users.
 
-### 10. Dark Mode and Theme Customization
+### 10. Light Mode and Theme Customization
 - **Feature Description**: Provide options for users to switch between light and dark modes or customize the forum’s appearance with different themes.
 - **Benefit**: Theme customization improves accessibility, accommodates user preferences, and can enhance the overall aesthetic appeal of the forum.
 
@@ -580,23 +580,19 @@ As Level Lounge continues to grow, numerous features can be added to enhance use
 - **Feature Description**: Explore integrations with external APIs, such as gaming news, reviews, or live streams, to enrich the content and provide additional value to users.
 - **Benefit**: External integrations can keep the forum content fresh and relevant, offering users more reasons to stay engaged with the platform.
 
-### 16. Anonymous Posting and Incognito Mode
-- **Feature Description**: Allow users to post anonymously or browse the forum in incognito mode, providing a layer of privacy for sensitive discussions.
-- **Benefit**: This feature would encourage participation from users who may be hesitant to engage publicly, particularly on sensitive or controversial topics.
-
-### 17. Mobile App Development
+### 16. Mobile App Development
 - **Feature Description**: Develop a dedicated mobile app for the forum, offering push notifications, offline access, and a tailored user experience for mobile devices.
 - **Benefit**: A mobile app would increase accessibility, improve user engagement, and provide a more seamless browsing experience for users on the go.
 
-### 18. AI-Powered Recommendations
+### 17. AI-Powered Recommendations
 - **Feature Description**: Implement AI-driven recommendations for related threads, trending topics, or suggested content based on user activity and interests.
 - **Benefit**: Personalized recommendations keep users engaged by presenting them with content that matches their preferences, encouraging more interaction with the forum.
 
-### 19. Scheduled Posts and Content Calendar
+### 18. Scheduled Posts and Content Calendar
 - **Feature Description**: Allow users, particularly moderators or content creators, to schedule posts or announcements to be published at specific times.
 - **Benefit**: Scheduled posts can help maintain a steady flow of content, particularly during peak times, and allow for better content planning.
 
-### 20. Data Analytics Dashboard for Admins
+### 19. Data Analytics Dashboard for Admins
 - **Feature Description**: Create a comprehensive analytics dashboard for administrators to track user engagement, post popularity, and overall forum health metrics.
 - **Benefit**: This feature would help administrators make data-driven decisions to improve user experience, identify trends, and address potential issues proactively.
 
@@ -616,14 +612,14 @@ Level Lounge is built using a modern technology stack that ensures a responsive,
 ### Frameworks and Libraries
 
 - **[Django](https://www.djangoproject.com/)**: A high-level Python web framework that encourages rapid development and clean, pragmatic design. Django handles everything from URL routing and views to database interactions and security.
-- **[Bootstrap 5](https://getbootstrap.com/)**: Integrated via `django-crispy-forms` and `crispy-bootstrap5` to enhance UI components with modern, responsive design elements.
+- **[Bootstrap 5](https://getbootstrap.com/)**: Integrated to enhance UI components with modern, responsive design elements.
 
 ### Tools and Services
 
 - **[favicon.io](https://favicon.io/)**: Used to generate and customize favicons for the site, ensuring a branded look across tabs and bookmarks.
 - **[ChatGPT](https://openai.com/chatgpt/)**: Assisted in developing code, documentation, and troubleshooting during the project.
 - **[Heroku](https://www.heroku.com/)**: A cloud platform used for deploying the application, managing the production environment, and scaling the app as needed.
-- **[Git/GitHub](https://github.com/)**: Version control tools used for code management, collaboration, and deployment workflow, ensuring smooth development and release cycles.
+- **[Git/GitHub](https://github.com/)**: Version control tools used for code management and deployment workflow, ensuring smooth development.
 
 ### Key Dependencies
 
@@ -654,10 +650,10 @@ Level Lounge is built using a modern technology stack that ensures a responsive,
 
 ### Additional Tools and Validators
 
-- **[Lucidchart](https://www.lucidchart.com/)**: A visual workspace that combines diagramming, data visualization, and collaboration to accelerate understanding and drive innovation. Used for creating flowcharts, wireframes, and other design diagrams to help plan and visualize the application structure. 
+- **[Lucidchart](https://www.lucidchart.com/)**: Used for creating flowcharts, wireframes, and other design diagrams to help plan and visualize the application structure. 
 - **[autopep8](https://pypi.org/project/autopep8/)**: A tool that automatically formats Python code to conform to the PEP 8 style guide. This helps maintain consistent and clean code throughout the project.
 - **[JSHint](https://jshint.com/)**: A JavaScript code quality tool that helps detect errors and potential problems in JavaScript code. It is used to ensure that the JavaScript code in the project adheres to best practices and standards.
-- **[W3C HTML Validator](https://validator.w3.org/)**: A service provided by the World Wide Web Consortium (W3C) that checks the markup validity of web documents in HTML, XHTML, SMIL, MathML, etc. It helps ensure the HTML code is compliant with web standards.
+- **[W3C HTML Validator](https://validator.w3.org/)**: A service provided by the World Wide Web Consortium (W3C) that checks the markup validity of web documents in HTML. It helps ensure the HTML code is compliant with web standards.
 - **[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)**: A tool provided by the W3C to check Cascading Style Sheets (CSS) for errors and conformance to W3C standards. It ensures that the CSS is valid and optimized for web performance and compatibility.
 
 ---
@@ -670,18 +666,18 @@ All testing was carried out in my [TESTING.md](/TESTING.md) file.
 
 ## Deployment🚀
 
-Deploying your project correctly ensures that it runs smoothly in a production environment. Below are detailed instructions for deploying Level Lounge to Heroku, and how to fork and clone the repository for development or customization purposes.
+Deploying the project correctly ensures that it runs smoothly in a production environment. Below are detailed instructions for deploying Level Lounge to Heroku, and how to fork and clone the repository for development or customization purposes.
 
 ### Deploy to Heroku
 
 Heroku is a cloud platform that allows developers to deploy, manage, and scale applications. Here’s how to deploy Level Lounge to Heroku:
 
-1. **Set Up Your Heroku Account**:
-   - Create an account on [Heroku](https://www.heroku.com/) if you haven't already.
-   - Install the Heroku CLI on your machine: [Heroku CLI Installation Guide](https://devcenter.heroku.com/articles/heroku-cli).
+1. **Set Up a Heroku Account**:
+   - Create an account on [Heroku](https://www.heroku.com/).
+   - Install the Heroku CLI: [Heroku CLI Installation Guide](https://devcenter.heroku.com/articles/heroku-cli).
 
 2. **Prepare Your Application for Deployment**:
-   - Ensure all your dependencies are listed in `requirements.txt` and that your `Procfile` is correctly configured:
+   - Ensure all dependencies are listed in `requirements.txt` and that `Procfile` is correctly configured:
      ```
      web: gunicorn your_project_name.wsgi
      ```
@@ -693,32 +689,32 @@ Heroku is a cloud platform that allows developers to deploy, manage, and scale a
      - In your `.env` file:
        ```
        DEBUG=False
-       SECRET_KEY=your_secret_key
-       DATABASE_URL=your_database_url
+       SECRET_KEY=secret_key
+       DATABASE_URL=database_url
        ```
    - On Heroku, set these variables through the Heroku Dashboard under **Settings > Config Vars** or using the Heroku CLI.
 
 4. **Collect Static Files**:
-   - If your application uses static files, ensure they are collected and served correctly:
+   - Collect all static files before pushing:
      ```bash
      python manage.py collectstatic
      ```
 
 5. **Deploy Your Application**:
-   - Go to the **Deploy** tab in your Heroku app dashboard.
-   - Under **Deployment method**, connect your GitHub repository to Heroku.
-   - Scroll down to the **Manual deploy** section and select the branch you want to deploy (typically `main`).
+   - Go to the **Deploy** tab in the Heroku app dashboard.
+   - Under **Deployment method**, connect the GitHub repository to Heroku.
+   - Scroll down to the **Manual deploy** section and select the branch to deploy (typically `main`).
    - Click **Deploy Branch**. Heroku will automatically build and deploy your app based on the selected branch.
 
 6. **Check Your Deployment**:
-   - Visit your deployed app at `https://your-app-name.herokuapp.com` to ensure everything is working correctly.
+   - Visit your deployed app at `https://level-lounge-16ccb4ef258a.herokuapp.com/` to ensure everything is working correctly.
 
 ### Forking the Repository
 
 Forking a repository allows you to create a personal copy of someone else's project on GitHub, which you can modify without affecting the original. Here's how to fork the Level Lounge repository:
 
 1. **Fork the Repository**:
-   - Go to the GitHub repository you want to fork.
+   - Go to the GitHub repository.
    - Click the **Fork** button at the top right corner of the repository page. This will create a copy of the repository under your GitHub account.
 
 2. **Clone Your Fork**:
@@ -731,26 +727,12 @@ Forking a repository allows you to create a personal copy of someone else's proj
      cd your-forked-repo
      ```
 
-3. **Set Up Upstream Remote**:
-   - To keep your fork up-to-date with the original repository, add the upstream remote:
-     ```bash
-     git remote add upstream https://github.com/original-author/original-repo.git
-     ```
-   - Fetch the latest changes from upstream:
-     ```bash
-     git fetch upstream
-     ```
-   - Merge upstream changes into your local fork:
-     ```bash
-     git merge upstream/main
-     ```
-
 ### Cloning the Repository
 
 Cloning a repository allows you to create a local copy of a project from GitHub. Follow these steps to clone the Level Lounge repository:
 
 1. **Clone the Repository**:
-   - Navigate to the GitHub repository page you want to clone.
+   - Navigate to the GitHub repository.
    - Click the **Code** button and copy the URL (HTTPS, SSH, or GitHub CLI).
    - Open your terminal and run:
      ```bash
@@ -783,8 +765,6 @@ Cloning a repository allows you to create a local copy of a project from GitHub.
      ```bash
      python manage.py runserver
      ```
-   - Open your browser and go to `http://127.0.0.1:8000/` to see your local version of the app running.
-
 ---
 
 These detailed deployment steps ensure that your application is securely set up, running correctly, and easily forked or cloned for further development or customization. Always double-check your environment configurations, particularly `DEBUG` and secret keys, to maintain security and proper operation in production environments.
@@ -807,11 +787,11 @@ This project was built with the support of various communities, resources, and i
 
 - **David Bowers**: David Bowers, my mentor, provided consistent guidance, constructive feedback, and encouragement throughout the project. His advice on debugging and refining the project’s architecture was invaluable.
   
-- **Marko Tot Course Cohort**: Marko Tot from the Code Institute provided continuous support and feedback, helping to test features, brainstorm ideas, and solve various challenges that arose during the development process.
+- **Marko Tot Course Cohort**: Marko Tot from the Code Institute provided continuous support and feedback.
 
 ### **Learning Resources**
 
-- **[Code Institute](https://codeinstitute.net/)**: The “I Think Therefore I Blog” walkthrough from Code Institute was particularly influential in structuring the core features of the forum, including user authentication, CRUD functionalities, and comment threading. The project built upon the foundations learned from this walkthrough, extending and customizing the features to suit the specific needs of Level Lounge.
+- **[Code Institute](https://codeinstitute.net/)**: The “I Think Therefore I Blog” walkthrough from Code Institute was particularly influential in structuring the core features of the forum, including user authentication, CRUD functionalities, and commenting. The project built upon the foundations learned from this walkthrough, extending and customizing the features to suit the specific needs of Level Lounge.
 
 - **[CoolCoders-PP4 by Darrach Barneveld](https://github.com/DarrachBarneveld/CoolCoders-PP4)**: Darrach Barneveld’s GitHub repository provided inspiration for the structure and layout of this README and testing documentation. The detailed approach to documenting testing procedures and the clear presentation of project features served as a guiding example.
 
