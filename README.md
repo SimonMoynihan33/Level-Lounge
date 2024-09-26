@@ -44,7 +44,7 @@ Dive in, introduce yourself, and start exploring everything Level Lounge has to 
     - [MoSCoW Prioritization](#MoScoW)
     - [Fibonacci Scale](#fibonacci-scale)
     - [Kanban Board](#kanban-board)
-- [Features](#features)
+- [Features](#navigation)
   - [Navigation](#navigation)
     - [Login](#log-in)
     - [Logout](#log-out)
@@ -82,11 +82,67 @@ Dive in, introduce yourself, and start exploring everything Level Lounge has to 
 
 ## User Experience 👤
 
-### User Stories 
+The user experience of Level Lounge is designed to be intuitive, engaging, and inclusive for all types of users, from casual gamers to avid forum participants. The clean and responsive interface ensures easy navigation across devices, providing users with a seamless browsing experience whether they are on a desktop or mobile device. Key features such as user profiles, nested comments, and intuitive navigation menus are thoughtfully designed to promote community interaction and make content discovery straightforward. The platform emphasizes accessibility and usability, with clear visual hierarchies, readable typography, and interactive elements that respond smoothly to user actions. This focus on user-centric design aims to create a welcoming environment that encourages users to engage in meaningful discussions and return regularly to contribute to the community.
 
-### Site Goals 
+
+### User Stories
+
+Each user story consists of multiple tasks that align with acceptance criteria, all of which must be met for the story to be closed. The full breakdown of tasks and criteria is available in the [TESTING.md file](#testing).
+
+### Uncompleted Stories
+- S3: User can like posts - 5 points, Epic 2, Won't have
+- S4: Unit and Integration Testing - 8 points, Epic 5, Won't have
+- S3: Search and Filtering - 8 points, Epic 2, Won't have
+- S2: Basic Game Rating System - 5 points, Epic 2, Won't have
+- User Story 0.4: DiceBear Integration Planning - 3 points, Epic 6, Won't have
+
+### Completed Stories
+- S4: Display Post Count on Profile - 3 points, Epic 4, Should have
+- S3: Click Usernames to View Profiles - 5 points, Epic 2, Should have
+- S3: View Own Posts and Drafts - 8 points, Epic 2, Must have
+- S2: Edit Profile and Bio - 13 points, Epic 2, Must have
+- S1: Edit and delete forum posts - 5 points, Epic 3, Must have
+- User Story 0.7: User Logout - 3 points, Epic 1, Must have
+- User Story 0.6: User Login - 3 points, Epic 1, Must have
+- S3: Comments - 13 points, Epic 2, Should have
+- S1: Create Posts - 5 points, Epic 3, Must have
+- S3: Integrate DiceBear API for User Avatars - 5 points, Epic 4, Won't have
+- S4: Final Documentation - 8 points, Epic 3, Must have
+- S4: Final Deployment - 5 points, Epic 3, Must have
+- S4: Bug Fixes and Refinements - 8 points, Epic 5, Must have
+- S3: User Profile Setup - 5 points, Epic 1, Must have
+- S2: Forum Moderation Tools - 8 points, Epic 2, Must have
+- S2: Forum Creation and Setup - 8 points, Epic 2, Must have
+- S1: Admin Panel Setup - 8 points, Epic 3, Must have
+- S1: Database Setup - 5 points, Epic 3, Must have
+- S1: Home Page Setup - 3 points, Epic 2, Must have
+- S1: User Registration and Login - 8 points, Epic 1, Must have
+- User Story 0.5: User Stories and Backlog Creation - 3 points, Must have
+- User Story 0.3: Set Up Development Environment - 3 points, Epic 6, Must have
+- User Story 0.2: Database Design & ERD - 5 points, Epic 6, Must have
+- User Story 0.1: Wireframing & UI Design - 5 points, Epic 6, Must have
+
+### Site Goals
+
+The primary goal of Level Lounge is to foster a vibrant and interactive community centered around gaming discussions, reviews, and shared experiences. The site aims to provide a safe and moderated space where users can express their opinions, ask questions, and connect with like-minded individuals. By offering a range of features such as customizable user profiles, threaded discussions, and engaging content, Level Lounge seeks to build a loyal user base that values thoughtful dialogue and constructive feedback. The platform aspires to grow into a leading gaming forum that not only meets the needs of its current users but also attracts new members through continuous feature enhancements, excellent user support, and a commitment to community-driven content.
 
 ## Design 🎨
+
+The design of Level Lounge is centered around creating an engaging, user-friendly, and visually appealing environment that reflects the vibrant nature of the gaming community. The color palette uses a bold combination of gold (#ffd700) and dark tones, including deep grays and blues, to create a striking contrast that captures attention while maintaining a modern, sleek aesthetic. This design choice not only enhances the visual appeal but also improves readability, providing a comfortable browsing experience across all devices.
+
+### **Design Principles and Thought Process**
+- **Consistency**: Consistent use of colors, fonts, and button styles across all pages ensures a cohesive look and feel. This consistency helps users navigate intuitively, making interactions predictable and reducing cognitive load.
+  
+- **Contrast and Visual Hierarchy**: The high contrast between the bold gold and dark background elements establishes a clear visual hierarchy, guiding the user's eye naturally to important elements like navigation buttons, headings, and call-to-action links. This approach helps users quickly find what they’re looking for, enhancing overall usability.
+
+- **Accessibility**: Accessibility was a key consideration, with a focus on clear fonts, appropriate contrast ratios, and a layout that supports screen readers and keyboard navigation. The design ensures that all users, including those with visual impairments, can easily access and interact with the content.
+
+- **User-Centric Layouts**: Pages are designed with the user journey in mind. The landing page presents a welcoming introduction with clear navigation options, encouraging exploration of the forum. Profile pages are personalized, showcasing user details, bio, and contributions in an organized and visually appealing manner. The layout emphasizes ease of use, keeping the user’s needs at the forefront.
+
+- **Responsive Design**: The design is fully responsive, adapting seamlessly to different screen sizes, from desktops to mobile devices. This responsiveness ensures that the forum is accessible and functional across all devices, providing a consistent user experience.
+
+### **Why the UX is Good**
+The user experience is at the heart of Level Lounge’s design. By prioritizing readability, accessibility, and intuitive navigation, the site provides a welcoming environment that encourages user engagement. The clean, structured layouts reduce clutter, making it easy for users to find information, contribute to discussions, and manage their profiles. The vibrant color scheme reflects the energy of the gaming community, creating a fun yet professional atmosphere that appeals to a broad audience. Overall, the design choices support a user-centric approach, ensuring that Level Lounge is not just a forum, but a community space where users feel comfortable and motivated to participate.
 
 ### Color Scheme 
 
@@ -96,32 +152,192 @@ The color scheme of Level Lounge is designed to create an inviting and energetic
 <img src="docs/color-scheme.png">
 </details>
 
-### Database Schema 
+### Database Schema
 
-## Planning 🧬
+The database schema for Level Lounge is designed to manage users, forum posts, comments, and nested replies efficiently, providing a scalable foundation for the platform. Below is an overview of the key models, their fields, and the relationships between them, reflecting the core functionalities of the forum.
 
-### WireFrames 
+### **1. UserProfile Model**
+- **Description**: This model extends the default Django User model by adding custom fields to provide additional user profile details. It holds information such as the user's bio, profile picture, and post count.
+- **Fields**:
+  - `user` (OneToOneField): Links to the Django User model, establishing a one-to-one relationship to extend user details.
+  - `bio` (TextField): An optional field allowing users to add a personal biography.
+  - `profile_picture` (CloudinaryField): Manages user profile images, with a default avatar provided for those who do not upload one.
+  - `post_count` (PositiveIntegerField): Tracks the number of posts created by the user, updating dynamically as users contribute content.
+  - `joined_on` (DateTimeField): Automatically records the timestamp when the profile is created, providing a historical view of the user’s activity.
 
-### ERD 
+### **2. Post Model**
+- **Description**: Represents individual forum posts created by users. Each post contains a title, content, and status (draft or published). This model includes fields for timestamps, slugs for URL-friendly links, and an excerpt for summarizing the content.
+- **Fields**:
+  - `title` (CharField): The title of the post, required to be unique to ensure each post has a distinct identity.
+  - `slug` (SlugField): Auto-generated from the title, used to create readable and SEO-friendly URLs.
+  - `content` (TextField): The main content of the post, allowing for long-form text.
+  - `created_at` (DateTimeField): Automatically records when the post is first created.
+  - `updated_at` (DateTimeField): Automatically updates when the post is edited, providing a record of changes.
+  - `author` (ForeignKey): Links the post to the user who created it, establishing ownership and enabling user-specific queries.
+  - `status` (IntegerField): Indicates whether the post is a draft or published, with choices defined as (0, "Draft") and (1, "Published").
+  - `excerpt` (TextField): A brief summary of the post, displayed in listings or previews to give readers a quick idea of the content.
 
-### Agile Methodology 
+### **3. Comment Model**
+- **Description**: Manages comments on posts, supporting nested replies to create discussion threads. Comments can be direct responses to a post or replies to other comments, forming multi-level conversations.
+- **Fields**:
+  - `post` (ForeignKey): Links the comment to the associated post, ensuring comments are displayed in the correct context.
+  - `content` (TextField): The main text of the comment, allowing users to share their thoughts and feedback.
+  - `created_at` (DateTimeField): Automatically records the time the comment is made, showing the sequence of interactions.
+  - `user` (ForeignKey): Identifies the user who made the comment, linking feedback to its creator.
+  - `parent` (ForeignKey): An optional field allowing comments to be replies to other comments, supporting nested comment threads with multi-level hierarchies.
+
+### **Schema Relationships**
+- **UserProfile and User**: A one-to-one relationship extends the default User model with additional fields tailored to the forum's needs.
+- **Post and User**: Each post is linked to its creator via a foreign key, ensuring that all content is attributed correctly to the author.
+- **Comment and Post**: Comments are directly linked to their respective posts, maintaining contextual relevance and enabling threaded discussions.
+- **Nested Comments**: Through the `parent` field, comments can recursively reference other comments, creating nested threads for in-depth discussions.
+
+The Level Lounge database schema is designed to be flexible and robust, accommodating current functionality while providing room for future expansion. This structure ensures efficient data handling, clear relationships between user-generated content, and the scalability needed to support a growing community.
+
+## Planning🧬
+
+### WireFrames
+
+The initial wireframes for Level Lounge were created to guide the development of the site’s layout, navigation, and overall user interface. The designs included key pages such as Home, Forum, User Profile, and Login, with both desktop and mobile variations considered. As the project evolved, some artistic changes were made to enhance the visual appeal and functionality, aligning the design closer to the site’s vibrant gaming community theme. Notably, the About page was integrated into the landing page’s welcome message, as it was determined that a separate About page was unnecessary, streamlining the user experience.
+
+### Desktop Wireframes
+- <details><summary>About Page (Desktop)</summary>
+  <img src="docs/planning/wireframes/wf-d-about.png"></details>
+  - The original wireframe included a dedicated About page. However, during development, this page was merged into the landing page to simplify navigation and avoid redundancy. The information is now presented through a welcoming message that sets the tone for the site.
+
+- <details><summary>Forum Expand (Desktop)</summary>
+  <img src="docs/planning/wireframes/wf-d-forum-expand.png"></details>
+  - The forum wireframe envisioned an expandable thread view. The final design refined this feature to make navigation more intuitive, prioritizing clear visual hierarchies and improved readability.
+
+- <details><summary>Home Page (Desktop)</summary>
+  <img src="docs/planning/wireframes/wf-d-home.png"></details>
+  - The home page design remained largely faithful to the wireframe, with minor adjustments made to the color scheme and typography to enhance visual contrast and accessibility.
+
+- <details><summary>Logged In (Desktop)</summary>
+  <img src="docs/planning/wireframes/wf-d-logged-in.png"></details>
+  - This wireframe showcased the navigation adjustments when a user is logged in. Final tweaks included refining the dropdown menu and ensuring key actions like logout were easily accessible.
+
+- <details><summary>Login Page (Desktop)</summary>
+  <img src="docs/planning/wireframes/wf-d-login.png"></details>
+  - The login page wireframe was implemented as designed, with a focus on simplicity and clear feedback for authentication errors.
+
+- <details><summary>My Account Page (Desktop)</summary>
+  <img src="docs/planning/wireframes/wf-d-myaccount.png"></details>
+  - The My Account page was fully realized from this wireframe, allowing users to manage their profiles effectively. Some artistic changes included adjusting the layout for better information hierarchy.
+
+- <details><summary>Search Page (Desktop)</summary>
+  <img src="docs/planning/wireframes/wf-d-search.png"></details>
+  - The search functionality did not make the final product due to time constraints but will be added in future development.
+
+- <details><summary>Signup Page (Desktop)</summary>
+  <img src="docs/planning/wireframes/wf-d-signup.png"></details>
+  - The signup page followed the wireframe closely, with added emphasis on error validation messages to guide users through the registration process.
+
+### Mobile Wireframes
+- <details><summary>About Page (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-about.png"></details>
+  - The mobile wireframe for the About page was ultimately not used, as the content was integrated into the main landing page to reduce navigation layers and keep the user journey smooth.
+
+- <details><summary>Comments Section (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-comments.png"></details>
+  - The comments section was designed to handle nested replies, with adjustments made in the final implementation to improve readability on smaller screens.
+
+- <details><summary>Forum Page (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-forum.png"></details>
+  - The forum page wireframe was adapted with a focus on mobile responsiveness, ensuring that all elements were easily accessible without compromising on the forum's functionality.
+
+- <details><summary>Home Page (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-home.png"></details>
+  - The home page design was tailored for mobile, ensuring that navigation and core content were prioritized for a seamless browsing experience on the go.
+
+- <details><summary>Login Page (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-login.png"></details>
+
+- <details><summary>My Account Page (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-myaccount.png"></details>
+
+- <details><summary>Navigation Dropdown (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-navdrop.png"></details>
+  - The navigation dropdown wireframe highlighted how users would interact with site menus on mobile. The final implementation ensured smooth transitions and clear, tappable options.
+
+- <details><summary>Search Page (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-search.png"></details>
+
+- <details><summary>Signup Page (Mobile)</summary>
+  <img src="docs/planning/wireframes/wf-m-signup.png"></details>
+
+Overall, the wireframes served as a critical blueprint in the development process, guiding both the design and functionality of Level Lounge. The artistic changes made during implementation were aimed at enhancing the user experience, ensuring that the final product was not only visually appealing but also highly functional and accessible across devices.
+
+### ERD
+
+The Entity-Relationship Diagram (ERD) visually represents the database structure, detailing the relationships between users, posts, and comments. It ensures the data model aligns with the application's requirements, supporting core features like user profiles, nested comments, and post management.
+
+- <details><summary>ERD</summary>
+  <img src="docs/planning/erd.png"></details>
+
+### Flowchart
+
+The flowchart provides a high-level overview of the user interactions within Level Lounge. It maps out key user journeys, including account management, post creation, and comment interactions, ensuring a smooth and logical flow through the site.
+
+- <details><summary>Flowchart</summary>
+  <img src="docs/planning/flowchart-levlounge.png"></details>
+
+### Agile Methodology
+
+The Agile Methodology was employed throughout the development of Level Lounge to ensure a structured and efficient workflow. This approach facilitated iterative progress, regular feedback loops, and the prioritization of key features to meet project goals within the set deadlines. The development process was organized into sprints, identified by user story names such as S1, S2, etc., which effectively served as milestones for the project.
 
 #### Milestones
 
+The project was broken down into milestones that marked significant phases of development, ensuring that key objectives were met on time and in the correct order. Milestones helped track progress and served as checkpoints for reviewing completed work before moving forward.
+
+- <details><summary>Milestones</summary>
+  <img src="docs/planning/agile/milestones.png"></details>
+
 #### Epics
+
+Epics were used to group related user stories and tasks into larger units of work, making it easier to manage and prioritize features that spanned multiple sprints. Each epic represented a major component of the project, such as user authentication or forum functionality.
+
+- <details><summary>Epics</summary>
+  <img src="docs/planning/agile/epics.png"></details>
 
 #### Issues
 
-#### Labels
+Issues were logged in GitHub to track tasks, bugs, and enhancements throughout the project. These issues were essential for managing the workload, assigning tasks, and maintaining a clear record of progress. 
+
+**Issues Expanded**
+
+- <details><summary>Open Issues</summary>
+  <img src="docs/planning/agile/issues-open.png"></details>
+  
+- <details><summary>Closed Issues</summary>
+  <img src="docs/planning/agile/issues-closed.png"></details>
+  
+- <details><summary>Issue Criteria and Tasks</summary>
+  <img src="docs/planning/agile/issue-criteria-tasks.png"></details>
 
 #### MoSCoW
 
+The MoSCoW method was used to organize and prioritize tasks into Must Have, Should Have, Could Have, and Won't Have categories. A key learning experience was the realization that too many tasks were categorized as Must Haves, focusing heavily on the core functionality of a well-working forum. This left little time to implement Should Have or Could Have tasks, highlighting the importance of balancing priorities. Ideally, Must Haves should not take up more than 60% of any sprint.
+
+- <details><summary>MoSCoW Method</summary>
+  <img src="docs/planning/agile/moscow-method.png"></details>
+
 #### Fibonacci Scale
+
+The Fibonacci Scale was used for task estimation, assigning point values to user stories based on their complexity and effort required. This approach helped ensure that the workload was manageable within each sprint and that tasks were realistically planned.
+
+- <details><summary>Fibonacci Scale</summary>
+  <img src="docs/planning/agile/fibonacci.png"></details>
 
 #### Kanban Board
 
-## Features ⚙️
+The Kanban Board was utilized to visually track the status of tasks from To Do, In Progress, to Done. This board provided a clear and dynamic view of the project’s progress, helping to keep the team on track and ensuring that tasks were completed in an organized manner.
 
+- <details><summary>Kanban Board</summary>
+  <img src="docs/planning/agile/kanbanboard.png"></details>
+
+
+## Features⚙️
 ### Navigation
 <details><summary>Navigation</summary> 
 <img src="docs/features/feat-nav.png">
@@ -307,6 +523,90 @@ The custom 404 page is displayed when users attempt to access a page that does n
 
 ## Future Features 🔮
 
+As Level Lounge continues to grow, numerous features can be added to enhance user experience, improve engagement, and expand the platform’s functionality. Below are detailed descriptions of future features that could be implemented:
+
+### 1. Advanced Nested Comment Management
+- **Feature Description**: Currently, nested comments can become distorted if replies go too deep (15+ levels). An advanced management system for nested comments, including a collapse/expand function for deep comment threads, would enhance readability and usability.
+- **Benefit**: This would allow users to navigate comment threads more easily, reducing visual clutter and making long discussions easier to follow.
+
+### 2. Private Messaging System
+- **Feature Description**: Implementing a private messaging system would allow users to communicate directly with each other, fostering a more connected community.
+- **Benefit**: This feature would enhance user engagement by providing a way to discuss topics privately without leaving the forum platform.
+
+### 3. Enhanced User Profiles
+- **Feature Description**: Expand user profiles to include additional details such as user badges, activity history, favorite threads, and a list of followed users or topics.
+- **Benefit**: Enhanced profiles would encourage users to participate more actively and allow them to showcase their forum contributions.
+
+### 4. Reputation and Badging System
+- **Feature Description**: Introduce a reputation system where users earn points or badges for participating in discussions, receiving upvotes, or completing specific actions.
+- **Benefit**: This would incentivize positive contributions, reward active users, and build a sense of achievement within the community.
+
+### 5. Polls and Surveys
+- **Feature Description**: Allow users to create polls and surveys within threads to gather opinions or feedback on specific topics.
+- **Benefit**: Polls and surveys can drive engagement by allowing users to interact with content in a more dynamic way, sparking discussions based on poll results.
+
+### 6. Moderation Tools and Reporting System
+- **Feature Description**: Develop advanced moderation tools, including user reporting, automated flagging of inappropriate content, and a streamlined process for moderators to review and manage reports.
+- **Benefit**: Enhancing moderation capabilities will help maintain a positive community environment and ensure the forum remains welcoming and safe.
+
+### 7. Content Tagging and Search Filters
+- **Feature Description**: Introduce tagging for posts and advanced search filters to help users find relevant threads quickly based on tags, keywords, or categories.
+- **Benefit**: Improved searchability will enhance user experience by making it easier to discover content, encouraging users to engage with topics of interest.
+
+### 8. Topic Subscription and Notifications
+- **Feature Description**: Allow users to subscribe to threads, receive notifications for new replies, and get alerts when they are mentioned in a discussion.
+- **Benefit**: This feature keeps users engaged with content they are interested in and fosters a sense of ongoing conversation, even when users are not actively browsing the forum.
+
+### 9. Gamification Features
+- **Feature Description**: Add gamification elements such as leaderboards, achievements, and daily challenges to encourage ongoing participation and competition among users.
+- **Benefit**: Gamification can significantly boost engagement by making the forum experience more fun and rewarding for active users.
+
+### 10. Dark Mode and Theme Customization
+- **Feature Description**: Provide options for users to switch between light and dark modes or customize the forum’s appearance with different themes.
+- **Benefit**: Theme customization improves accessibility, accommodates user preferences, and can enhance the overall aesthetic appeal of the forum.
+
+### 11. SEO Optimization and Meta Tags
+- **Feature Description**: Implement advanced SEO techniques, including the addition of meta tags, structured data, and optimization of page load times to improve search engine rankings.
+- **Benefit**: Improved SEO will increase the forum’s visibility, attract new users, and help grow the community organically.
+
+### 12. Integration with Social Media
+- **Feature Description**: Enable users to share threads or posts directly to social media platforms such as Twitter, Facebook, and LinkedIn.
+- **Benefit**: Social media integration increases content reach, promotes community growth, and allows users to engage with the forum in new ways.
+
+### 13. Accessibility Enhancements
+- **Feature Description**: Implement accessibility improvements, such as screen reader compatibility, keyboard navigation support, and high-contrast modes.
+- **Benefit**: These enhancements will ensure that the forum is inclusive and accessible to users with disabilities, broadening the user base.
+
+### 14. Advertising and Sponsorship Opportunities
+- **Feature Description**: Introduce options for advertising and sponsored content within the forum, allowing brands to engage with the community in a structured way.
+- **Benefit**: This could create additional revenue streams to support the ongoing development and maintenance of the forum.
+
+### 15. Integration with External APIs
+- **Feature Description**: Explore integrations with external APIs, such as gaming news, reviews, or live streams, to enrich the content and provide additional value to users.
+- **Benefit**: External integrations can keep the forum content fresh and relevant, offering users more reasons to stay engaged with the platform.
+
+### 16. Anonymous Posting and Incognito Mode
+- **Feature Description**: Allow users to post anonymously or browse the forum in incognito mode, providing a layer of privacy for sensitive discussions.
+- **Benefit**: This feature would encourage participation from users who may be hesitant to engage publicly, particularly on sensitive or controversial topics.
+
+### 17. Mobile App Development
+- **Feature Description**: Develop a dedicated mobile app for the forum, offering push notifications, offline access, and a tailored user experience for mobile devices.
+- **Benefit**: A mobile app would increase accessibility, improve user engagement, and provide a more seamless browsing experience for users on the go.
+
+### 18. AI-Powered Recommendations
+- **Feature Description**: Implement AI-driven recommendations for related threads, trending topics, or suggested content based on user activity and interests.
+- **Benefit**: Personalized recommendations keep users engaged by presenting them with content that matches their preferences, encouraging more interaction with the forum.
+
+### 19. Scheduled Posts and Content Calendar
+- **Feature Description**: Allow users, particularly moderators or content creators, to schedule posts or announcements to be published at specific times.
+- **Benefit**: Scheduled posts can help maintain a steady flow of content, particularly during peak times, and allow for better content planning.
+
+### 20. Data Analytics Dashboard for Admins
+- **Feature Description**: Create a comprehensive analytics dashboard for administrators to track user engagement, post popularity, and overall forum health metrics.
+- **Benefit**: This feature would help administrators make data-driven decisions to improve user experience, identify trends, and address potential issues proactively.
+
+These future features represent a broad range of opportunities to expand and enhance Level Lounge, creating a more dynamic, engaging, and user-friendly platform for all community members. Implementing these features over time will help the forum evolve, attract new users, and maintain its position as a go-to destination for gaming discussions.
+
 ## Technologies Used📡
 
 Level Lounge is built using a modern technology stack that ensures a responsive, reliable, and interactive user experience. Below is a breakdown of the key technologies, tools, and services used in this project.
@@ -369,11 +669,11 @@ Level Lounge is built using a modern technology stack that ensures a responsive,
 
 These technologies collectively form the foundation of Level Lounge, offering robust backend support, engaging frontend experiences, and efficient deployment and maintenance workflows.
 
-## Testing 👨‍🔬
+## Testing👨‍🔬
 
 All testing was carried out in my [TESTING.md](/TESTING.md) file.
 
-## Deployment 🚀
+## Deployment🚀
 
 Deploying your project correctly ensures that it runs smoothly in a production environment. Below are detailed instructions for deploying Level Lounge to Heroku, and how to fork and clone the repository for development or customization purposes.
 
@@ -494,13 +794,52 @@ Cloning a repository allows you to create a local copy of a project from GitHub.
 
 These detailed deployment steps ensure that your application is securely set up, running correctly, and easily forked or cloned for further development or customization. Always double-check your environment configurations, particularly `DEBUG` and secret keys, to maintain security and proper operation in production environments.
 
-## Credits ✅
+## Credits✅
 
-### Content
+This project was built with the support of various communities, resources, and individuals who provided guidance, inspiration, and solutions to complex coding challenges. Below is a detailed acknowledgment of these contributions:
 
-### Media
+### **Communities and Forums**
 
-**Images**:
+- **[Reddit (r/django)](https://www.reddit.com/r/django/)**: This subreddit provided invaluable insights and solutions to common Django-related problems. Community members offered tips on improving code efficiency, debugging complex issues, and implementing best practices that enhanced the overall quality of the project.
+  
+- **[Stack Overflow](https://stackoverflow.com/)**: Stack Overflow was instrumental in troubleshooting and finding solutions to specific code errors and bugs encountered throughout the development process. Threads on various Django topics, including form handling, model relationships, and JavaScript integration, were particularly helpful.
 
-### Acknowledgements
+- **[GitHub Discussions](https://github.com/discussions)**: Various GitHub repositories and their discussion sections were useful for finding code snippets, configuration settings, and explanations related to advanced Django functionalities.
 
+- **[Django Documentation](https://docs.djangoproject.com/en/stable/)**: The official Django documentation served as the primary source of reference for understanding the framework’s core features, APIs, and best practices. It was crucial for learning about Django’s authentication system, query optimizations, and form handling.
+
+### **Individuals**
+
+- **David Bowers**: David Bowers, my mentor, provided consistent guidance, constructive feedback, and encouragement throughout the project. His advice on debugging and refining the project’s architecture was invaluable.
+  
+- **Marko Tot Course Cohort**: Marko Tot from the Code Institute provided continuous support and feedback, helping to test features, brainstorm ideas, and solve various challenges that arose during the development process.
+
+### **Learning Resources**
+
+- **[Code Institute](https://codeinstitute.net/)**: The “I Think Therefore I Blog” walkthrough from Code Institute was particularly influential in structuring the core features of the forum, including user authentication, CRUD functionalities, and comment threading. The project built upon the foundations learned from this walkthrough, extending and customizing the features to suit the specific needs of Level Lounge.
+
+- **[CoolCoders-PP4 by Darrach Barneveld](https://github.com/DarrachBarneveld/CoolCoders-PP4)**: Darrach Barneveld’s GitHub repository provided inspiration for the structure and layout of this README and testing documentation. The detailed approach to documenting testing procedures and the clear presentation of project features served as a guiding example.
+
+- **[MDN Web Docs](https://developer.mozilla.org/en-US/)**: The Mozilla Developer Network (MDN) was an essential resource for understanding HTML, CSS, and JavaScript standards. It provided comprehensive explanations and examples that were pivotal in debugging front-end issues and enhancing the user interface.
+
+- **[Bootstrap Documentation](https://getbootstrap.com/docs/)**: Bootstrap’s official documentation helped with implementing responsive design components, ensuring the site’s layout remained consistent across different devices and screen sizes.
+
+- **[W3Schools](https://www.w3schools.com/)**: W3Schools was frequently used for quick references on HTML, CSS, and JavaScript syntax, as well as for understanding the basics of various web technologies that were integrated into the project.
+
+### **Technical Assistance and Tools**
+
+- **ChatGPT**: ChatGPT was used to break down complex code into manageable parts and write small code snippets that were beyond my current skill level. All contributions from ChatGPT are documented within the codebase through comments to ensure proper acknowledgment. ChatGPT also assisted in providing explanations and advice on improving the readability and efficiency of my code.
+
+- **[Lucidchart](https://www.lucidchart.com/)**: Lucidchart was utilized for planning and designing the database structure and user flow diagrams. These visual aids were crucial for conceptualizing complex relationships and ensuring the database met the application’s needs.
+
+- **[Favicon.io](https://favicon.io/)**: This tool was used to create a favicon that matched the branding and theme of Level Lounge, ensuring a polished and professional look for the site.
+
+- **[AutoPEP8](https://pypi.org/project/autopep8/)**: AutoPEP8 was used to format Python code according to PEP8 standards, ensuring code consistency and readability across the entire project.
+
+### **Agile Methodology**
+
+- **[GitHub Issues](https://github.com/)**: GitHub Issues was utilized to implement Agile methodology throughout the development process. By creating a Kanban board, tasks were organized into sprints, allowing for efficient management of user stories, bug tracking, and feature implementation. This approach helped maintain a structured workflow, prioritize tasks, and ensure that the project stayed on track.
+
+### **Acknowledgements**
+
+- This project would not have been possible without the contributions and resources provided by these communities, individuals, and documentation. Their support played a crucial role in guiding this project from conception to completion. Each piece of advice, code snippet, and documentation reference contributed to the development and learning process, shaping Level Lounge into a fully functional and engaging gaming forum.

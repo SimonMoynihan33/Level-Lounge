@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 setTimeout(function() {
     const messages = document.querySelectorAll('.messages .alert');
     messages.forEach(message => {

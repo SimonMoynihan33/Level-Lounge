@@ -1,3 +1,38 @@
+## Table of Contents
+
+1. [User Story Testing](#user-story-testing)
+2. [Validation](#validation)
+    - [HTML Validation](#html)
+    - [CSS Validation](#css)
+    - [JavaScript Validation](#javascript)
+    - [Python Validation](#python)
+3. [Lighthouse Scores](#lighthouse-scores)
+4. [Feature Testing Summary](#feature-testing-summary)
+5. [User Authentication Tests](#user-authentication-tests)
+    - [How the Tests Work](#how-the-tests-work)
+    - [Why These Tests Matter](#why-these-tests-matter)
+    - [Python Testing Results](#python-testing-results)
+6. [Browser Testing Summary](#browser-testing-summary)
+7. [Bugs](#bugs)
+    - [Bug 01](#bug-01)
+    - [Bug 02](#bug-02)
+    - [Bug 03](#bug-03)
+    - [Bug 04](#bug-04)
+    - [Bug 05](#bug-05)
+    - [Bug 06](#bug-06)
+    - [Bug 07](#bug-07)
+    - [Bug 08](#bug-08)
+    - [Bug 09](#bug-09)
+    - [Bug 10](#bug-10)
+    - [Bug 11](#bug-11)
+    - [Bug 12](#bug-12)
+    - [Bug 13](#bug-13)
+    - [Bug 14](#bug-14)
+    - [Bug 15](#bug-15)
+    - [Bug 16](#bug-16)
+    - [Bug 17](#bug-17)
+    - [Bug 18](#bug-18)
+
 ## User Story Testing
 
 | Iteration | User Story                        | Result            | Acceptance Criteria                                                                                                       | Tasks Completed                                                                                                                   |
@@ -102,6 +137,7 @@
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
 | JS Validation Comments | <details><summary>JS Validation Comments</summary><img src="docs/validation/js/val-js-validation-comments.png"></details>                    | <mark>PASS</mark>   |
 | Toggle Reply Form JS   | <details><summary>Toggle Reply Form JS Validation</summary><img src="docs/validation/js/val-togglereplyform-js-val.png"></details>           | <mark>PASS</mark>   |
+| Messages              | <details><summary>Messages Validation</summary><img src="docs/validation/js/val-js-messages.png"></details>             | <mark>PASS</mark> |
 
 `One unused variable toggleReplyForm()` is actually in use for the reply form so this metric is irrelevant.
 
@@ -211,6 +247,7 @@
 | Contact section                                                | Contact information visible in footer               | Works as expected         | Pass  |
 | Instagram link                                                 | Link navigates to Instagram                         | Working                  | Pass  |
 | All footer links                                                    | Footer links open in new tabs                       | Working                  | Pass  |
+| Python messages fade out after 3 seconds                       | Messages fade out to avoid obstructing navigation    | Works as expected         | Pass  |
 
 
 ### **User Authentication Tests**
@@ -243,6 +280,27 @@ These tests can be run anytime using Django’s built-in test runner (`python ma
 #### **Python Testing Results**
 
 <details><summary>tests.py</summary><img src="docs/testing/python-testing.png"></details>
+
+### **Browser Testing Summary**
+
+| Browser/Platform     | Device/Screen Size       | Elements Tested                                    | Errors Found                           | Status     |
+| -------------------- | ------------------------ | -------------------------------------------------- | -------------------------------------- | ---------- |
+| Google Chrome        | Desktop (1366px, 1920px) | Layout, functionality, responsiveness              | None                                   | Pass       |
+| Google Chrome        | Mobile (375px, 414px)    | Navigation, dropdowns, touch interactions          | Image field spill                      | Issue Found |
+| Mozilla Firefox      | Desktop (1366px, 1920px) | Layout, button functionality, forms                | None                                   | Pass       |
+| Mozilla Firefox      | Mobile (375px, 414px)    | Responsive design, scroll behavior                 | Image field spill                      | Issue Found |
+| Microsoft Edge       | Desktop (1366px, 1920px) | CSS compatibility, fonts, interactions             | None                                   | Pass       |
+| Microsoft Edge       | Mobile (375px, 414px)    | Navigation, button presses, input fields           | Image field spill                      | Issue Found |
+| Safari               | Desktop (1440px)         | Overall layout, form submission, image rendering   | None                                   | Pass       |
+| Safari               | iPhone (320px, 375px)    | Mobile responsiveness, touch elements              | Image field spill                      | Issue Found |
+| Opera                | Desktop (1366px, 1920px) | Browser compatibility, loading speed               | None                                   | Pass       |
+| Opera                | Mobile (375px)           | Menu display, touch response                       | Image field spill                      | Issue Found |
+
+### Comments:
+- **Profile Image Field Issue**: The profile image changing field spills over to the right on mobile screens, impacting usability. Due to time constraints, this issue could not be fixed in the current version and will be addressed in a later iteration. <details><summary>Image field spill</summary><img src="docs/validation/profile-image-field-mobile.jpg"></details>
+
+
+- **Nested Comments**: Nested comments start to look distorted and very small if nesting becomes too long (estimated 15+ comments deep). This distortion only occurs when continuously replying to the deepest reply; replies to any earlier comments do not contribute to this problem. A JavaScript solution was attempted to collapse and show replies but couldn't be implemented successfully in time. Due to the expected traffic on the site, this issue should not significantly impact most users currently. This will be refined in a future update to improve the comment section’s usability and appearance.
 
 ## Bugs
 
@@ -351,12 +409,12 @@ I changed my perspective and decided to try targetting with JavaScript which was
 - **Cause**: Media URL not working as intended.
 - **Fix**: Add `'MEDIA_URL': settings.MEDIA_URL,` to profile_view directly.
 
-### Bug 27
+### Bug 17
 - **Issue**: Post count not updating on user profile.
 - **Cause**: Post count feature and signals added after posts were created, therefore not counting posts already created.
 - **Fix**: Run command in Django shell to iterate over posts and update the count.
 
-### Bug 28
+### Bug 18
 - **Issue**: Profile picture error when trying to access a post from a user created before default profile image was set.
 - **Cause**: No Profile image for a user.
 - **Fix**: Run django shell and input code: 
@@ -375,3 +433,16 @@ print(f"Updated {profiles_without_images.count()} profiles with the default prof
 ```
 
 Result: `Updated 4 profiles with the default profile picture.`
+
+## Unfixed Bugs
+
+### Nested Comments
+- **Issue**: Nested comments begin to look distorted and very small when nesting becomes too deep, estimated to occur at 15+ levels of replies. This problem arises specifically when users keep replying to the deepest reply, causing excessive nesting. Replies to earlier comments do not contribute to this issue.
+- **Impact**: Due to the expected traffic on the site, this issue should not significantly impact most users, as such deep nesting is uncommon in normal forum discussions. However, it affects the readability and usability of deeply nested threads.
+- **Attempted Solution**: A JavaScript solution was attempted to collapse and show replies, but it did not function correctly within the project's constraints. This feature is planned for refinement in a future iteration.
+- **Future Fix**: Plan to implement a more robust collapsing system to manage deep nesting of comments effectively and maintain a clean interface.
+
+### Profile Image Field in Edit Modal
+- **Issue**: The profile image changing field in the edit profile modal spills over to the right side of the screen on mobile devices, affecting the layout and user experience.
+- **Impact**: This layout issue primarily affects mobile users when editing their profile. Due to time constraints, this bug has not been fixed in the current version and is slated for correction in future updates.
+- **Future Fix**: This issue will be addressed in the next iteration with improved responsive design adjustments to ensure the profile image field displays correctly across all devices.
