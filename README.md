@@ -145,7 +145,7 @@ The user experience is at the heart of Level Lounge’s design. By prioritizing 
 The color scheme of Level Lounge is designed to create an inviting and energetic atmosphere that reflects the vibrant world of gaming. Dominated by shades of gold, navy and gray the theme evokes warmth, enthusiasm, and a sense of adventure, making every interaction feel dynamic and engaging. This bright and bold palette not only enhances readability but also brings a touch of excitement to the forum, encouraging users to explore and participate. The color scheme is carefully balanced to ensure that important elements like buttons, links, and notifications stand out, guiding users intuitively through the platform while maintaining a cohesive and visually appealing experience.
 
 <details><summary>Color Scheme</summary>
-<img src="docs/color-scheme.png">
+<img src="docs/design/color-scheme.png">
 </details>
 
 ### Database Schema
