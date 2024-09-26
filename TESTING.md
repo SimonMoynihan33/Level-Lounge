@@ -166,23 +166,17 @@ This cleared the file from my repo and its history and stopped Git from tracking
 
 A large bug I encountered was obtaining nested comments. The Code Institute walkthrough views and template did not support this feature, but I felt it was an essential aspect of a discussion based forum website. Most of the time, when I added a view or updated my post_detail template, I ecountered server errors or replies would not show at all.
 
-### Bug 10
-- Issue: `django.template.exceptions.TemplateDoesNotExist: comments.html` error shown when trying to run server when comments.html exists and has content.
-
-### Bug 11
-- Issue: `Not NULL` error when trying to comment for 'author'.
-
-### Bug 12 
+### Bug 10 
 - Issue: `RecursionError` when attempting to comment.
 - Cause: I created an infinite loop as I did not handle checks if there is no replies properly.
 - Fix: Wrap the `{% include %}` tag in a conditional to check if there are replies.
 
-### Bug 13
+### Bug 11
 - Issue: `RecursionError` when attempting to reply to a comment.
 - Cause: This was because I was not terminating the logic properly when displaying the replies, causing replies to display infinitely.
 - Fix: Add for loop to comments.html to iterate through replies and end when there are no more replies, and call `exists()` method to make sure comment replies exist.
 
-### Bug 14
+### Bug 12
 - Issue: Too many replies can affect mobile view and does not look good. Applying hidden class using django templating language did seem to work in comments.html.
 - Attempted fixes: My first attempt was to use django templating language to apply a css class to comments if there was more than three, but the syntax would not work due to the first `>` tag stopping the rest of the code from running in this example:
 ```
@@ -200,35 +194,32 @@ I changed my perspective and decided to try targetting with JavaScript which was
 - Cause: Drawbacks with templating language.
 - Fix: After placing console.logs in my hideReplies function, I found that my `.reply` class was not being applied to each reply, therefore not being targetted by JavaScript or the CSS.
 
-### Bug 15
-- Issue: Committed changes and pushed them and the site was working, and when I open it again the next day thw fixed buttons are no longer working.
-- Fix: Re-do all changes made previous day.
+### Bug 13
+- Issue: JavaScript for showing and hiding replies did not function as intended.
+- Fix: Remove show and collapse functionality as it had unfixed bugs and within the time frame was not plausible to properly implement.
 
-### Bug 16
-- Issue: Cannot get edit post form to show when trying to change CI code from editting comments.
-
-### Bug 17
+### Bug 14
 - Issue: Cannot get Logout/Login list item to align centrally when the nav collapses on mobile devices. Only solutions I could think of with css aligned everything to the left, or would leave 'Home' and 'Profile' horizontal on one line, and 'Login' right aligned on the next line.
 - Cause: Failure overriding Bootstrap styling successfully.
 - Fix: The only fix I could think of was removing the `ms-auto` Bootstrap class depending on screen sizes. I achieved this through JavaScript.
 
-### Bug 18
+### Bug 15
 - Issue: Created UserProfile model and view after creating users.
 - Cause: Implemented Profile feature last, after populating site for testing.
 - Fix: Use python shell commands to loop through and create user profiles for each user without one.
 ----------------------- Image
 
-### Bug 19
+### Bug 16
 - Issue: Could not get default image to render on profile page.
 - Cause: Media URL not working as intended.
 - Fix: Add `'MEDIA_URL': settings.MEDIA_URL,` to profile_view directly.
 
-### Bug 20
+### Bug 27
 - Issue: Post count not updating on user profile.
 - Cause: Post count feature and signals added after posts were created, therefore not counting posts already created.
 - Fix: Run command in Django shell to iterate over posts and update the count.
 
-### Bug 21
+### Bug 28
 - Issue: Profile picture error when trying to access a post from a user created before default profile image was set.
 - Cause: No Profile image for a user.
 - Fix: Run django shell and input code: 
@@ -247,7 +238,3 @@ print(f"Updated {profiles_without_images.count()} profiles with the default prof
 ```
 
 Result: `Updated 4 profiles with the default profile picture.`
-
-### Bug 22
-- Issue: Profile images not rendering all of the time
-

@@ -12,6 +12,9 @@
     <title>The Level Lounge</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Join Level Lounge, the ultimate gaming forum for gamers to connect, share insights, discuss strategies, and stay updated with the latest in gaming. Create posts, comment, and engage in dynamic discussions with fellow enthusiasts. Level up your gaming experience with a vibrant community at Level Lounge!">
+
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
@@ -32,62 +35,62 @@
 
 <body class="d-flex flex-column main-bg">
     <header>
-            <!-- Nav -->
-            <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
-                <div class="container-fluid navbar-container">
-                    <a href="{% url 'home' %}" class="navbar-brand">The Level Lounge</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon">
-                            <span class="sr-only">Click to toggle mobile dropdown menu</span>
-                        </span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav nav-list w-100">
-                            <!-- Left aligned links -->
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
-                                    aria-current="page" href="{% url 'home' %}">Home</a>
-                            </li>
-                            {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.resolver_match.url_name == 'profile' and request.user.username == request.resolver_match.kwargs.username %}active{% endif %}"
-                                    aria-current="page" href="{% url 'profile' user.username %}">Profile</a>
-                            </li>
-                            <!-- Right-aligned links (Login/Logout) -->
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
-                                    href="{% url 'account_logout' %}">Logout</a>
-                            </li>
-                            {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == login_url %}active{% endif %}"
-                                    href="{% url 'account_login' %}">Login</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                        <div class="ms-auto">
-                            {% if user.is_authenticated %}
-                            <p class="text-end m-3 logged-in-as">You are logged in as {{ user }}</p>
-                            {% else %}
-                            <p class="text-end m-3 logged-in-as">You are not logged in</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        {% for message in messages %}
-                        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                            {{ message | safe }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        {% endfor %}
+        <!-- Nav -->
+        <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
+            <div class="container-fluid navbar-container">
+                <a href="{% url 'home' %}" class="navbar-brand">The Level Lounge</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span class="sr-only">Click to toggle mobile dropdown menu</span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav nav-list w-100">
+                        <!-- Left aligned links -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                                aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'profile' and request.user.username == request.resolver_match.kwargs.username %}active{% endif %}"
+                                aria-current="page" href="{% url 'profile' user.username %}">Profile</a>
+                        </li>
+                        <!-- Right-aligned links (Login/Logout) -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <div class="ms-auto">
+                        {% if user.is_authenticated %}
+                        <p class="text-end m-3 logged-in-as">You are logged in as {{ user }}</p>
+                        {% else %}
+                        <p class="text-end m-3 logged-in-as">You are not logged in</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </header>
 
     <main class="main-bg flex-grow-1">
