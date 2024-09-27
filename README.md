@@ -21,6 +21,8 @@ To keep our community safe and secure, Level Lounge features a robust user login
 
 Dive in, introduce yourself, and start exploring everything Level Lounge has to offer. Whether you're here to learn, collaborate, or just hang out, we’re excited to have you as part of our growing community. Let’s level up together!
 
+![Am I Responsive](docs/am-i-responsive.png)
+
 [App Link](https://level-lounge-16ccb4ef258a.herokuapp.com/)
 
 - [User Experience](#user-experience)
